@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="Adressen">
+    <EntityType.Attributes>
+      <DisplayName
+        Value="Adressen" />
+      <Description
+        Value="" />
+    </EntityType.Attributes>
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <EntityProperty
+        Name="Bedrijfsnaam"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="Bedrijfsnaam" />
+          <Required />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Adrestype"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <SupportedValue
+            DisplayName="Bezoekadres"
+            Value="Bezoekadres" />
+          <SupportedValue
+            DisplayName="Postadres"
+            Value="Postadres" />
+          <DisplayName
+            Value="Adrestype" />
+          <Required />
+          <Description
+            Value="Adrestype" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Postcode"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="Postcode" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Plaats"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="Plaats" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Land"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="Land" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Adresregel1"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="Adresregel 1" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Adresregel2"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="Adresregel 2" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <KeyProperty
+        Name="Id"
+        IsReadOnly="True"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Id" />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="Inhoudstype"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="Inhoudstype" />
+          <NotSortable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="InhoudstypeId"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Inhoudstype-id" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Gewijzigd"
+        IsReadOnly="True"
+        PropertyType=":DateTime?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Gewijzigd" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Gemaakt"
+        IsReadOnly="True"
+        PropertyType=":DateTime?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Gemaakt" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Owshiddenversion"
+        IsReadOnly="True"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="owshiddenversion" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Versie"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Versie" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Pad"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Pad" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="GemaaktDoor"
+        Association="AdressenItem_GemaaktDoor"
+        FromEnd="AdressenItem"
+        ToEnd="GemaaktDoor" />
+      <NavigationProperty
+        Name="GewijzigdDoor"
+        Association="AdressenItem_GewijzigdDoor"
+        FromEnd="AdressenItem"
+        ToEnd="GewijzigdDoor" />
+      <VirtualNavigationProperty
+        Name="Bedrijven"
+        FromEnd="Adressen"
+        ToEnd="Bedrijven"
+        VirtualAssociation="Bedrijven_Adressen" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityContainer
+    Name="T_MC_Adressen">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="Adressens"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="Adressen" />
+    <QueryOperation
+      Name="Adressens_Single"
+      ReturnType="Adressen">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Adressens" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <DisplayName
+            Value="Id" />
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Adressens_SingleOrDefault"
+      ReturnType="Adressen">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Adressens" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <DisplayName
+            Value="Id" />
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+  </EntityContainer>
+  <DataService
+    Name="T_MC_AdressenDataService">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <EntitySetMapping
+      EntitySet="Adressens">
+      <EntitySetMapping.Attributes>
+        <CsdlEntitySet
+          EntityTypeName="AdressenItem"
+          Name="Adressen"
+          EntityType="Adressen" />
+        <CsdlProperty
+          Name="InhoudstypeId"
+          Property="Adressen/Properties[InhoudstypeId]" />
+        <CsdlProperty
+          Name="Bedrijfsnaam"
+          Property="Adressen/Properties[Bedrijfsnaam]" />
+        <CsdlProperty
+          Name="AdrestypeValue"
+          Property="Adressen/Properties[Adrestype]" />
+        <CsdlProperty
+          Name="Postcode"
+          Property="Adressen/Properties[Postcode]" />
+        <CsdlProperty
+          Name="Plaats"
+          Property="Adressen/Properties[Plaats]" />
+        <CsdlProperty
+          Name="Land"
+          Property="Adressen/Properties[Land]" />
+        <CsdlProperty
+          Name="Adresregel1"
+          Property="Adressen/Properties[Adresregel1]" />
+        <CsdlProperty
+          Name="Adresregel2"
+          Property="Adressen/Properties[Adresregel2]" />
+        <CsdlProperty
+          Name="Id"
+          Property="Adressen/Properties[Id]" />
+        <CsdlProperty
+          Name="Inhoudstype"
+          Property="Adressen/Properties[Inhoudstype]" />
+        <CsdlProperty
+          Name="Gewijzigd"
+          Property="Adressen/Properties[Gewijzigd]" />
+        <CsdlProperty
+          Name="Gemaakt"
+          Property="Adressen/Properties[Gemaakt]" />
+        <CsdlProperty
+          Name="Owshiddenversion"
+          Property="Adressen/Properties[Owshiddenversion]" />
+        <CsdlProperty
+          Name="Versie"
+          Property="Adressen/Properties[Versie]" />
+        <CsdlProperty
+          Name="Pad"
+          Property="Adressen/Properties[Pad]" />
+        <CsdlProperty
+          Name="GemaaktDoor"
+          Property="Adressen/Properties[GemaaktDoor]" />
+        <CsdlForeignKeyProperty
+          Name="GemaaktDoorId"
+          Property="LijstMetGebruikersgegeven1/Properties[Id]" />
+        <CsdlProperty
+          Name="GewijzigdDoor"
+          Property="Adressen/Properties[GewijzigdDoor]" />
+        <CsdlForeignKeyProperty
+          Name="GewijzigdDoorId"
+          Property="LijstMetGebruikersgegeven1/Properties[Id]" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+  </DataService>
+</ServiceApplication>

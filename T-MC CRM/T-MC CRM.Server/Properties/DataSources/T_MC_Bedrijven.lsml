@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityContainer
+    Name="T_MC_Bedrijven"
+    DataProvider="SharePointDataProvider">
+    <EntityContainer.Attributes>
+      <SupportsSharePointHostFeatures />
+      <Partial
+        IsPrimary="True" />
+    </EntityContainer.Attributes>
+    <SubmitOperation
+      Name="SaveChanges" />
+  </EntityContainer>
+  <DataService
+    Name="T_MC_BedrijvenDataService"
+    EntityContainer="T_MC_Bedrijven">
+    <DataService.Attributes>
+      <CsdlEntityContainer
+        Name="TMCDevDataContext" />
+      <Partial
+        IsPrimary="True" />
+    </DataService.Attributes>
+    <DataService.ConnectionProperties>
+      <ConnectionProperty
+        Name="ConnectionStringGuid"
+        Value="1c230f45-7e17-49fd-a189-df91edcb50c3" />
+      <ConnectionProperty
+        Name="ProjectMetadata"
+        Value="T_MC_Bedrijven" />
+    </DataService.ConnectionProperties>
+  </DataService>
+</ServiceApplication>

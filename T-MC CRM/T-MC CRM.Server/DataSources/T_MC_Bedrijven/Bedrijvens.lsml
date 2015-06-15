@@ -1,0 +1,459 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="Bedrijven">
+    <EntityType.Attributes>
+      <DisplayName
+        Value="Bedrijven" />
+      <Description
+        Value="" />
+    </EntityType.Attributes>
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <EntityProperty
+        Name="Bedrijfsnaam"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="Bedrijfsnaam" />
+          <Required />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Telefoonnummer"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="Telefoonnummer" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Branche"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="Branche" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="EmailAdres"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="Email adres" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Website"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="Website" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="MoederAccount"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="Moeder account" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="PrimairContact"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="Primair contact" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="KvKNummer"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="KvK Nummer" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="OneNote"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="OneNote" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Actief"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="Actief" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <KeyProperty
+        Name="Id"
+        IsReadOnly="True"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Id" />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="Inhoudstype"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="Inhoudstype" />
+          <NotSortable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="InhoudstypeId"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Inhoudstype-id" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Gewijzigd"
+        IsReadOnly="True"
+        PropertyType=":DateTime?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Gewijzigd" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Gemaakt"
+        IsReadOnly="True"
+        PropertyType=":DateTime?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Gemaakt" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Owshiddenversion"
+        IsReadOnly="True"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="owshiddenversion" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Versie"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Versie" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Pad"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Pad" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="Klantpartner"
+        Association="BedrijvenItem_Klantpartner"
+        FromEnd="BedrijvenItem"
+        ToEnd="Klantpartner" />
+      <NavigationProperty
+        Name="GemaaktDoor"
+        Association="BedrijvenItem_GemaaktDoor"
+        FromEnd="BedrijvenItem"
+        ToEnd="GemaaktDoor" />
+      <NavigationProperty
+        Name="GewijzigdDoor"
+        Association="BedrijvenItem_GewijzigdDoor"
+        FromEnd="BedrijvenItem"
+        ToEnd="GewijzigdDoor" />
+      <VirtualNavigationProperty
+        Name="Contactpersonens"
+        FromEnd="Bedrijven"
+        ToEnd="Contactpersonen"
+        VirtualAssociation="Contactpersonen_Bedrijven" />
+      <VirtualNavigationProperty
+        Name="Adressens"
+        FromEnd="Bedrijven"
+        ToEnd="Adressen"
+        VirtualAssociation="Bedrijven_Adressen" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityContainer
+    Name="T_MC_Bedrijven">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="Bedrijvens"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="Bedrijven" />
+    <QueryOperation
+      Name="Bedrijvens_Single"
+      ReturnType="Bedrijven">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Bedrijvens" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <DisplayName
+            Value="Id" />
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Bedrijvens_SingleOrDefault"
+      ReturnType="Bedrijven">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Bedrijvens" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <DisplayName
+            Value="Id" />
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+  </EntityContainer>
+  <DataService
+    Name="T_MC_BedrijvenDataService">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <EntitySetMapping
+      EntitySet="Bedrijvens">
+      <EntitySetMapping.Attributes>
+        <CsdlEntitySet
+          EntityTypeName="BedrijvenItem"
+          Name="Bedrijven"
+          EntityType="Bedrijven" />
+        <CsdlProperty
+          Name="InhoudstypeId"
+          Property="Bedrijven/Properties[InhoudstypeId]" />
+        <CsdlProperty
+          Name="Bedrijfsnaam"
+          Property="Bedrijven/Properties[Bedrijfsnaam]" />
+        <CsdlProperty
+          Name="Telefoonnummer"
+          Property="Bedrijven/Properties[Telefoonnummer]" />
+        <CsdlProperty
+          Name="Branche"
+          Property="Bedrijven/Properties[Branche]" />
+        <CsdlProperty
+          Name="EmailAdres"
+          Property="Bedrijven/Properties[EmailAdres]" />
+        <CsdlProperty
+          Name="Website"
+          Property="Bedrijven/Properties[Website]" />
+        <CsdlProperty
+          Name="MoederAccount"
+          Property="Bedrijven/Properties[MoederAccount]" />
+        <CsdlProperty
+          Name="PrimairContact"
+          Property="Bedrijven/Properties[PrimairContact]" />
+        <CsdlProperty
+          Name="KvKNummer"
+          Property="Bedrijven/Properties[KvKNummer]" />
+        <CsdlProperty
+          Name="OneNote"
+          Property="Bedrijven/Properties[OneNote]" />
+        <CsdlProperty
+          Name="Actief"
+          Property="Bedrijven/Properties[Actief]" />
+        <CsdlProperty
+          Name="Id"
+          Property="Bedrijven/Properties[Id]" />
+        <CsdlProperty
+          Name="Inhoudstype"
+          Property="Bedrijven/Properties[Inhoudstype]" />
+        <CsdlProperty
+          Name="Gewijzigd"
+          Property="Bedrijven/Properties[Gewijzigd]" />
+        <CsdlProperty
+          Name="Gemaakt"
+          Property="Bedrijven/Properties[Gemaakt]" />
+        <CsdlProperty
+          Name="Owshiddenversion"
+          Property="Bedrijven/Properties[Owshiddenversion]" />
+        <CsdlProperty
+          Name="Versie"
+          Property="Bedrijven/Properties[Versie]" />
+        <CsdlProperty
+          Name="Pad"
+          Property="Bedrijven/Properties[Pad]" />
+        <CsdlProperty
+          Name="Klantpartner"
+          Property="Bedrijven/Properties[Klantpartner]" />
+        <CsdlForeignKeyProperty
+          Name="KlantpartnerId"
+          Property="LijstMetGebruikersgegeven/Properties[Id]" />
+        <CsdlProperty
+          Name="GemaaktDoor"
+          Property="Bedrijven/Properties[GemaaktDoor]" />
+        <CsdlForeignKeyProperty
+          Name="GemaaktDoorId"
+          Property="LijstMetGebruikersgegeven/Properties[Id]" />
+        <CsdlProperty
+          Name="GewijzigdDoor"
+          Property="Bedrijven/Properties[GewijzigdDoor]" />
+        <CsdlForeignKeyProperty
+          Name="GewijzigdDoorId"
+          Property="LijstMetGebruikersgegeven/Properties[Id]" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+  </DataService>
+  <VirtualAssociation
+    Name="Contactpersonen_Bedrijven">
+    <VirtualAssociationEnd
+      Name="Contactpersonen"
+      Multiplicity="Many"
+      EntityType="Contactpersonen" />
+    <VirtualAssociationEnd
+      Name="Bedrijven"
+      Multiplicity="One"
+      EntityType="Bedrijven" />
+  </VirtualAssociation>
+  <VirtualAssociationSet
+    Name="Contactpersonen_Bedrijven_Set"
+    VirtualAssociation="Contactpersonen_Bedrijven">
+    <VirtualAssociationSetEnd
+      Name="Contactpersonen"
+      EntityContainer="T_MC_Contactpersonen"
+      EntitySet="Contactpersonens">
+      <VirtualAssociationSetEndProperty
+        EntityProperty="Bedrijfsnaam" />
+    </VirtualAssociationSetEnd>
+    <VirtualAssociationSetEnd
+      Name="Bedrijven"
+      EntityContainer="T_MC_Bedrijven"
+      EntitySet="Bedrijvens">
+      <VirtualAssociationSetEndProperty
+        EntityProperty="Bedrijfsnaam" />
+    </VirtualAssociationSetEnd>
+  </VirtualAssociationSet>
+  <VirtualAssociation
+    Name="Bedrijven_Adressen">
+    <VirtualAssociationEnd
+      Name="Bedrijven"
+      Multiplicity="One"
+      EntityType="Bedrijven" />
+    <VirtualAssociationEnd
+      Name="Adressen"
+      Multiplicity="Many"
+      EntityType="Adressen" />
+  </VirtualAssociation>
+  <VirtualAssociationSet
+    Name="Bedrijven_Adressen_Set"
+    VirtualAssociation="Bedrijven_Adressen">
+    <VirtualAssociationSetEnd
+      Name="Bedrijven"
+      EntityContainer="T_MC_Bedrijven"
+      EntitySet="Bedrijvens">
+      <VirtualAssociationSetEndProperty
+        EntityProperty="Bedrijfsnaam" />
+    </VirtualAssociationSetEnd>
+    <VirtualAssociationSetEnd
+      Name="Adressen"
+      EntityContainer="T_MC_Adressen"
+      EntitySet="Adressens">
+      <VirtualAssociationSetEndProperty
+        EntityProperty="Bedrijfsnaam" />
+    </VirtualAssociationSetEnd>
+  </VirtualAssociationSet>
+</ServiceApplication>

@@ -66,6 +66,12 @@
     <Content Include="Content\Images\user-splash-screen.png" />
     <Content Include="Content\Web.config" />
     <Content Include="packages.config" />
+    <Content Include="Screens\Bedrijvens\ViewBedrijven.lsml.js">
+      <DependentUpon>ViewBedrijven.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\Contactpersonens\ViewContactpersonen.lsml.js">
+      <DependentUpon>ViewContactpersonen.lsml</DependentUpon>
+    </Content>
     <Content Include="Scripts\datajs-1.1.1.js" />
     <Content Include="Scripts\datajs-1.1.1.min.js" />
     <Content Include="Scripts\jquery-1.9.1.intellisense.js" />
@@ -82,9 +88,6 @@
     <Content Include="Scripts\winjs-1.0.min.js" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Screens\" />
-  </ItemGroup>
-  <ItemGroup>
     <ServiceMetadataReference Include="..\T-MC CRM.Server\T-MC CRM.Server.csproj">
       <Visible>false</Visible>
     </ServiceMetadataReference>
@@ -94,35 +97,41 @@
       <ProjectCritical>true</ProjectCritical>
     </LightSwitchModel>
     <LightSwitchModel Include="Properties\Proxies.lsml" />
+    <LightSwitchModel Include="Properties\T_MC_Bedrijven\Bedrijvens.lsml" />
+    <LightSwitchModel Include="Properties\T_MC_Contactpersonen\Contactpersonens.lsml" />
+    <LightSwitchModel Include="Screens\Bedrijvens\AddEditBedrijven.lsml" />
+    <LightSwitchModel Include="Screens\Bedrijvens\BrowseBedrijvens.lsml" />
+    <LightSwitchModel Include="Screens\Bedrijvens\ViewBedrijven.lsml" />
+    <LightSwitchModel Include="Screens\Contactpersonens\AddEditContactpersonen.lsml" />
+    <LightSwitchModel Include="Screens\Contactpersonens\BrowseContactpersonens.lsml" />
+    <LightSwitchModel Include="Screens\Contactpersonens\ViewContactpersonen.lsml" />
   </ItemGroup>
-  <ItemGroup>  
+  <ItemGroup>
     <_ClientBuildFile Include="GeneratedArtifacts\model.json">
-        <SubFolder>Content\Resources\Generated</SubFolder>
+      <SubFolder>Content\Resources\Generated</SubFolder>
     </_ClientBuildFile>
     <_ClientBuildFile Include="GeneratedArtifacts\data.js">
-        <SubFolder>Scripts\Generated</SubFolder>
+      <SubFolder>Scripts\Generated</SubFolder>
     </_ClientBuildFile>
     <_ClientBuildFile Include="GeneratedArtifacts\viewModel.js">
-        <SubFolder>Scripts\Generated</SubFolder>
+      <SubFolder>Scripts\Generated</SubFolder>
     </_ClientBuildFile>
     <_ClientBuildFile Include="GeneratedArtifacts\usercode.js">
-        <SubFolder>Scripts\Generated</SubFolder>
+      <SubFolder>Scripts\Generated</SubFolder>
     </_ClientBuildFile>
     <_ClientBuildFile Include="GeneratedArtifacts\resources.js">
       <SubFolder>Scripts\Generated</SubFolder>
     </_ClientBuildFile>
   </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\LightSwitch\v4.5\MobileClient\Microsoft.LightSwitch.MobileClient.targets"/>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\LightSwitch\v4.5\MobileClient\Microsoft.LightSwitch.MobileClient.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\LightSwitch\v4.5\Microsoft.LightSwitch.Build.Tasks.targets" />
-
-    <!-- Redefine the targets to be empty -->
-    <Target Name="GetXapOutputFile" />
-
-    <PropertyGroup>
-      <AppxPackage>false</AppxPackage>
-      <AppxGeneratePriEnabled>false</AppxGeneratePriEnabled>
-    </PropertyGroup>
-    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+  <!-- Redefine the targets to be empty -->
+  <Target Name="GetXapOutputFile" />
+  <PropertyGroup>
+    <AppxPackage>false</AppxPackage>
+    <AppxGeneratePriEnabled>false</AppxGeneratePriEnabled>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>

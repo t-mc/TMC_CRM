@@ -1,0 +1,750 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="LijstMetGebruikersgegeven2">
+    <EntityType.Attributes>
+      <DisplayName
+        Value="Lijst met gebruikersgegevens" />
+      <Description
+        Value="Alle personen." />
+    </EntityType.Attributes>
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        IsReadOnly="True"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Id" />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="Inhoudstype"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="Inhoudstype" />
+          <NotSortable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="InhoudstypeId"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Inhoudstype-id" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Naam"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Naam" />
+          <Required />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Account"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Account" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ZakelijkEMailadres"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Zakelijk e-mailadres" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="MobieleTelefoon"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <MaxLength
+            Value="127" />
+          <DisplayName
+            Value="Mobiele telefoon" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="OverMij"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Over mij" />
+          <NotSortable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="SIPAdres"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="SIP-adres" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="IsBeheerderVanDeSite"
+        IsReadOnly="True"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Is beheerder van de site" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Verwijderd"
+        IsReadOnly="True"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Verwijderd" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Verborgen"
+        IsReadOnly="True"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Verborgen" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Afbeelding"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Afbeelding" />
+          <NotSortable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Afdeling"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Afdeling" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Titel"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Titel" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Voornaam"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Voornaam" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Achternaam"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Achternaam" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="TelefoonWerk"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Telefoon werk" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Gebruikersnaam"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Gebruikersnaam" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Website"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Website" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="StelMijEenVraagOver"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Stel mij een vraag over" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Kantoor"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Kantoor" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="TijdstempelAfbeelding"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Tijdstempel afbeelding" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="StatusTijdelijkeAanduidingVoorAfbeelding"
+        IsReadOnly="True"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Status tijdelijke aanduiding voor afbeelding" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="SynchronisatiestatusAfbeelding"
+        IsReadOnly="True"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Synchronisatiestatus afbeelding" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Gewijzigd"
+        IsReadOnly="True"
+        PropertyType=":DateTime?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Gewijzigd" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Gemaakt"
+        IsReadOnly="True"
+        PropertyType=":DateTime?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Gemaakt" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Owshiddenversion"
+        IsReadOnly="True"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="owshiddenversion" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Versie"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Versie" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Pad"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Pad" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="GemaaktDoor"
+        Association="LijstMetGebruikersgegevensItem_GemaaktDoor2"
+        FromEnd="LijstMetGebruikersgegevensItem"
+        ToEnd="GemaaktDoor" />
+      <NavigationProperty
+        Name="GewijzigdDoor"
+        Association="LijstMetGebruikersgegevensItem_GewijzigdDoor2"
+        FromEnd="LijstMetGebruikersgegevensItem"
+        ToEnd="GewijzigdDoor" />
+    </EntityType.Properties>
+  </EntityType>
+  <Association
+    Name="ContactpersonenItem_GemaaktDoor">
+    <AssociationEnd
+      Name="ContactpersonenItem"
+      Multiplicity="Many"
+      EntityType="Contactpersonen" />
+    <AssociationEnd
+      Name="GemaaktDoor"
+      EntityType="LijstMetGebruikersgegeven2">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="ContactpersonenItem_GewijzigdDoor">
+    <AssociationEnd
+      Name="ContactpersonenItem"
+      Multiplicity="Many"
+      EntityType="Contactpersonen" />
+    <AssociationEnd
+      Name="GewijzigdDoor"
+      EntityType="LijstMetGebruikersgegeven2">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="LijstMetGebruikersgegevensItem_GemaaktDoor2">
+    <AssociationEnd
+      Name="LijstMetGebruikersgegevensItem"
+      Multiplicity="Many"
+      EntityType="LijstMetGebruikersgegeven2" />
+    <AssociationEnd
+      Name="GemaaktDoor"
+      EntityType="LijstMetGebruikersgegeven2">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="LijstMetGebruikersgegevensItem_GewijzigdDoor2">
+    <AssociationEnd
+      Name="LijstMetGebruikersgegevensItem"
+      Multiplicity="Many"
+      EntityType="LijstMetGebruikersgegeven2" />
+    <AssociationEnd
+      Name="GewijzigdDoor"
+      EntityType="LijstMetGebruikersgegeven2">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <EntityContainer
+    Name="T_MC_Contactpersonen">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="LijstMetGebruikersgegevens"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="LijstMetGebruikersgegeven2" />
+    <AssociationSet
+      Name="ContactpersonenItem_GemaaktDoor"
+      Association="ContactpersonenItem_GemaaktDoor">
+      <AssociationSetEnd
+        Name="ContactpersonenItem"
+        EntitySet="Contactpersonens" />
+      <AssociationSetEnd
+        Name="GemaaktDoor"
+        EntitySet="LijstMetGebruikersgegevens" />
+    </AssociationSet>
+    <AssociationSet
+      Name="ContactpersonenItem_GewijzigdDoor"
+      Association="ContactpersonenItem_GewijzigdDoor">
+      <AssociationSetEnd
+        Name="ContactpersonenItem"
+        EntitySet="Contactpersonens" />
+      <AssociationSetEnd
+        Name="GewijzigdDoor"
+        EntitySet="LijstMetGebruikersgegevens" />
+    </AssociationSet>
+    <AssociationSet
+      Name="LijstMetGebruikersgegevensItem_GemaaktDoor"
+      Association="LijstMetGebruikersgegevensItem_GemaaktDoor2">
+      <AssociationSetEnd
+        Name="LijstMetGebruikersgegevensItem"
+        EntitySet="LijstMetGebruikersgegevens" />
+      <AssociationSetEnd
+        Name="GemaaktDoor"
+        EntitySet="LijstMetGebruikersgegevens" />
+    </AssociationSet>
+    <AssociationSet
+      Name="LijstMetGebruikersgegevensItem_GewijzigdDoor"
+      Association="LijstMetGebruikersgegevensItem_GewijzigdDoor2">
+      <AssociationSetEnd
+        Name="LijstMetGebruikersgegevensItem"
+        EntitySet="LijstMetGebruikersgegevens" />
+      <AssociationSetEnd
+        Name="GewijzigdDoor"
+        EntitySet="LijstMetGebruikersgegevens" />
+    </AssociationSet>
+    <QueryOperation
+      Name="LijstMetGebruikersgegevens_Single"
+      ReturnType="LijstMetGebruikersgegeven2">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="LijstMetGebruikersgegevens" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <DisplayName
+            Value="Id" />
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="LijstMetGebruikersgegevens_SingleOrDefault"
+      ReturnType="LijstMetGebruikersgegeven2">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="LijstMetGebruikersgegevens" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <DisplayName
+            Value="Id" />
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+  </EntityContainer>
+  <DataService
+    Name="T_MC_ContactpersonenDataService">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <EntitySetMapping
+      EntitySet="LijstMetGebruikersgegevens">
+      <EntitySetMapping.Attributes>
+        <CsdlEntitySet
+          EntityTypeName="LijstMetGebruikersgegevensItem"
+          Name="LijstMetGebruikersgegevens"
+          EntityType="LijstMetGebruikersgegeven2" />
+        <CsdlProperty
+          Name="InhoudstypeId"
+          Property="LijstMetGebruikersgegeven2/Properties[InhoudstypeId]" />
+        <CsdlProperty
+          Name="Naam"
+          Property="LijstMetGebruikersgegeven2/Properties[Naam]" />
+        <CsdlProperty
+          Name="Account"
+          Property="LijstMetGebruikersgegeven2/Properties[Account]" />
+        <CsdlProperty
+          Name="ZakelijkEMailadres"
+          Property="LijstMetGebruikersgegeven2/Properties[ZakelijkEMailadres]" />
+        <CsdlProperty
+          Name="MobieleTelefoon"
+          Property="LijstMetGebruikersgegeven2/Properties[MobieleTelefoon]" />
+        <CsdlProperty
+          Name="OverMij"
+          Property="LijstMetGebruikersgegeven2/Properties[OverMij]" />
+        <CsdlProperty
+          Name="SIPAdres"
+          Property="LijstMetGebruikersgegeven2/Properties[SIPAdres]" />
+        <CsdlProperty
+          Name="IsBeheerderVanDeSite"
+          Property="LijstMetGebruikersgegeven2/Properties[IsBeheerderVanDeSite]" />
+        <CsdlProperty
+          Name="Verwijderd"
+          Property="LijstMetGebruikersgegeven2/Properties[Verwijderd]" />
+        <CsdlProperty
+          Name="Verborgen"
+          Property="LijstMetGebruikersgegeven2/Properties[Verborgen]" />
+        <CsdlProperty
+          Name="Afbeelding"
+          Property="LijstMetGebruikersgegeven2/Properties[Afbeelding]" />
+        <CsdlProperty
+          Name="Afdeling"
+          Property="LijstMetGebruikersgegeven2/Properties[Afdeling]" />
+        <CsdlProperty
+          Name="Titel"
+          Property="LijstMetGebruikersgegeven2/Properties[Titel]" />
+        <CsdlProperty
+          Name="Voornaam"
+          Property="LijstMetGebruikersgegeven2/Properties[Voornaam]" />
+        <CsdlProperty
+          Name="Achternaam"
+          Property="LijstMetGebruikersgegeven2/Properties[Achternaam]" />
+        <CsdlProperty
+          Name="TelefoonWerk"
+          Property="LijstMetGebruikersgegeven2/Properties[TelefoonWerk]" />
+        <CsdlProperty
+          Name="Gebruikersnaam"
+          Property="LijstMetGebruikersgegeven2/Properties[Gebruikersnaam]" />
+        <CsdlProperty
+          Name="Website"
+          Property="LijstMetGebruikersgegeven2/Properties[Website]" />
+        <CsdlProperty
+          Name="StelMijEenVraagOver"
+          Property="LijstMetGebruikersgegeven2/Properties[StelMijEenVraagOver]" />
+        <CsdlProperty
+          Name="Kantoor"
+          Property="LijstMetGebruikersgegeven2/Properties[Kantoor]" />
+        <CsdlProperty
+          Name="TijdstempelAfbeelding"
+          Property="LijstMetGebruikersgegeven2/Properties[TijdstempelAfbeelding]" />
+        <CsdlProperty
+          Name="StatusTijdelijkeAanduidingVoorAfbeelding"
+          Property="LijstMetGebruikersgegeven2/Properties[StatusTijdelijkeAanduidingVoorAfbeelding]" />
+        <CsdlProperty
+          Name="SynchronisatiestatusAfbeelding"
+          Property="LijstMetGebruikersgegeven2/Properties[SynchronisatiestatusAfbeelding]" />
+        <CsdlProperty
+          Name="Id"
+          Property="LijstMetGebruikersgegeven2/Properties[Id]" />
+        <CsdlProperty
+          Name="Inhoudstype"
+          Property="LijstMetGebruikersgegeven2/Properties[Inhoudstype]" />
+        <CsdlProperty
+          Name="Gewijzigd"
+          Property="LijstMetGebruikersgegeven2/Properties[Gewijzigd]" />
+        <CsdlProperty
+          Name="Gemaakt"
+          Property="LijstMetGebruikersgegeven2/Properties[Gemaakt]" />
+        <CsdlProperty
+          Name="Owshiddenversion"
+          Property="LijstMetGebruikersgegeven2/Properties[Owshiddenversion]" />
+        <CsdlProperty
+          Name="Versie"
+          Property="LijstMetGebruikersgegeven2/Properties[Versie]" />
+        <CsdlProperty
+          Name="Pad"
+          Property="LijstMetGebruikersgegeven2/Properties[Pad]" />
+        <CsdlProperty
+          Name="GemaaktDoor"
+          Property="LijstMetGebruikersgegeven2/Properties[GemaaktDoor]" />
+        <CsdlForeignKeyProperty
+          Name="GemaaktDoorId"
+          Property="LijstMetGebruikersgegeven2/Properties[Id]" />
+        <CsdlProperty
+          Name="GewijzigdDoor"
+          Property="LijstMetGebruikersgegeven2/Properties[GewijzigdDoor]" />
+        <CsdlForeignKeyProperty
+          Name="GewijzigdDoorId"
+          Property="LijstMetGebruikersgegeven2/Properties[Id]" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <AssociationSetMapping
+      AssociationSet="ContactpersonenItem_GemaaktDoor">
+      <AssociationSetMapping.Attributes>
+        <CsdlAssociation
+          Name="ContactpersonenItem_GemaaktDoor"
+          Association="ContactpersonenItem_GemaaktDoor" />
+        <CsdlAssociationSetEnd
+          End="T_MC_Contactpersonen/Members[ContactpersonenItem_GemaaktDoor]/Members[GemaaktDoor]">
+          <CsdlAssociationSetEnd.Attributes>
+            <CsdlPropertyRef
+              Name="Id" />
+          </CsdlAssociationSetEnd.Attributes>
+        </CsdlAssociationSetEnd>
+        <CsdlAssociationSetEnd
+          End="T_MC_Contactpersonen/Members[ContactpersonenItem_GemaaktDoor]/Members[ContactpersonenItem]">
+          <CsdlAssociationSetEnd.Attributes>
+            <CsdlPropertyRef
+              Name="GemaaktDoorId" />
+          </CsdlAssociationSetEnd.Attributes>
+        </CsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="ContactpersonenItem_GewijzigdDoor">
+      <AssociationSetMapping.Attributes>
+        <CsdlAssociation
+          Name="ContactpersonenItem_GewijzigdDoor"
+          Association="ContactpersonenItem_GewijzigdDoor" />
+        <CsdlAssociationSetEnd
+          End="T_MC_Contactpersonen/Members[ContactpersonenItem_GewijzigdDoor]/Members[GewijzigdDoor]">
+          <CsdlAssociationSetEnd.Attributes>
+            <CsdlPropertyRef
+              Name="Id" />
+          </CsdlAssociationSetEnd.Attributes>
+        </CsdlAssociationSetEnd>
+        <CsdlAssociationSetEnd
+          End="T_MC_Contactpersonen/Members[ContactpersonenItem_GewijzigdDoor]/Members[ContactpersonenItem]">
+          <CsdlAssociationSetEnd.Attributes>
+            <CsdlPropertyRef
+              Name="GewijzigdDoorId" />
+          </CsdlAssociationSetEnd.Attributes>
+        </CsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="LijstMetGebruikersgegevensItem_GemaaktDoor">
+      <AssociationSetMapping.Attributes>
+        <CsdlAssociation
+          Name="LijstMetGebruikersgegevensItem_GemaaktDoor"
+          Association="LijstMetGebruikersgegevensItem_GemaaktDoor2" />
+        <CsdlAssociationSetEnd
+          End="T_MC_Contactpersonen/Members[LijstMetGebruikersgegevensItem_GemaaktDoor]/Members[GemaaktDoor]">
+          <CsdlAssociationSetEnd.Attributes>
+            <CsdlPropertyRef
+              Name="Id" />
+          </CsdlAssociationSetEnd.Attributes>
+        </CsdlAssociationSetEnd>
+        <CsdlAssociationSetEnd
+          End="T_MC_Contactpersonen/Members[LijstMetGebruikersgegevensItem_GemaaktDoor]/Members[LijstMetGebruikersgegevensItem]">
+          <CsdlAssociationSetEnd.Attributes>
+            <CsdlPropertyRef
+              Name="GemaaktDoorId" />
+          </CsdlAssociationSetEnd.Attributes>
+        </CsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="LijstMetGebruikersgegevensItem_GewijzigdDoor">
+      <AssociationSetMapping.Attributes>
+        <CsdlAssociation
+          Name="LijstMetGebruikersgegevensItem_GewijzigdDoor"
+          Association="LijstMetGebruikersgegevensItem_GewijzigdDoor2" />
+        <CsdlAssociationSetEnd
+          End="T_MC_Contactpersonen/Members[LijstMetGebruikersgegevensItem_GewijzigdDoor]/Members[GewijzigdDoor]">
+          <CsdlAssociationSetEnd.Attributes>
+            <CsdlPropertyRef
+              Name="Id" />
+          </CsdlAssociationSetEnd.Attributes>
+        </CsdlAssociationSetEnd>
+        <CsdlAssociationSetEnd
+          End="T_MC_Contactpersonen/Members[LijstMetGebruikersgegevensItem_GewijzigdDoor]/Members[LijstMetGebruikersgegevensItem]">
+          <CsdlAssociationSetEnd.Attributes>
+            <CsdlPropertyRef
+              Name="GewijzigdDoorId" />
+          </CsdlAssociationSetEnd.Attributes>
+        </CsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+  </DataService>
+</ServiceApplication>

@@ -1,0 +1,474 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="Contactpersonen">
+    <EntityType.Attributes>
+      <DisplayName
+        Value="Contactpersonen" />
+      <Description
+        Value="" />
+    </EntityType.Attributes>
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <EntityProperty
+        Name="VolledigeNaam"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="Volledige naam" />
+          <Required />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Titel"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="Titel" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Initialen"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="Initialen" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Voornaam"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="Voornaam" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Tussenvoegsel"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="Tussenvoegsel" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Achternaam"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="Achternaam" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Telefoonnummer"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="Telefoonnummer" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="MobielNummer"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="Mobiel nummer" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="EmailAdres"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="Email adres" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Standplaats"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="Standplaats" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Functie"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="Functie" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Afdeling"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="Afdeling" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Assistent"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="Assistent" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Manager"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="Manager" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="OneNote"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="OneNote" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Nieuwsbrief"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="Nieuwsbrief" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Actief"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="Actief" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Bedrijfsnaam"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="Bedrijfsnaam" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <KeyProperty
+        Name="Id"
+        IsReadOnly="True"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Id" />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="Inhoudstype"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="Inhoudstype" />
+          <NotSortable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="InhoudstypeId"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Inhoudstype-id" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Gewijzigd"
+        IsReadOnly="True"
+        PropertyType=":DateTime?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Gewijzigd" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Gemaakt"
+        IsReadOnly="True"
+        PropertyType=":DateTime?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Gemaakt" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Owshiddenversion"
+        IsReadOnly="True"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="owshiddenversion" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Versie"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Versie" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Pad"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Pad" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="GemaaktDoor"
+        Association="ContactpersonenItem_GemaaktDoor"
+        FromEnd="ContactpersonenItem"
+        ToEnd="GemaaktDoor" />
+      <NavigationProperty
+        Name="GewijzigdDoor"
+        Association="ContactpersonenItem_GewijzigdDoor"
+        FromEnd="ContactpersonenItem"
+        ToEnd="GewijzigdDoor" />
+      <VirtualNavigationProperty
+        Name="Bedrijven"
+        FromEnd="Contactpersonen"
+        ToEnd="Bedrijven"
+        VirtualAssociation="Contactpersonen_Bedrijven" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityContainer
+    Name="T_MC_Contactpersonen">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="Contactpersonens"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="Contactpersonen" />
+    <QueryOperation
+      Name="Contactpersonens_Single"
+      ReturnType="Contactpersonen">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Contactpersonens" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <DisplayName
+            Value="Id" />
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Contactpersonens_SingleOrDefault"
+      ReturnType="Contactpersonen">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Contactpersonens" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <DisplayName
+            Value="Id" />
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+  </EntityContainer>
+  <DataService
+    Name="T_MC_ContactpersonenDataService">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <EntitySetMapping
+      EntitySet="Contactpersonens">
+      <EntitySetMapping.Attributes>
+        <CsdlEntitySet
+          EntityTypeName="ContactpersonenItem"
+          Name="Contactpersonen"
+          EntityType="Contactpersonen" />
+        <CsdlProperty
+          Name="InhoudstypeId"
+          Property="Contactpersonen/Properties[InhoudstypeId]" />
+        <CsdlProperty
+          Name="VolledigeNaam"
+          Property="Contactpersonen/Properties[VolledigeNaam]" />
+        <CsdlProperty
+          Name="Titel"
+          Property="Contactpersonen/Properties[Titel]" />
+        <CsdlProperty
+          Name="Initialen"
+          Property="Contactpersonen/Properties[Initialen]" />
+        <CsdlProperty
+          Name="Voornaam"
+          Property="Contactpersonen/Properties[Voornaam]" />
+        <CsdlProperty
+          Name="Tussenvoegsel"
+          Property="Contactpersonen/Properties[Tussenvoegsel]" />
+        <CsdlProperty
+          Name="Achternaam"
+          Property="Contactpersonen/Properties[Achternaam]" />
+        <CsdlProperty
+          Name="Telefoonnummer"
+          Property="Contactpersonen/Properties[Telefoonnummer]" />
+        <CsdlProperty
+          Name="MobielNummer"
+          Property="Contactpersonen/Properties[MobielNummer]" />
+        <CsdlProperty
+          Name="EmailAdres"
+          Property="Contactpersonen/Properties[EmailAdres]" />
+        <CsdlProperty
+          Name="Standplaats"
+          Property="Contactpersonen/Properties[Standplaats]" />
+        <CsdlProperty
+          Name="Functie"
+          Property="Contactpersonen/Properties[Functie]" />
+        <CsdlProperty
+          Name="Afdeling"
+          Property="Contactpersonen/Properties[Afdeling]" />
+        <CsdlProperty
+          Name="Assistent"
+          Property="Contactpersonen/Properties[Assistent]" />
+        <CsdlProperty
+          Name="Manager"
+          Property="Contactpersonen/Properties[Manager]" />
+        <CsdlProperty
+          Name="OneNote"
+          Property="Contactpersonen/Properties[OneNote]" />
+        <CsdlProperty
+          Name="Nieuwsbrief"
+          Property="Contactpersonen/Properties[Nieuwsbrief]" />
+        <CsdlProperty
+          Name="Actief"
+          Property="Contactpersonen/Properties[Actief]" />
+        <CsdlProperty
+          Name="Bedrijfsnaam"
+          Property="Contactpersonen/Properties[Bedrijfsnaam]" />
+        <CsdlProperty
+          Name="Id"
+          Property="Contactpersonen/Properties[Id]" />
+        <CsdlProperty
+          Name="Inhoudstype"
+          Property="Contactpersonen/Properties[Inhoudstype]" />
+        <CsdlProperty
+          Name="Gewijzigd"
+          Property="Contactpersonen/Properties[Gewijzigd]" />
+        <CsdlProperty
+          Name="Gemaakt"
+          Property="Contactpersonen/Properties[Gemaakt]" />
+        <CsdlProperty
+          Name="Owshiddenversion"
+          Property="Contactpersonen/Properties[Owshiddenversion]" />
+        <CsdlProperty
+          Name="Versie"
+          Property="Contactpersonen/Properties[Versie]" />
+        <CsdlProperty
+          Name="Pad"
+          Property="Contactpersonen/Properties[Pad]" />
+        <CsdlProperty
+          Name="GemaaktDoor"
+          Property="Contactpersonen/Properties[GemaaktDoor]" />
+        <CsdlForeignKeyProperty
+          Name="GemaaktDoorId"
+          Property="LijstMetGebruikersgegeven2/Properties[Id]" />
+        <CsdlProperty
+          Name="GewijzigdDoor"
+          Property="Contactpersonen/Properties[GewijzigdDoor]" />
+        <CsdlForeignKeyProperty
+          Name="GewijzigdDoorId"
+          Property="LijstMetGebruikersgegeven2/Properties[Id]" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+  </DataService>
+</ServiceApplication>

@@ -1,0 +1,105 @@
+﻿<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <edmx:DataServices xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="1.0">
+    <Schema Namespace="Microsoft.SharePoint.DataService" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2007/05/edm">
+      <EntityType Name="AdressenItem">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="InhoudstypeId" Type="Edm.String" Nullable="true" />
+        <Property Name="Bedrijfsnaam" Type="Edm.String" Nullable="true" m:FC_TargetPath="SyndicationTitle" m:FC_ContentKind="text" m:FC_KeepInContent="true" />
+        <Property Name="AdrestypeValue" Type="Edm.String" Nullable="true" />
+        <Property Name="Postcode" Type="Edm.String" Nullable="true" />
+        <Property Name="Plaats" Type="Edm.String" Nullable="true" />
+        <Property Name="Land" Type="Edm.String" Nullable="true" />
+        <Property Name="Adresregel1" Type="Edm.String" Nullable="true" />
+        <Property Name="Adresregel2" Type="Edm.String" Nullable="true" />
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Inhoudstype" Type="Edm.String" Nullable="true" />
+        <Property Name="Gewijzigd" Type="Edm.DateTime" Nullable="true" m:FC_TargetPath="SyndicationUpdated" m:FC_ContentKind="text" m:FC_KeepInContent="true" />
+        <Property Name="Gemaakt" Type="Edm.DateTime" Nullable="true" />
+        <NavigationProperty Name="GemaaktDoor" Relationship="Microsoft.SharePoint.DataService.AdressenItem_GemaaktDoor" FromRole="AdressenItem" ToRole="GemaaktDoor" />
+        <Property Name="GemaaktDoorId" Type="Edm.Int32" Nullable="true" />
+        <NavigationProperty Name="GewijzigdDoor" Relationship="Microsoft.SharePoint.DataService.AdressenItem_GewijzigdDoor" FromRole="AdressenItem" ToRole="GewijzigdDoor" />
+        <Property Name="GewijzigdDoorId" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Owshiddenversion" Type="Edm.Int32" Nullable="true" ConcurrencyMode="Fixed" />
+        <Property Name="Versie" Type="Edm.String" Nullable="true" />
+        <Property Name="Pad" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="LijstMetGebruikersgegevensItem">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="InhoudstypeId" Type="Edm.String" Nullable="true" />
+        <Property Name="Naam" Type="Edm.String" Nullable="true" m:FC_TargetPath="SyndicationTitle" m:FC_ContentKind="text" m:FC_KeepInContent="true" />
+        <Property Name="Account" Type="Edm.String" Nullable="true" />
+        <Property Name="ZakelijkEMailadres" Type="Edm.String" Nullable="true" />
+        <Property Name="MobieleTelefoon" Type="Edm.String" Nullable="true" />
+        <Property Name="OverMij" Type="Edm.String" Nullable="true" />
+        <Property Name="SIPAdres" Type="Edm.String" Nullable="true" />
+        <Property Name="IsBeheerderVanDeSite" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="Verwijderd" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="Verborgen" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="Afbeelding" Type="Edm.String" Nullable="true" />
+        <Property Name="Afdeling" Type="Edm.String" Nullable="true" />
+        <Property Name="Titel" Type="Edm.String" Nullable="true" />
+        <Property Name="Voornaam" Type="Edm.String" Nullable="true" />
+        <Property Name="Achternaam" Type="Edm.String" Nullable="true" />
+        <Property Name="TelefoonWerk" Type="Edm.String" Nullable="true" />
+        <Property Name="Gebruikersnaam" Type="Edm.String" Nullable="true" />
+        <Property Name="Website" Type="Edm.String" Nullable="true" />
+        <Property Name="StelMijEenVraagOver" Type="Edm.String" Nullable="true" />
+        <Property Name="Kantoor" Type="Edm.String" Nullable="true" />
+        <Property Name="TijdstempelAfbeelding" Type="Edm.String" Nullable="true" />
+        <Property Name="StatusTijdelijkeAanduidingVoorAfbeelding" Type="Edm.Int32" Nullable="true" />
+        <Property Name="SynchronisatiestatusAfbeelding" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Inhoudstype" Type="Edm.String" Nullable="true" />
+        <Property Name="Gewijzigd" Type="Edm.DateTime" Nullable="true" m:FC_TargetPath="SyndicationUpdated" m:FC_ContentKind="text" m:FC_KeepInContent="true" />
+        <Property Name="Gemaakt" Type="Edm.DateTime" Nullable="true" />
+        <NavigationProperty Name="GemaaktDoor" Relationship="Microsoft.SharePoint.DataService.LijstMetGebruikersgegevensItem_GemaaktDoor" FromRole="LijstMetGebruikersgegevensItem" ToRole="GemaaktDoor" />
+        <Property Name="GemaaktDoorId" Type="Edm.Int32" Nullable="true" />
+        <NavigationProperty Name="GewijzigdDoor" Relationship="Microsoft.SharePoint.DataService.LijstMetGebruikersgegevensItem_GewijzigdDoor" FromRole="LijstMetGebruikersgegevensItem" ToRole="GewijzigdDoor" />
+        <Property Name="GewijzigdDoorId" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Owshiddenversion" Type="Edm.Int32" Nullable="true" ConcurrencyMode="Fixed" />
+        <Property Name="Versie" Type="Edm.String" Nullable="true" />
+        <Property Name="Pad" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <Association Name="AdressenItem_GemaaktDoor">
+        <End Role="AdressenItem" Type="Microsoft.SharePoint.DataService.AdressenItem" Multiplicity="*" />
+        <End Role="GemaaktDoor" Type="Microsoft.SharePoint.DataService.LijstMetGebruikersgegevensItem" Multiplicity="0..1" />
+      </Association>
+      <Association Name="AdressenItem_GewijzigdDoor">
+        <End Role="AdressenItem" Type="Microsoft.SharePoint.DataService.AdressenItem" Multiplicity="*" />
+        <End Role="GewijzigdDoor" Type="Microsoft.SharePoint.DataService.LijstMetGebruikersgegevensItem" Multiplicity="0..1" />
+      </Association>
+      <Association Name="LijstMetGebruikersgegevensItem_GemaaktDoor">
+        <End Role="LijstMetGebruikersgegevensItem" Type="Microsoft.SharePoint.DataService.LijstMetGebruikersgegevensItem" Multiplicity="*" />
+        <End Role="GemaaktDoor" Type="Microsoft.SharePoint.DataService.LijstMetGebruikersgegevensItem" Multiplicity="0..1" />
+      </Association>
+      <Association Name="LijstMetGebruikersgegevensItem_GewijzigdDoor">
+        <End Role="LijstMetGebruikersgegevensItem" Type="Microsoft.SharePoint.DataService.LijstMetGebruikersgegevensItem" Multiplicity="*" />
+        <End Role="GewijzigdDoor" Type="Microsoft.SharePoint.DataService.LijstMetGebruikersgegevensItem" Multiplicity="0..1" />
+      </Association>
+      <EntityContainer Name="TMCDevDataContext" m:IsDefaultEntityContainer="true">
+        <EntitySet Name="Adressen" EntityType="Microsoft.SharePoint.DataService.AdressenItem" />
+        <EntitySet Name="LijstMetGebruikersgegevens" EntityType="Microsoft.SharePoint.DataService.LijstMetGebruikersgegevensItem" />
+        <AssociationSet Name="AdressenItem_GemaaktDoor" Association="Microsoft.SharePoint.DataService.AdressenItem_GemaaktDoor">
+          <End Role="AdressenItem" EntitySet="Adressen" />
+          <End Role="GemaaktDoor" EntitySet="LijstMetGebruikersgegevens" />
+        </AssociationSet>
+        <AssociationSet Name="AdressenItem_GewijzigdDoor" Association="Microsoft.SharePoint.DataService.AdressenItem_GewijzigdDoor">
+          <End Role="AdressenItem" EntitySet="Adressen" />
+          <End Role="GewijzigdDoor" EntitySet="LijstMetGebruikersgegevens" />
+        </AssociationSet>
+        <AssociationSet Name="LijstMetGebruikersgegevensItem_GemaaktDoor" Association="Microsoft.SharePoint.DataService.LijstMetGebruikersgegevensItem_GemaaktDoor">
+          <End Role="LijstMetGebruikersgegevensItem" EntitySet="LijstMetGebruikersgegevens" />
+          <End Role="GemaaktDoor" EntitySet="LijstMetGebruikersgegevens" />
+        </AssociationSet>
+        <AssociationSet Name="LijstMetGebruikersgegevensItem_GewijzigdDoor" Association="Microsoft.SharePoint.DataService.LijstMetGebruikersgegevensItem_GewijzigdDoor">
+          <End Role="LijstMetGebruikersgegevensItem" EntitySet="LijstMetGebruikersgegevens" />
+          <End Role="GewijzigdDoor" EntitySet="LijstMetGebruikersgegevens" />
+        </AssociationSet>
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>
