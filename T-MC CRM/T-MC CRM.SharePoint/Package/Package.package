@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="465dc359-6dac-476a-9f09-369659e5385a" solutionId="465dc359-6dac-476a-9f09-369659e5385a" resetWebServer="false" sharePointProductVersion="15.0" name="T-MC CRM.SharePoint" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="d7b19f0a-7af1-4d73-b3ef-c63b6a8bfe72" />
+  </features>
+</package>
