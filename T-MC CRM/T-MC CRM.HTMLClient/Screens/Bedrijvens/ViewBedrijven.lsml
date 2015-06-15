@@ -261,7 +261,7 @@
               View="Microsoft.LightSwitch.MobileWeb:TileList">
               <ContentItem.Attributes>
                 <DisplayName
-                  Value="Adressens" />
+                  Value="Adressen" />
               </ContentItem.Attributes>
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
@@ -425,7 +425,7 @@
                 Kind="Command">
                 <ContentItem.Attributes>
                   <DisplayName
-                    Value="Edit" />
+                    Value="Edit Details" />
                 </ContentItem.Attributes>
                 <ContentItem.PropertySources>
                   <ControlPropertySource
@@ -500,6 +500,21 @@
                   </ControlPropertySource>
                 </ContentItem.PropertySources>
               </ContentItem>
+              <ContentItem
+                Name="DeleteAdres"
+                Kind="Command">
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <CallExpression
+                          Target="ViewBedrijven/Methods[DeleteAdres]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
+              </ContentItem>
             </ContentItem.CommandItems>
           </ContentItem>
           <ContentItem.PropertySources>
@@ -544,6 +559,8 @@
           Name="dialogName"
           ParameterType=":String" />
       </ScreenMethod>
+      <ScreenMethod
+        Name="DeleteAdres" />
     </Screen.Methods>
     <Screen.Properties>
       <ScreenProperty

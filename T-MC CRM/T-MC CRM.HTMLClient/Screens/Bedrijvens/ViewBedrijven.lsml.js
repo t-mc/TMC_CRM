@@ -8,3 +8,9 @@ myapp.ViewBedrijven.Details_postRender = function (element, contentItem) {
     });
 }
 
+
+myapp.ViewBedrijven.DeleteAdres_execute = function (screen) {
+    // Write code here.
+
+};
+

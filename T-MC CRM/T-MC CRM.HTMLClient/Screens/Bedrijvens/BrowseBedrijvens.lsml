@@ -10,7 +10,7 @@
       <SaveChangesTo
         EntityContainer="T_MC_Bedrijven" />
       <DisplayName
-        Value="Bedrijvens" />
+        Value="Bedrijven" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem
