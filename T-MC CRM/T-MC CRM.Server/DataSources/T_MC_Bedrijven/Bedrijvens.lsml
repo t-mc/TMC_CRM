@@ -32,10 +32,18 @@
       </EntityProperty>
       <EntityProperty
         Name="Telefoonnummer"
-        PropertyType=":String?">
+        PropertyType="Microsoft.LightSwitch.Extensions:PhoneNumber?">
         <EntityProperty.Attributes>
           <DisplayName
             Value="Telefoonnummer" />
+          <MaxLength
+            Value="255" />
+          <Attribute
+            Class="Microsoft.LightSwitch.Extensions:@PhoneNumberValidation">
+            <Property
+              Name="Formats"
+              Value="CC (AAA) NNNNNN;CC (A) NNNNNNN;CAAANNNNNNN;(AAA) NNN-NNNN;(AAA) NNNNNNN;AAANNNNNNN;NNN-NNNN;NNNNNNN" />
+          </Attribute>
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -48,18 +56,22 @@
       </EntityProperty>
       <EntityProperty
         Name="EmailAdres"
-        PropertyType=":String?">
+        PropertyType="Microsoft.LightSwitch.Extensions:EmailAddress?">
         <EntityProperty.Attributes>
           <DisplayName
             Value="Email adres" />
+          <MaxLength
+            Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
         Name="Website"
-        PropertyType=":String?">
+        PropertyType="Microsoft.LightSwitch.Extensions:WebAddress?">
         <EntityProperty.Attributes>
           <DisplayName
             Value="Website" />
+          <MaxLength
+            Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -88,10 +100,12 @@
       </EntityProperty>
       <EntityProperty
         Name="OneNote"
-        PropertyType=":String?">
+        PropertyType="Microsoft.LightSwitch.Extensions:WebAddress?">
         <EntityProperty.Attributes>
           <DisplayName
             Value="OneNote" />
+          <MaxLength
+            Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty

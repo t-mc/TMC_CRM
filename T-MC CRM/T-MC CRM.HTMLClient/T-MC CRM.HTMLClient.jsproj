@@ -99,6 +99,7 @@
     <LightSwitchModel Include="Properties\Proxies.lsml" />
     <LightSwitchModel Include="Properties\T_MC_Bedrijven\Bedrijvens.lsml" />
     <LightSwitchModel Include="Properties\T_MC_Contactpersonen\Contactpersonens.lsml" />
+    <LightSwitchModel Include="Screens\AddEditAdressen.lsml" />
     <LightSwitchModel Include="Screens\Bedrijvens\AddEditBedrijven.lsml" />
     <LightSwitchModel Include="Screens\Bedrijvens\BrowseBedrijvens.lsml" />
     <LightSwitchModel Include="Screens\Bedrijvens\ViewBedrijven.lsml" />

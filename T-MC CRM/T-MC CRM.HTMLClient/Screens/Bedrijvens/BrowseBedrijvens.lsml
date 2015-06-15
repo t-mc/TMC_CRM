@@ -31,7 +31,7 @@
               View="Microsoft.LightSwitch.MobileWeb:TileList">
               <ContentItem.Attributes>
                 <DisplayName
-                  Value="Bedrijvens" />
+                  Value="Bedrijven" />
               </ContentItem.Attributes>
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
@@ -81,9 +81,22 @@
                   </ContentItem.PropertySources>
                 </ContentItem>
                 <ContentItem
-                  Name="Telefoonnummer"
+                  Name="PrimairContact"
                   Kind="Value"
                   DataType=":String?">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Bedrijven/Properties[PrimairContact]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="Telefoonnummer"
+                  Kind="Value"
+                  DataType="Microsoft.LightSwitch.Extensions:PhoneNumber?">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
@@ -106,29 +119,17 @@
                   </ContentItem.PropertySources>
                 </ContentItem>
                 <ContentItem
-                  Name="Branche"
+                  Name="OneNote"
                   Kind="Value"
-                  DataType=":String?">
+                  DataType="Microsoft.LightSwitch.Extensions:WebAddress?">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="Bedrijven/Properties[Branche]" />
+                          Member="Bedrijven/Properties[OneNote]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
-                  <ContentItem.PropertySources>
-                    <ControlPropertySource
-                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <ConstantExpression
-                            Value="Small"
-                            ResultType=":String" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ControlPropertySource>
-                  </ContentItem.PropertySources>
                 </ContentItem>
                 <ContentItem.PropertySources>
                   <ControlPropertySource
