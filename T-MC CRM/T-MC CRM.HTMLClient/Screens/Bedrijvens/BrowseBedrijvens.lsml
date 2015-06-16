@@ -119,6 +119,19 @@
                   </ContentItem.PropertySources>
                 </ContentItem>
                 <ContentItem
+                  Name="Klantpartner"
+                  Kind="Value"
+                  DataType=":Person?">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Bedrijven/Properties[Klantpartner]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
                   Name="OneNote"
                   Kind="Value"
                   DataType="Microsoft.LightSwitch.Extensions:WebAddress?">
@@ -176,7 +189,7 @@
                 Kind="Command">
                 <ContentItem.Attributes>
                   <DisplayName
-                    Value="Add" />
+                    Value="Voeg bedrijf toe" />
                 </ContentItem.Attributes>
                 <ContentItem.PropertySources>
                   <ControlPropertySource
@@ -212,7 +225,7 @@
                 Kind="Command">
                 <ContentItem.Attributes>
                   <DisplayName
-                    Value="Search" />
+                    Value="Zoek bedrijf" />
                 </ContentItem.Attributes>
                 <ContentItem.PropertySources>
                   <ControlPropertySource

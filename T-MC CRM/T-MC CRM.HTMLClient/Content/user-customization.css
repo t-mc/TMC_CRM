@@ -36,3 +36,25 @@
 screen and (max-width: 400px) and (orientation: portrait), 
 screen and (max-width: 640px) and (max-height: 400px) and (orientation: landscape) {
 }
+
+.ui-body-a.ui-page {
+    background-image: inherit;
+    background-color: transparent;
+}
+
+.ui-body-a.msls-dialog-inner-frame {
+    background-image: url(images/app-watermark.png);
+    background-repeat: no-repeat;
+}
+
+#app-background-div {
+    background-image: url(images/app-watermark.png);
+    background-repeat: no-repeat;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 100%;
+
+}.ui-body-a.ui-icon-searchfield, .ui-input-text, .ui-select, ul.msls-listview li, .msls-table-header {
+    opacity: 0.75;
+}

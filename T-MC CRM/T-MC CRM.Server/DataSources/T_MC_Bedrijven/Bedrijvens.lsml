@@ -28,6 +28,8 @@
           <DisplayName
             Value="Bedrijfsnaam" />
           <Required />
+          <MaxLength
+            Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -36,13 +38,11 @@
         <EntityProperty.Attributes>
           <DisplayName
             Value="Telefoonnummer" />
-          <MaxLength
-            Value="255" />
           <Attribute
             Class="Microsoft.LightSwitch.Extensions:@PhoneNumberValidation">
             <Property
               Name="Formats"
-              Value="CC (AAA) NNNNNN;CC (A) NNNNNNN;CAAANNNNNNN;(AAA) NNN-NNNN;(AAA) NNNNNNN;AAANNNNNNN;NNN-NNNN;NNNNNNN" />
+              Value="+CC (AAA) NNNNNN;+CC (A) NNNNNNNN;+CC (AA) NNNNNNN" />
           </Attribute>
         </EntityProperty.Attributes>
       </EntityProperty>
@@ -60,8 +60,6 @@
         <EntityProperty.Attributes>
           <DisplayName
             Value="Email adres" />
-          <MaxLength
-            Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -70,8 +68,6 @@
         <EntityProperty.Attributes>
           <DisplayName
             Value="Website" />
-          <MaxLength
-            Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -104,8 +100,6 @@
         <EntityProperty.Attributes>
           <DisplayName
             Value="OneNote" />
-          <MaxLength
-            Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -203,11 +197,6 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty
-        Name="Klantpartner"
-        Association="BedrijvenItem_Klantpartner"
-        FromEnd="BedrijvenItem"
-        ToEnd="Klantpartner" />
-      <NavigationProperty
         Name="GemaaktDoor"
         Association="BedrijvenItem_GemaaktDoor"
         FromEnd="BedrijvenItem"
@@ -227,6 +216,16 @@
         FromEnd="Bedrijven"
         ToEnd="Adressen"
         VirtualAssociation="Bedrijven_Adressen" />
+      <EntityProperty
+        Name="Klantpartner"
+        PropertyType=":Person?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+          <DisplayName
+            Value="Klantpartner" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
     </EntityType.Properties>
   </EntityType>
   <EntityContainer
@@ -325,93 +324,6 @@
       </QueryOperationParameter>
     </QueryOperation>
   </EntityContainer>
-  <DataService
-    Name="T_MC_BedrijvenDataService">
-    <DataService.Attributes>
-      <Partial />
-    </DataService.Attributes>
-    <EntitySetMapping
-      EntitySet="Bedrijvens">
-      <EntitySetMapping.Attributes>
-        <CsdlEntitySet
-          EntityTypeName="BedrijvenItem"
-          Name="Bedrijven"
-          EntityType="Bedrijven" />
-        <CsdlProperty
-          Name="InhoudstypeId"
-          Property="Bedrijven/Properties[InhoudstypeId]" />
-        <CsdlProperty
-          Name="Bedrijfsnaam"
-          Property="Bedrijven/Properties[Bedrijfsnaam]" />
-        <CsdlProperty
-          Name="Telefoonnummer"
-          Property="Bedrijven/Properties[Telefoonnummer]" />
-        <CsdlProperty
-          Name="Branche"
-          Property="Bedrijven/Properties[Branche]" />
-        <CsdlProperty
-          Name="EmailAdres"
-          Property="Bedrijven/Properties[EmailAdres]" />
-        <CsdlProperty
-          Name="Website"
-          Property="Bedrijven/Properties[Website]" />
-        <CsdlProperty
-          Name="MoederAccount"
-          Property="Bedrijven/Properties[MoederAccount]" />
-        <CsdlProperty
-          Name="PrimairContact"
-          Property="Bedrijven/Properties[PrimairContact]" />
-        <CsdlProperty
-          Name="KvKNummer"
-          Property="Bedrijven/Properties[KvKNummer]" />
-        <CsdlProperty
-          Name="OneNote"
-          Property="Bedrijven/Properties[OneNote]" />
-        <CsdlProperty
-          Name="Actief"
-          Property="Bedrijven/Properties[Actief]" />
-        <CsdlProperty
-          Name="Id"
-          Property="Bedrijven/Properties[Id]" />
-        <CsdlProperty
-          Name="Inhoudstype"
-          Property="Bedrijven/Properties[Inhoudstype]" />
-        <CsdlProperty
-          Name="Gewijzigd"
-          Property="Bedrijven/Properties[Gewijzigd]" />
-        <CsdlProperty
-          Name="Gemaakt"
-          Property="Bedrijven/Properties[Gemaakt]" />
-        <CsdlProperty
-          Name="Owshiddenversion"
-          Property="Bedrijven/Properties[Owshiddenversion]" />
-        <CsdlProperty
-          Name="Versie"
-          Property="Bedrijven/Properties[Versie]" />
-        <CsdlProperty
-          Name="Pad"
-          Property="Bedrijven/Properties[Pad]" />
-        <CsdlProperty
-          Name="Klantpartner"
-          Property="Bedrijven/Properties[Klantpartner]" />
-        <CsdlForeignKeyProperty
-          Name="KlantpartnerId"
-          Property="LijstMetGebruikersgegeven/Properties[Id]" />
-        <CsdlProperty
-          Name="GemaaktDoor"
-          Property="Bedrijven/Properties[GemaaktDoor]" />
-        <CsdlForeignKeyProperty
-          Name="GemaaktDoorId"
-          Property="LijstMetGebruikersgegeven/Properties[Id]" />
-        <CsdlProperty
-          Name="GewijzigdDoor"
-          Property="Bedrijven/Properties[GewijzigdDoor]" />
-        <CsdlForeignKeyProperty
-          Name="GewijzigdDoorId"
-          Property="LijstMetGebruikersgegeven/Properties[Id]" />
-      </EntitySetMapping.Attributes>
-    </EntitySetMapping>
-  </DataService>
   <VirtualAssociation
     Name="Contactpersonen_Bedrijven">
     <VirtualAssociationEnd
@@ -470,4 +382,88 @@
         EntityProperty="Bedrijfsnaam" />
     </VirtualAssociationSetEnd>
   </VirtualAssociationSet>
+  <DataService
+    Name="T_MC_BedrijvenDataService">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <EntitySetMapping
+      EntitySet="Bedrijvens">
+      <EntitySetMapping.Attributes>
+        <CsdlEntitySet
+          EntityTypeName="BedrijvenItem"
+          Name="Bedrijven"
+          EntityType="Bedrijven" />
+        <CsdlProperty
+          Name="InhoudstypeId"
+          Property="Bedrijven/Properties[InhoudstypeId]" />
+        <CsdlProperty
+          Name="Bedrijfsnaam"
+          Property="Bedrijven/Properties[Bedrijfsnaam]" />
+        <CsdlProperty
+          Name="Telefoonnummer"
+          Property="Bedrijven/Properties[Telefoonnummer]" />
+        <CsdlProperty
+          Name="Branche"
+          Property="Bedrijven/Properties[Branche]" />
+        <CsdlProperty
+          Name="EmailAdres"
+          Property="Bedrijven/Properties[EmailAdres]" />
+        <CsdlProperty
+          Name="Website"
+          Property="Bedrijven/Properties[Website]" />
+        <CsdlProperty
+          Name="MoederAccount"
+          Property="Bedrijven/Properties[MoederAccount]" />
+        <CsdlProperty
+          Name="PrimairContact"
+          Property="Bedrijven/Properties[PrimairContact]" />
+        <CsdlProperty
+          Name="KvKNummer"
+          Property="Bedrijven/Properties[KvKNummer]" />
+        <CsdlProperty
+          Name="OneNote"
+          Property="Bedrijven/Properties[OneNote]" />
+        <CsdlProperty
+          Name="Actief"
+          Property="Bedrijven/Properties[Actief]" />
+        <CsdlProperty
+          Name="Klantpartner"
+          Property="Bedrijven/Properties[Klantpartner]" />
+        <CsdlProperty
+          Name="Id"
+          Property="Bedrijven/Properties[Id]" />
+        <CsdlProperty
+          Name="Inhoudstype"
+          Property="Bedrijven/Properties[Inhoudstype]" />
+        <CsdlProperty
+          Name="Gewijzigd"
+          Property="Bedrijven/Properties[Gewijzigd]" />
+        <CsdlProperty
+          Name="Gemaakt"
+          Property="Bedrijven/Properties[Gemaakt]" />
+        <CsdlProperty
+          Name="Owshiddenversion"
+          Property="Bedrijven/Properties[Owshiddenversion]" />
+        <CsdlProperty
+          Name="Versie"
+          Property="Bedrijven/Properties[Versie]" />
+        <CsdlProperty
+          Name="Pad"
+          Property="Bedrijven/Properties[Pad]" />
+        <CsdlProperty
+          Name="GemaaktDoor"
+          Property="Bedrijven/Properties[GemaaktDoor]" />
+        <CsdlForeignKeyProperty
+          Name="GemaaktDoorId"
+          Property="LijstMetGebruikersgegeven/Properties[Id]" />
+        <CsdlProperty
+          Name="GewijzigdDoor"
+          Property="Bedrijven/Properties[GewijzigdDoor]" />
+        <CsdlForeignKeyProperty
+          Name="GewijzigdDoorId"
+          Property="LijstMetGebruikersgegeven/Properties[Id]" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+  </DataService>
 </ServiceApplication>

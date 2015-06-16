@@ -1,16 +1,16 @@
 ﻿/// <reference path="~/GeneratedArtifacts/viewModel.js" />
 
 myapp.AddEditAdressen.DeleteAdres_execute = function (screen) {
-    // Write code here.
+    // Vraag bevestiging voor verwijderen
+    var bevestig = confirm("Weet je zeker dat je dit adres wilt verwijderen?");
 
-   screen.OrderDetail.deleteEntity();
+    if (bevestig == true) {
+        screen.Adressen.deleteEntity();
+        return myapp.commitChanges().then(null, function fail(e) {
+            myapp.cancelChanges();
+            throw e;
+        });
+    } 
 
-   return myapp.commitChanges().then(null, function fail(e) {
-
-       myapp.cancelChanges();
-
-       throw e;
-
-   });
 
 };

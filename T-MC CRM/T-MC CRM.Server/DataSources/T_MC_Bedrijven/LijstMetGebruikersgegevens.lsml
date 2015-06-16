@@ -349,20 +349,6 @@
     </EntityType.Properties>
   </EntityType>
   <Association
-    Name="BedrijvenItem_Klantpartner">
-    <AssociationEnd
-      Name="BedrijvenItem"
-      Multiplicity="Many"
-      EntityType="Bedrijven" />
-    <AssociationEnd
-      Name="Klantpartner"
-      EntityType="LijstMetGebruikersgegeven">
-      <AssociationEnd.Attributes>
-        <DeleteRule />
-      </AssociationEnd.Attributes>
-    </AssociationEnd>
-  </Association>
-  <Association
     Name="BedrijvenItem_GemaaktDoor">
     <AssociationEnd
       Name="BedrijvenItem"
@@ -431,16 +417,6 @@
       CanInsert="True"
       CanUpdate="True"
       EntityType="LijstMetGebruikersgegeven" />
-    <AssociationSet
-      Name="BedrijvenItem_Klantpartner"
-      Association="BedrijvenItem_Klantpartner">
-      <AssociationSetEnd
-        Name="BedrijvenItem"
-        EntitySet="Bedrijvens" />
-      <AssociationSetEnd
-        Name="Klantpartner"
-        EntitySet="LijstMetGebruikersgegevens" />
-    </AssociationSet>
     <AssociationSet
       Name="BedrijvenItem_GemaaktDoor"
       Association="BedrijvenItem_GemaaktDoor">
@@ -682,28 +658,6 @@
           Property="LijstMetGebruikersgegeven/Properties[Id]" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
-    <AssociationSetMapping
-      AssociationSet="BedrijvenItem_Klantpartner">
-      <AssociationSetMapping.Attributes>
-        <CsdlAssociation
-          Name="BedrijvenItem_Klantpartner"
-          Association="BedrijvenItem_Klantpartner" />
-        <CsdlAssociationSetEnd
-          End="T_MC_Bedrijven/Members[BedrijvenItem_Klantpartner]/Members[Klantpartner]">
-          <CsdlAssociationSetEnd.Attributes>
-            <CsdlPropertyRef
-              Name="Id" />
-          </CsdlAssociationSetEnd.Attributes>
-        </CsdlAssociationSetEnd>
-        <CsdlAssociationSetEnd
-          End="T_MC_Bedrijven/Members[BedrijvenItem_Klantpartner]/Members[BedrijvenItem]">
-          <CsdlAssociationSetEnd.Attributes>
-            <CsdlPropertyRef
-              Name="KlantpartnerId" />
-          </CsdlAssociationSetEnd.Attributes>
-        </CsdlAssociationSetEnd>
-      </AssociationSetMapping.Attributes>
-    </AssociationSetMapping>
     <AssociationSetMapping
       AssociationSet="BedrijvenItem_GemaaktDoor">
       <AssociationSetMapping.Attributes>

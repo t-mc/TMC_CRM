@@ -72,23 +72,35 @@
       </EntityProperty>
       <EntityProperty
         Name="Telefoonnummer"
-        PropertyType=":String?">
+        PropertyType="Microsoft.LightSwitch.Extensions:PhoneNumber?">
         <EntityProperty.Attributes>
           <DisplayName
             Value="Telefoonnummer" />
+          <Attribute
+            Class="Microsoft.LightSwitch.Extensions:@PhoneNumberValidation">
+            <Property
+              Name="Formats"
+              Value="+CC (AAA) NNNNNN;+CC (AA) NNNNNNN" />
+          </Attribute>
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
         Name="MobielNummer"
-        PropertyType=":String?">
+        PropertyType="Microsoft.LightSwitch.Extensions:PhoneNumber?">
         <EntityProperty.Attributes>
           <DisplayName
             Value="Mobiel nummer" />
+          <Attribute
+            Class="Microsoft.LightSwitch.Extensions:@PhoneNumberValidation">
+            <Property
+              Name="Formats"
+              Value="+CC (A) NNNNNNNN" />
+          </Attribute>
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
         Name="EmailAdres"
-        PropertyType=":String?">
+        PropertyType="Microsoft.LightSwitch.Extensions:EmailAddress?">
         <EntityProperty.Attributes>
           <DisplayName
             Value="Email adres" />
@@ -268,6 +280,20 @@
         FromEnd="Contactpersonen"
         ToEnd="Bedrijven"
         VirtualAssociation="Contactpersonen_Bedrijven" />
+      <EntityProperty
+        Name="Geslacht"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="Geslacht" />
+          <SupportedValue
+            DisplayName="Man"
+            Value="Man" />
+          <SupportedValue
+            DisplayName="Vrouw"
+            Value="Vrouw" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
     </EntityType.Properties>
   </EntityType>
   <EntityContainer
@@ -435,6 +461,9 @@
         <CsdlProperty
           Name="Bedrijfsnaam"
           Property="Contactpersonen/Properties[Bedrijfsnaam]" />
+        <CsdlProperty
+          Name="GeslachtValue"
+          Property="Contactpersonen/Properties[Geslacht]" />
         <CsdlProperty
           Name="Id"
           Property="Contactpersonen/Properties[Id]" />

@@ -168,8 +168,8 @@
                 </ContentItem>
                 <ContentItem
                   Name="Klantpartner"
-                  Kind="Details"
-                  DataType="LijstMetGebruikersgegeven">
+                  Kind="Value"
+                  DataType=":Person?">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
@@ -178,16 +178,6 @@
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
-                  <ContentItem
-                    Name="RowTemplate"
-                    Kind="Details"
-                    DataType="LijstMetGebruikersgegeven">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression />
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
                 </ContentItem>
                 <ContentItem
                   Name="EmailAdres"

@@ -11,13 +11,12 @@
         <Property Name="Branche" Type="Edm.String" Nullable="true" />
         <Property Name="EmailAdres" Type="Edm.String" Nullable="true" />
         <Property Name="Website" Type="Edm.String" Nullable="true" />
-        <NavigationProperty Name="Klantpartner" Relationship="Microsoft.SharePoint.DataService.BedrijvenItem_Klantpartner" FromRole="BedrijvenItem" ToRole="Klantpartner" />
-        <Property Name="KlantpartnerId" Type="Edm.Int32" Nullable="true" />
         <Property Name="MoederAccount" Type="Edm.String" Nullable="true" />
         <Property Name="PrimairContact" Type="Edm.String" Nullable="true" />
         <Property Name="KvKNummer" Type="Edm.String" Nullable="true" />
         <Property Name="OneNote" Type="Edm.String" Nullable="true" />
         <Property Name="Actief" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="Klantpartner" Type="Edm.String" Nullable="true" />
         <Property Name="Id" Type="Edm.Int32" Nullable="false" />
         <Property Name="Inhoudstype" Type="Edm.String" Nullable="true" />
         <Property Name="Gewijzigd" Type="Edm.DateTime" Nullable="true" m:FC_TargetPath="SyndicationUpdated" m:FC_ContentKind="text" m:FC_KeepInContent="true" />
@@ -69,10 +68,6 @@
         <Property Name="Versie" Type="Edm.String" Nullable="true" />
         <Property Name="Pad" Type="Edm.String" Nullable="true" />
       </EntityType>
-      <Association Name="BedrijvenItem_Klantpartner">
-        <End Role="BedrijvenItem" Type="Microsoft.SharePoint.DataService.BedrijvenItem" Multiplicity="*" />
-        <End Role="Klantpartner" Type="Microsoft.SharePoint.DataService.LijstMetGebruikersgegevensItem" Multiplicity="0..1" />
-      </Association>
       <Association Name="BedrijvenItem_GemaaktDoor">
         <End Role="BedrijvenItem" Type="Microsoft.SharePoint.DataService.BedrijvenItem" Multiplicity="*" />
         <End Role="GemaaktDoor" Type="Microsoft.SharePoint.DataService.LijstMetGebruikersgegevensItem" Multiplicity="0..1" />
@@ -92,10 +87,6 @@
       <EntityContainer Name="TMCDevDataContext" m:IsDefaultEntityContainer="true">
         <EntitySet Name="Bedrijven" EntityType="Microsoft.SharePoint.DataService.BedrijvenItem" />
         <EntitySet Name="LijstMetGebruikersgegevens" EntityType="Microsoft.SharePoint.DataService.LijstMetGebruikersgegevensItem" />
-        <AssociationSet Name="BedrijvenItem_Klantpartner" Association="Microsoft.SharePoint.DataService.BedrijvenItem_Klantpartner">
-          <End Role="BedrijvenItem" EntitySet="Bedrijven" />
-          <End Role="Klantpartner" EntitySet="LijstMetGebruikersgegevens" />
-        </AssociationSet>
         <AssociationSet Name="BedrijvenItem_GemaaktDoor" Association="Microsoft.SharePoint.DataService.BedrijvenItem_GemaaktDoor">
           <End Role="BedrijvenItem" EntitySet="Bedrijven" />
           <End Role="GemaaktDoor" EntitySet="LijstMetGebruikersgegevens" />

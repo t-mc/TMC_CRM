@@ -13,12 +13,6 @@
   <Association>
     <Association.Attributes>
       <Proxy
-        Target="ServiceInterface:BedrijvenItem_Klantpartner" />
-    </Association.Attributes>
-  </Association>
-  <Association>
-    <Association.Attributes>
-      <Proxy
         Target="ServiceInterface:BedrijvenItem_GemaaktDoor" />
     </Association.Attributes>
   </Association>
