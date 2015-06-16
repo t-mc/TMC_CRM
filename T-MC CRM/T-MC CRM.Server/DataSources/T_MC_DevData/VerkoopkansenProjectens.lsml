@@ -5,10 +5,10 @@
     <Partial />
   </ServiceApplication.Attributes>
   <EntityType
-    Name="Bedrijven">
+    Name="VerkoopkansenProjecten">
     <EntityType.Attributes>
       <DisplayName
-        Value="Bedrijven" />
+        Value="Verkoopkansen / Projecten" />
       <Description
         Value="" />
     </EntityType.Attributes>
@@ -22,93 +22,151 @@
     </EntityType.Methods>
     <EntityType.Properties>
       <EntityProperty
+        Name="Projectcode"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+          <DisplayName
+            Value="Projectcode" />
+          <Required />
+          <Description
+            Value="" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Omschrijving"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="Omschrijving" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
         Name="Bedrijfsnaam"
         PropertyType=":String?">
         <EntityProperty.Attributes>
           <DisplayName
             Value="Bedrijfsnaam" />
-          <Required />
-          <MaxLength
-            Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
-        Name="Telefoonnummer"
-        PropertyType="Microsoft.LightSwitch.Extensions:PhoneNumber?">
+        Name="Verkoopstadium"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <SupportedValue
+            DisplayName="Marktkans"
+            Value="Marktkans" />
+          <SupportedValue
+            DisplayName="Lead"
+            Value="Lead" />
+          <SupportedValue
+            DisplayName="Prospect"
+            Value="Prospect" />
+          <SupportedValue
+            DisplayName="Verkoopkans"
+            Value="Verkoopkans" />
+          <SupportedValue
+            DisplayName="Offerte"
+            Value="Offerte" />
+          <SupportedValue
+            DisplayName="Order"
+            Value="Order" />
+          <SupportedValue
+            DisplayName="Order afgerond"
+            Value="Order afgerond" />
+          <SupportedValue
+            DisplayName="Loss"
+            Value="Loss" />
+          <DisplayName
+            Value="Verkoopstadium" />
+          <Description
+            Value="" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Verkoopkans"
+        PropertyType=":Double?">
         <EntityProperty.Attributes>
           <DisplayName
-            Value="Telefoonnummer" />
-          <Attribute
-            Class="Microsoft.LightSwitch.Extensions:@PhoneNumberValidation">
-            <Property
-              Name="Formats"
-              Value="+CC (AAA) NNNNNN;+CC (A) NNNNNNNN;+CC (AA) NNNNNNN" />
-          </Attribute>
+            Value="Verkoopkans" />
+          <NotSearchable />
+          <StringValueFormat
+            Value="P2" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
-        Name="Branche"
+        Name="GeschatteOmzet"
+        PropertyType=":Double?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="Geschatte omzet" />
+          <NotSearchable />
+          <StringValueFormat
+            Value="&quot;C&quot;" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="GeschatteSluitingsdatum"
+        PropertyType=":Date?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="Geschatte sluitingsdatum" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="WerkelijkeOmzet"
+        PropertyType=":Double?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="Werkelijke omzet" />
+          <NotSearchable />
+          <StringValueFormat
+            Value="&quot;C&quot;" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="WerkelijkeSluitingsdatum"
+        PropertyType=":Date?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="Werkelijke sluitingsdatum" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Broncampagne"
         PropertyType=":String?">
         <EntityProperty.Attributes>
           <DisplayName
-            Value="Branche" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="EmailAdres"
-        PropertyType="Microsoft.LightSwitch.Extensions:EmailAddress?">
-        <EntityProperty.Attributes>
-          <DisplayName
-            Value="Email adres" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="Website"
-        PropertyType="Microsoft.LightSwitch.Extensions:WebAddress?">
-        <EntityProperty.Attributes>
-          <DisplayName
-            Value="Website" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="MoederAccount"
-        PropertyType=":String?">
-        <EntityProperty.Attributes>
-          <DisplayName
-            Value="Moeder account" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="PrimairContact"
-        PropertyType=":String?">
-        <EntityProperty.Attributes>
-          <DisplayName
-            Value="Primair contact" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="KvKNummer"
-        PropertyType=":String?">
-        <EntityProperty.Attributes>
-          <DisplayName
-            Value="KvK Nummer" />
+            Value="Broncampagne" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
         Name="OneNote"
-        PropertyType="Microsoft.LightSwitch.Extensions:WebAddress?">
+        PropertyType=":String?">
         <EntityProperty.Attributes>
           <DisplayName
             Value="OneNote" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
-        Name="Actief"
-        PropertyType=":Boolean?">
+        Name="Opdrachtgever"
+        PropertyType=":String?">
         <EntityProperty.Attributes>
           <DisplayName
-            Value="Actief" />
-          <NotSearchable />
+            Value="Opdrachtgever" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Klantpartner"
+        PropertyType=":Person?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+          <DisplayName
+            Value="Klantpartner" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <KeyProperty
@@ -198,55 +256,40 @@
       </EntityProperty>
       <NavigationProperty
         Name="GemaaktDoor"
-        Association="BedrijvenItem_GemaaktDoor"
-        FromEnd="BedrijvenItem"
+        Association="VerkoopkansenProjectenItem_GemaaktDoor"
+        FromEnd="VerkoopkansenProjectenItem"
         ToEnd="GemaaktDoor" />
       <NavigationProperty
         Name="GewijzigdDoor"
-        Association="BedrijvenItem_GewijzigdDoor"
-        FromEnd="BedrijvenItem"
+        Association="VerkoopkansenProjectenItem_GewijzigdDoor"
+        FromEnd="VerkoopkansenProjectenItem"
         ToEnd="GewijzigdDoor" />
       <VirtualNavigationProperty
-        Name="Contactpersonens"
-        FromEnd="Bedrijven"
-        ToEnd="Contactpersonen"
-        VirtualAssociation="Contactpersonen_Bedrijven" />
-      <VirtualNavigationProperty
-        Name="Adressens"
-        FromEnd="Bedrijven"
-        ToEnd="Adressen"
-        VirtualAssociation="Bedrijven_Adressen" />
-      <EntityProperty
-        Name="Klantpartner"
-        PropertyType=":Person?">
-        <EntityProperty.Attributes>
-          <MaxLength
-            Value="255" />
-          <DisplayName
-            Value="Klantpartner" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <VirtualNavigationProperty
-        Name="VerkoopkansenProjectens"
-        FromEnd="Bedrijven"
-        ToEnd="VerkoopkansenProjecten"
+        Name="Bedrijven"
+        FromEnd="VerkoopkansenProjecten"
+        ToEnd="Bedrijven"
         VirtualAssociation="VerkoopkansenProjecten_Bedrijven" />
+      <VirtualNavigationProperty
+        Name="Contactpersonens"
+        FromEnd="VerkoopkansenProjecten"
+        ToEnd="Contactpersonen"
+        VirtualAssociation="VerkoopkansenProjecten_Contactpersonen" />
     </EntityType.Properties>
   </EntityType>
   <EntityContainer
-    Name="T_MC_Bedrijven">
+    Name="T_MC_DevData">
     <EntityContainer.Attributes>
       <Partial />
     </EntityContainer.Attributes>
     <EntitySet
-      Name="Bedrijvens"
+      Name="VerkoopkansenProjectens"
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
-      EntityType="Bedrijven" />
+      EntityType="VerkoopkansenProjecten" />
     <QueryOperation
-      Name="Bedrijvens_Single"
-      ReturnType="Bedrijven">
+      Name="VerkoopkansenProjectens_Single"
+      ReturnType="VerkoopkansenProjecten">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -272,7 +315,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="Bedrijvens" />
+            Member="VerkoopkansenProjectens" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -287,8 +330,8 @@
       </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
-      Name="Bedrijvens_SingleOrDefault"
-      ReturnType="Bedrijven">
+      Name="VerkoopkansenProjectens_SingleOrDefault"
+      ReturnType="VerkoopkansenProjecten">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -314,7 +357,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="Bedrijvens" />
+            Member="VerkoopkansenProjectens" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -329,175 +372,94 @@
       </QueryOperationParameter>
     </QueryOperation>
   </EntityContainer>
-  <VirtualAssociation
-    Name="Contactpersonen_Bedrijven">
-    <VirtualAssociationEnd
-      Name="Contactpersonen"
-      Multiplicity="Many"
-      EntityType="Contactpersonen" />
-    <VirtualAssociationEnd
-      Name="Bedrijven"
-      Multiplicity="One"
-      EntityType="Bedrijven" />
-  </VirtualAssociation>
-  <VirtualAssociationSet
-    Name="Contactpersonen_Bedrijven_Set"
-    VirtualAssociation="Contactpersonen_Bedrijven">
-    <VirtualAssociationSetEnd
-      Name="Contactpersonen"
-      EntityContainer="T_MC_Contactpersonen"
-      EntitySet="Contactpersonens">
-      <VirtualAssociationSetEndProperty
-        EntityProperty="Bedrijfsnaam" />
-    </VirtualAssociationSetEnd>
-    <VirtualAssociationSetEnd
-      Name="Bedrijven"
-      EntityContainer="T_MC_Bedrijven"
-      EntitySet="Bedrijvens">
-      <VirtualAssociationSetEndProperty
-        EntityProperty="Bedrijfsnaam" />
-    </VirtualAssociationSetEnd>
-  </VirtualAssociationSet>
-  <VirtualAssociation
-    Name="Bedrijven_Adressen">
-    <VirtualAssociationEnd
-      Name="Bedrijven"
-      Multiplicity="One"
-      EntityType="Bedrijven" />
-    <VirtualAssociationEnd
-      Name="Adressen"
-      Multiplicity="Many"
-      EntityType="Adressen" />
-  </VirtualAssociation>
-  <VirtualAssociationSet
-    Name="Bedrijven_Adressen_Set"
-    VirtualAssociation="Bedrijven_Adressen">
-    <VirtualAssociationSetEnd
-      Name="Bedrijven"
-      EntityContainer="T_MC_Bedrijven"
-      EntitySet="Bedrijvens">
-      <VirtualAssociationSetEndProperty
-        EntityProperty="Bedrijfsnaam" />
-    </VirtualAssociationSetEnd>
-    <VirtualAssociationSetEnd
-      Name="Adressen"
-      EntityContainer="T_MC_Adressen"
-      EntitySet="Adressens">
-      <VirtualAssociationSetEndProperty
-        EntityProperty="Bedrijfsnaam" />
-    </VirtualAssociationSetEnd>
-  </VirtualAssociationSet>
   <DataService
-    Name="T_MC_BedrijvenDataService">
+    Name="T_MC_DevDataDataService">
     <DataService.Attributes>
       <Partial />
     </DataService.Attributes>
     <EntitySetMapping
-      EntitySet="Bedrijvens">
+      EntitySet="VerkoopkansenProjectens">
       <EntitySetMapping.Attributes>
         <CsdlEntitySet
-          EntityTypeName="BedrijvenItem"
-          Name="Bedrijven"
-          EntityType="Bedrijven" />
+          EntityTypeName="VerkoopkansenProjectenItem"
+          Name="VerkoopkansenProjecten"
+          EntityType="VerkoopkansenProjecten" />
         <CsdlProperty
           Name="InhoudstypeId"
-          Property="Bedrijven/Properties[InhoudstypeId]" />
+          Property="VerkoopkansenProjecten/Properties[InhoudstypeId]" />
+        <CsdlProperty
+          Name="Projectcode"
+          Property="VerkoopkansenProjecten/Properties[Projectcode]" />
+        <CsdlProperty
+          Name="Omschrijving"
+          Property="VerkoopkansenProjecten/Properties[Omschrijving]" />
         <CsdlProperty
           Name="Bedrijfsnaam"
-          Property="Bedrijven/Properties[Bedrijfsnaam]" />
+          Property="VerkoopkansenProjecten/Properties[Bedrijfsnaam]" />
         <CsdlProperty
-          Name="Telefoonnummer"
-          Property="Bedrijven/Properties[Telefoonnummer]" />
+          Name="VerkoopstadiumValue"
+          Property="VerkoopkansenProjecten/Properties[Verkoopstadium]" />
         <CsdlProperty
-          Name="Branche"
-          Property="Bedrijven/Properties[Branche]" />
+          Name="Verkoopkans"
+          Property="VerkoopkansenProjecten/Properties[Verkoopkans]" />
         <CsdlProperty
-          Name="EmailAdres"
-          Property="Bedrijven/Properties[EmailAdres]" />
+          Name="GeschatteOmzet"
+          Property="VerkoopkansenProjecten/Properties[GeschatteOmzet]" />
         <CsdlProperty
-          Name="Website"
-          Property="Bedrijven/Properties[Website]" />
+          Name="GeschatteSluitingsdatum"
+          Property="VerkoopkansenProjecten/Properties[GeschatteSluitingsdatum]" />
         <CsdlProperty
-          Name="MoederAccount"
-          Property="Bedrijven/Properties[MoederAccount]" />
+          Name="WerkelijkeOmzet"
+          Property="VerkoopkansenProjecten/Properties[WerkelijkeOmzet]" />
         <CsdlProperty
-          Name="PrimairContact"
-          Property="Bedrijven/Properties[PrimairContact]" />
+          Name="WerkelijkeSluitingsdatum"
+          Property="VerkoopkansenProjecten/Properties[WerkelijkeSluitingsdatum]" />
         <CsdlProperty
-          Name="KvKNummer"
-          Property="Bedrijven/Properties[KvKNummer]" />
+          Name="Broncampagne"
+          Property="VerkoopkansenProjecten/Properties[Broncampagne]" />
         <CsdlProperty
           Name="OneNote"
-          Property="Bedrijven/Properties[OneNote]" />
+          Property="VerkoopkansenProjecten/Properties[OneNote]" />
         <CsdlProperty
-          Name="Actief"
-          Property="Bedrijven/Properties[Actief]" />
+          Name="Opdrachtgever"
+          Property="VerkoopkansenProjecten/Properties[Opdrachtgever]" />
         <CsdlProperty
           Name="Klantpartner"
-          Property="Bedrijven/Properties[Klantpartner]" />
+          Property="VerkoopkansenProjecten/Properties[Klantpartner]" />
         <CsdlProperty
           Name="Id"
-          Property="Bedrijven/Properties[Id]" />
+          Property="VerkoopkansenProjecten/Properties[Id]" />
         <CsdlProperty
           Name="Inhoudstype"
-          Property="Bedrijven/Properties[Inhoudstype]" />
+          Property="VerkoopkansenProjecten/Properties[Inhoudstype]" />
         <CsdlProperty
           Name="Gewijzigd"
-          Property="Bedrijven/Properties[Gewijzigd]" />
+          Property="VerkoopkansenProjecten/Properties[Gewijzigd]" />
         <CsdlProperty
           Name="Gemaakt"
-          Property="Bedrijven/Properties[Gemaakt]" />
+          Property="VerkoopkansenProjecten/Properties[Gemaakt]" />
         <CsdlProperty
           Name="Owshiddenversion"
-          Property="Bedrijven/Properties[Owshiddenversion]" />
+          Property="VerkoopkansenProjecten/Properties[Owshiddenversion]" />
         <CsdlProperty
           Name="Versie"
-          Property="Bedrijven/Properties[Versie]" />
+          Property="VerkoopkansenProjecten/Properties[Versie]" />
         <CsdlProperty
           Name="Pad"
-          Property="Bedrijven/Properties[Pad]" />
+          Property="VerkoopkansenProjecten/Properties[Pad]" />
         <CsdlProperty
           Name="GemaaktDoor"
-          Property="Bedrijven/Properties[GemaaktDoor]" />
+          Property="VerkoopkansenProjecten/Properties[GemaaktDoor]" />
         <CsdlForeignKeyProperty
           Name="GemaaktDoorId"
-          Property="LijstMetGebruikersgegeven/Properties[Id]" />
+          Property="LijstMetGebruikersgegeven3/Properties[Id]" />
         <CsdlProperty
           Name="GewijzigdDoor"
-          Property="Bedrijven/Properties[GewijzigdDoor]" />
+          Property="VerkoopkansenProjecten/Properties[GewijzigdDoor]" />
         <CsdlForeignKeyProperty
           Name="GewijzigdDoorId"
-          Property="LijstMetGebruikersgegeven/Properties[Id]" />
+          Property="LijstMetGebruikersgegeven3/Properties[Id]" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
   </DataService>
-  <VirtualAssociation
-    Name="VerkoopkansenProjecten_Bedrijven">
-    <VirtualAssociationEnd
-      Name="VerkoopkansenProjecten"
-      Multiplicity="Many"
-      EntityType="VerkoopkansenProjecten" />
-    <VirtualAssociationEnd
-      Name="Bedrijven"
-      Multiplicity="One"
-      EntityType="Bedrijven" />
-  </VirtualAssociation>
-  <VirtualAssociationSet
-    Name="VerkoopkansenProjecten_Bedrijven_Set"
-    VirtualAssociation="VerkoopkansenProjecten_Bedrijven">
-    <VirtualAssociationSetEnd
-      Name="VerkoopkansenProjecten"
-      EntityContainer="T_MC_DevData"
-      EntitySet="VerkoopkansenProjectens">
-      <VirtualAssociationSetEndProperty
-        EntityProperty="Bedrijfsnaam" />
-    </VirtualAssociationSetEnd>
-    <VirtualAssociationSetEnd
-      Name="Bedrijven"
-      EntityContainer="T_MC_Bedrijven"
-      EntitySet="Bedrijvens">
-      <VirtualAssociationSetEndProperty
-        EntityProperty="Bedrijfsnaam" />
-    </VirtualAssociationSetEnd>
-  </VirtualAssociationSet>
 </ServiceApplication>

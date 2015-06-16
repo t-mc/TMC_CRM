@@ -33,6 +33,9 @@
     <EntityContainerGroupProperty
       Name="T_MC_Contactpersonen"
       EntityContainer="T_MC_Contactpersonen" />
+    <EntityContainerGroupProperty
+      Name="T_MC_DevData"
+      EntityContainer="T_MC_DevData" />
   </EntityContainerGroup>
   <GlobalAttributeGroup>
     <GlobalAttributeGroup.Attributes>
@@ -47,5 +50,8 @@
     <ApplicationNavigationMethodLink
       Name="link1"
       Method="!module/Methods[showBrowseContactpersonens]" />
+    <ApplicationNavigationMethodLink
+      Name="link2"
+      Method="!module/Methods[showBrowseVerkoopkansenProjectens]" />
   </Application.NavigationItems>
 </Application>

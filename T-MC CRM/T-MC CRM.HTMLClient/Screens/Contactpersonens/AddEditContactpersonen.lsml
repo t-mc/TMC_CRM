@@ -51,6 +51,7 @@
                 Kind="Group">
                 <ContentItem
                   Name="VolledigeNaam"
+                  IsHidden="True"
                   Kind="Value"
                   DataType=":String?">
                   <ContentItem.DataSource>
@@ -61,41 +62,6 @@
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="Group"
-                  Kind="Group"
-                  View="Microsoft.LightSwitch.MobileWeb:ColumnsLayout">
-                  <ContentItem.Attributes>
-                    <DisplayName
-                      Value="Positie" />
-                  </ContentItem.Attributes>
-                  <ContentItem
-                    Name="Afdeling"
-                    Kind="Value"
-                    DataType=":String?">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="Contactpersonen/Properties[Afdeling]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                  <ContentItem
-                    Name="Functie"
-                    Kind="Value"
-                    DataType=":String?">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="Contactpersonen/Properties[Functie]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
                 </ContentItem>
                 <ContentItem
                   Name="Group1"
@@ -188,6 +154,41 @@
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="Group"
+                  Kind="Group"
+                  View="Microsoft.LightSwitch.MobileWeb:ColumnsLayout">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Positie" />
+                  </ContentItem.Attributes>
+                  <ContentItem
+                    Name="Afdeling"
+                    Kind="Value"
+                    DataType=":String?">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="Contactpersonen/Properties[Afdeling]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    Name="Functie"
+                    Kind="Value"
+                    DataType=":String?">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="Contactpersonen/Properties[Functie]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
                 </ContentItem>
                 <ContentItem
                   Name="Group2"

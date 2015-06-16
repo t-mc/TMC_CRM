@@ -203,9 +203,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataSources\T_MC_Contactpersonen\Contactpersonen.lsml.cs">
-      <DependentUpon>Contactpersonens.lsml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\T_MC_Adressen.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -221,6 +218,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>T_MC_Contactpersonen.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\T_MC_DevData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>T_MC_DevData.edmx</DependentUpon>
     </Compile>
     <Compile Include="SharePointLaunch.aspx.cs">
       <DependentUpon>SharePointLaunch.aspx</DependentUpon>
@@ -265,6 +267,14 @@
     <LightSwitchModel Include="DataSources\T_MC_Adressen\Query1.lsml">
       <DependentUpon>Adressens.lsml</DependentUpon>
     </LightSwitchModel>
+    <LightSwitchModel Include="DataSources\T_MC_DevData\LijstMetGebruikersgegevens.lsml" />
+    <LightSwitchModel Include="DataSources\T_MC_DevData\VerkoopkansenProjectens.lsml" />
+    <LightSwitchModel Include="Properties\DataSources\T_MC_DevData.lsml" />
+    <LightSwitchExternalDataSource Include="Properties\T_MC_DevData.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>T_MC_DevData.Designer.cs</LastGenOutput>
+      <EntityContainer>T_MC_DevData</EntityContainer>
+    </LightSwitchExternalDataSource>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

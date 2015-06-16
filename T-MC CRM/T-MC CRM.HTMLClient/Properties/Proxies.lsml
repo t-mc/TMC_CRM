@@ -142,4 +142,64 @@
         Target="ServiceInterface:Bedrijven_Adressen_Set" />
     </VirtualAssociationSet.Attributes>
   </VirtualAssociationSet>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:LijstMetGebruikersgegeven3" />
+    </EntityType.Attributes>
+  </EntityType>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:LijstMetGebruikersgegevensItem_GemaaktDoor3" />
+    </Association.Attributes>
+  </Association>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:LijstMetGebruikersgegevensItem_GewijzigdDoor3" />
+    </Association.Attributes>
+  </Association>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:VerkoopkansenProjectenItem_GemaaktDoor" />
+    </Association.Attributes>
+  </Association>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:VerkoopkansenProjectenItem_GewijzigdDoor" />
+    </Association.Attributes>
+  </Association>
+  <EntityContainer>
+    <EntityContainer.Attributes>
+      <Proxy
+        Target="ServiceInterface:T_MC_DevData" />
+    </EntityContainer.Attributes>
+  </EntityContainer>
+  <VirtualAssociation>
+    <VirtualAssociation.Attributes>
+      <Proxy
+        Target="ServiceInterface:VerkoopkansenProjecten_Bedrijven" />
+    </VirtualAssociation.Attributes>
+  </VirtualAssociation>
+  <VirtualAssociationSet>
+    <VirtualAssociationSet.Attributes>
+      <Proxy
+        Target="ServiceInterface:VerkoopkansenProjecten_Bedrijven_Set" />
+    </VirtualAssociationSet.Attributes>
+  </VirtualAssociationSet>
+  <VirtualAssociation>
+    <VirtualAssociation.Attributes>
+      <Proxy
+        Target="ServiceInterface:VerkoopkansenProjecten_Contactpersonen" />
+    </VirtualAssociation.Attributes>
+  </VirtualAssociation>
+  <VirtualAssociationSet>
+    <VirtualAssociationSet.Attributes>
+      <Proxy
+        Target="ServiceInterface:VerkoopkansenProjecten_Contactpersonen_Set" />
+    </VirtualAssociationSet.Attributes>
+  </VirtualAssociationSet>
 </Application>

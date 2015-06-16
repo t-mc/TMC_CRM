@@ -30,6 +30,9 @@
     <EntityContainerGroupProperty
       Name="T_MC_Contactpersonen"
       EntityContainer="T_MC_Contactpersonen" />
+    <EntityContainerGroupProperty
+      Name="T_MC_DevData"
+      EntityContainer="T_MC_DevData" />
   </EntityContainerGroup>
   <GlobalAttributeGroup
     Name="LightSwitchServiceApplicationGroup">
