@@ -221,21 +221,26 @@
                 </ContentItem.PropertySources>
               </ContentItem>
               <ContentItem
-                Name="SearchBedrijvens"
+                Name="ShowGroup"
                 Kind="Command">
                 <ContentItem.Attributes>
                   <DisplayName
-                    Value="Zoek bedrijf" />
+                    Value="Filter" />
                 </ContentItem.Attributes>
                 <ContentItem.PropertySources>
                   <ControlPropertySource
                     Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
                     <ScreenExpressionTree>
                       <ChainExpression>
-                        <MemberExpression
-                          Member="BrowseBedrijvens/Properties[Bedrijvens]" />
                         <CallExpression
-                          Target="showSearch" />
+                          Target="BrowseBedrijvens/Methods[showDialog]">
+                          <ArgumentExpression
+                            Parameter="dialogName">
+                            <ConstantExpression
+                              Value="Group"
+                              ResultType=":String" />
+                          </ArgumentExpression>
+                        </CallExpression>
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ControlPropertySource>
@@ -244,8 +249,8 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <ConstantExpression
-                          Value="msls-search"
-                          ResultType="Microsoft.LightSwitch:String" />
+                          Value="msls-filter"
+                          ResultType=":String" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ControlPropertySource>
@@ -269,7 +274,50 @@
         <ContentItem
           Name="Popups"
           Kind="Group"
-          View="Microsoft.LightSwitch.MobileWeb:DialogPages" />
+          View="Microsoft.LightSwitch.MobileWeb:DialogPages">
+          <ContentItem
+            Name="Group"
+            Kind="Group">
+            <ContentItem.Attributes>
+              <DisplayName
+                Value="Filter" />
+            </ContentItem.Attributes>
+            <ContentItem
+              Name="BedrijvenBedrijfsnaam"
+              Kind="Value"
+              DataType=":String?">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="Bedrijfsnaam" />
+              </ContentItem.Attributes>
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="BrowseBedrijvens/Properties[BedrijvenBedrijfsnaam]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+            </ContentItem>
+            <ContentItem
+              Name="BedrijvenKlantpartner"
+              Kind="Value"
+              DataType=":Person?">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="Klantpartner" />
+              </ContentItem.Attributes>
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="BrowseBedrijvens/Properties[BedrijvenKlantpartner]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+            </ContentItem>
+          </ContentItem>
+        </ContentItem>
       </ContentItem>
     </Screen.RootContentItem>
     <Screen.Methods>
@@ -306,12 +354,27 @@
             Name="BedrijvensQuery"
             ReturnType="Bedrijven*">
             <ScreenQueryDefinition.FilterExpression>
-              <QueryFilterExpressionTree />
+              <QueryFilterExpressionTree>
+                <BinaryExpression
+                  NodeType="Equal">
+                  <BinaryExpression.Left>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="Bedrijven/Properties[Actief]" />
+                    </ChainExpression>
+                  </BinaryExpression.Left>
+                  <BinaryExpression.Right>
+                    <ConstantExpression
+                      Value="True"
+                      ResultType=":Boolean?" />
+                  </BinaryExpression.Right>
+                </BinaryExpression>
+              </QueryFilterExpressionTree>
             </ScreenQueryDefinition.FilterExpression>
             <ScreenQueryDefinition.Source>
               <QuerySourceExpressionTree>
                 <MemberExpression
-                  Member="T_MC_Bedrijven/Members[Bedrijvens]" />
+                  Member="T_MC_Bedrijven/Members[FilterByNameAndKlantpartner]" />
               </QuerySourceExpressionTree>
             </ScreenQueryDefinition.Source>
           </ScreenQueryDefinition>
@@ -319,10 +382,31 @@
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="BrowseBedrijvens/Properties[Bedrijvens]/Query" />
+              Target="BrowseBedrijvens/Properties[Bedrijvens]/Query">
+              <ArgumentExpression
+                Parameter="Bedrijfsnaam">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="BrowseBedrijvens/Properties[BedrijvenBedrijfsnaam]" />
+                </ChainExpression>
+              </ArgumentExpression>
+              <ArgumentExpression
+                Parameter="Klantpartner">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="BrowseBedrijvens/Properties[BedrijvenKlantpartner]" />
+                </ChainExpression>
+              </ArgumentExpression>
+            </CallExpression>
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
+      <ScreenProperty
+        Name="BedrijvenBedrijfsnaam"
+        PropertyType=":String?" />
+      <ScreenProperty
+        Name="BedrijvenKlantpartner"
+        PropertyType=":Person?" />
     </Screen.Properties>
   </Screen>
   <Application.Methods>

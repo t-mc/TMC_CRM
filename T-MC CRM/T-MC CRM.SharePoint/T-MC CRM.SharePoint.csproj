@@ -48,6 +48,7 @@
     <Content Include="AppIcon.png">
       <OpcRelationship>manifest-icon</OpcRelationship>
     </Content>
+    <Content Include="Elements.xml" />
     <Content Include="Features\Feature1\Feature1.Template.xml">
       <DependentUpon>Feature1.feature</DependentUpon>
     </Content>
@@ -78,6 +79,15 @@
     <None Include="Package\Package.package">
       <PackageId>{33fa6b92-482a-4e15-8f39-920b57dd4f15}</PackageId>
     </None>
+    <None Include="SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{906d7f6c-f362-498f-b0b2-046b66855de0}</SharePointProjectItemId>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

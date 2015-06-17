@@ -175,7 +175,7 @@
   <EntityContainer>
     <EntityContainer.Attributes>
       <Proxy
-        Target="ServiceInterface:T_MC_DevData" />
+        Target="ServiceInterface:T_MC_Verkoopkansen" />
     </EntityContainer.Attributes>
   </EntityContainer>
   <VirtualAssociation>

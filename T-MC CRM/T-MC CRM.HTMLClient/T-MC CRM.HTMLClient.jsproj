@@ -70,6 +70,9 @@
     <Content Include="Screens\AddEditAdressen.lsml.js">
       <DependentUpon>AddEditAdressen.lsml</DependentUpon>
     </Content>
+    <Content Include="Screens\Bedrijvens\BrowseBedrijvens.lsml.js">
+      <DependentUpon>BrowseBedrijvens.lsml</DependentUpon>
+    </Content>
     <Content Include="Screens\Bedrijvens\ViewBedrijven.lsml.js">
       <DependentUpon>ViewBedrijven.lsml</DependentUpon>
     </Content>
@@ -109,11 +112,12 @@
     <LightSwitchModel Include="Properties\Proxies.lsml" />
     <LightSwitchModel Include="Properties\T_MC_Bedrijven\Bedrijvens.lsml" />
     <LightSwitchModel Include="Properties\T_MC_Contactpersonen\Contactpersonens.lsml" />
-    <LightSwitchModel Include="Properties\T_MC_DevData\VerkoopkansenProjectens.lsml" />
+    <LightSwitchModel Include="Properties\T_MC_Verkoopkansen\VerkoopkansenProjectens.lsml" />
     <LightSwitchModel Include="Screens\AddEditAdressen.lsml" />
     <LightSwitchModel Include="Screens\Bedrijvens\AddEditBedrijven.lsml" />
     <LightSwitchModel Include="Screens\Bedrijvens\BrowseBedrijvens.lsml" />
     <LightSwitchModel Include="Screens\Bedrijvens\ViewBedrijven.lsml" />
+    <LightSwitchModel Include="Screens\BrowseNietActieveBedrijven.lsml" />
     <LightSwitchModel Include="Screens\Contactpersonens\AddEditContactpersonen.lsml" />
     <LightSwitchModel Include="Screens\Contactpersonens\BrowseContactpersonens.lsml" />
     <LightSwitchModel Include="Screens\Contactpersonens\ViewContactpersonen.lsml" />

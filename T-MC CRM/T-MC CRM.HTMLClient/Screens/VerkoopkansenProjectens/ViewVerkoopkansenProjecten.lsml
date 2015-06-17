@@ -8,7 +8,7 @@
     Name="ViewVerkoopkansenProjecten">
     <Screen.Attributes>
       <SaveChangesTo
-        EntityContainer="T_MC_DevData" />
+        EntityContainer="T_MC_Verkoopkansen" />
       <DisplayName
         Value="VerkoopkansenProjecten" />
     </Screen.Attributes>

@@ -34,8 +34,8 @@
       Name="T_MC_Contactpersonen"
       EntityContainer="T_MC_Contactpersonen" />
     <EntityContainerGroupProperty
-      Name="T_MC_DevData"
-      EntityContainer="T_MC_DevData" />
+      Name="T_MC_Verkoopkansen"
+      EntityContainer="T_MC_Verkoopkansen" />
   </EntityContainerGroup>
   <GlobalAttributeGroup>
     <GlobalAttributeGroup.Attributes>
@@ -53,5 +53,8 @@
     <ApplicationNavigationMethodLink
       Name="link2"
       Method="!module/Methods[showBrowseVerkoopkansenProjectens]" />
+    <ApplicationNavigationMethodLink
+      Name="link3"
+      Method="!module/Methods[showBrowseNietActieveBedrijven]" />
   </Application.NavigationItems>
 </Application>

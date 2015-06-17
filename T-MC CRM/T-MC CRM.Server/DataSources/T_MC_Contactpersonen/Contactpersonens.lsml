@@ -525,7 +525,7 @@
     VirtualAssociation="VerkoopkansenProjecten_Contactpersonen">
     <VirtualAssociationSetEnd
       Name="VerkoopkansenProjecten"
-      EntityContainer="T_MC_DevData"
+      EntityContainer="T_MC_Verkoopkansen"
       EntitySet="VerkoopkansenProjectens">
       <VirtualAssociationSetEndProperty
         EntityProperty="Opdrachtgever" />

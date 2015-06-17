@@ -407,7 +407,7 @@
     </AssociationEnd>
   </Association>
   <EntityContainer
-    Name="T_MC_DevData">
+    Name="T_MC_Verkoopkansen">
     <EntityContainer.Attributes>
       <Partial />
     </EntityContainer.Attributes>
@@ -543,7 +543,7 @@
     </QueryOperation>
   </EntityContainer>
   <DataService
-    Name="T_MC_DevDataDataService">
+    Name="T_MC_VerkoopkansenDataService">
     <DataService.Attributes>
       <Partial />
     </DataService.Attributes>
@@ -665,14 +665,14 @@
           Name="LijstMetGebruikersgegevensItem_GemaaktDoor"
           Association="LijstMetGebruikersgegevensItem_GemaaktDoor3" />
         <CsdlAssociationSetEnd
-          End="T_MC_DevData/Members[LijstMetGebruikersgegevensItem_GemaaktDoor]/Members[GemaaktDoor]">
+          End="T_MC_Verkoopkansen/Members[LijstMetGebruikersgegevensItem_GemaaktDoor]/Members[GemaaktDoor]">
           <CsdlAssociationSetEnd.Attributes>
             <CsdlPropertyRef
               Name="Id" />
           </CsdlAssociationSetEnd.Attributes>
         </CsdlAssociationSetEnd>
         <CsdlAssociationSetEnd
-          End="T_MC_DevData/Members[LijstMetGebruikersgegevensItem_GemaaktDoor]/Members[LijstMetGebruikersgegevensItem]">
+          End="T_MC_Verkoopkansen/Members[LijstMetGebruikersgegevensItem_GemaaktDoor]/Members[LijstMetGebruikersgegevensItem]">
           <CsdlAssociationSetEnd.Attributes>
             <CsdlPropertyRef
               Name="GemaaktDoorId" />
@@ -687,14 +687,14 @@
           Name="LijstMetGebruikersgegevensItem_GewijzigdDoor"
           Association="LijstMetGebruikersgegevensItem_GewijzigdDoor3" />
         <CsdlAssociationSetEnd
-          End="T_MC_DevData/Members[LijstMetGebruikersgegevensItem_GewijzigdDoor]/Members[GewijzigdDoor]">
+          End="T_MC_Verkoopkansen/Members[LijstMetGebruikersgegevensItem_GewijzigdDoor]/Members[GewijzigdDoor]">
           <CsdlAssociationSetEnd.Attributes>
             <CsdlPropertyRef
               Name="Id" />
           </CsdlAssociationSetEnd.Attributes>
         </CsdlAssociationSetEnd>
         <CsdlAssociationSetEnd
-          End="T_MC_DevData/Members[LijstMetGebruikersgegevensItem_GewijzigdDoor]/Members[LijstMetGebruikersgegevensItem]">
+          End="T_MC_Verkoopkansen/Members[LijstMetGebruikersgegevensItem_GewijzigdDoor]/Members[LijstMetGebruikersgegevensItem]">
           <CsdlAssociationSetEnd.Attributes>
             <CsdlPropertyRef
               Name="GewijzigdDoorId" />
@@ -709,14 +709,14 @@
           Name="VerkoopkansenProjectenItem_GemaaktDoor"
           Association="VerkoopkansenProjectenItem_GemaaktDoor" />
         <CsdlAssociationSetEnd
-          End="T_MC_DevData/Members[VerkoopkansenProjectenItem_GemaaktDoor]/Members[GemaaktDoor]">
+          End="T_MC_Verkoopkansen/Members[VerkoopkansenProjectenItem_GemaaktDoor]/Members[GemaaktDoor]">
           <CsdlAssociationSetEnd.Attributes>
             <CsdlPropertyRef
               Name="Id" />
           </CsdlAssociationSetEnd.Attributes>
         </CsdlAssociationSetEnd>
         <CsdlAssociationSetEnd
-          End="T_MC_DevData/Members[VerkoopkansenProjectenItem_GemaaktDoor]/Members[VerkoopkansenProjectenItem]">
+          End="T_MC_Verkoopkansen/Members[VerkoopkansenProjectenItem_GemaaktDoor]/Members[VerkoopkansenProjectenItem]">
           <CsdlAssociationSetEnd.Attributes>
             <CsdlPropertyRef
               Name="GemaaktDoorId" />
@@ -731,14 +731,14 @@
           Name="VerkoopkansenProjectenItem_GewijzigdDoor"
           Association="VerkoopkansenProjectenItem_GewijzigdDoor" />
         <CsdlAssociationSetEnd
-          End="T_MC_DevData/Members[VerkoopkansenProjectenItem_GewijzigdDoor]/Members[GewijzigdDoor]">
+          End="T_MC_Verkoopkansen/Members[VerkoopkansenProjectenItem_GewijzigdDoor]/Members[GewijzigdDoor]">
           <CsdlAssociationSetEnd.Attributes>
             <CsdlPropertyRef
               Name="Id" />
           </CsdlAssociationSetEnd.Attributes>
         </CsdlAssociationSetEnd>
         <CsdlAssociationSetEnd
-          End="T_MC_DevData/Members[VerkoopkansenProjectenItem_GewijzigdDoor]/Members[VerkoopkansenProjectenItem]">
+          End="T_MC_Verkoopkansen/Members[VerkoopkansenProjectenItem_GewijzigdDoor]/Members[VerkoopkansenProjectenItem]">
           <CsdlAssociationSetEnd.Attributes>
             <CsdlPropertyRef
               Name="GewijzigdDoorId" />

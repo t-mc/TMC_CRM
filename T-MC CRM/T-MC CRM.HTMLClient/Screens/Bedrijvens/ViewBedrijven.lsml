@@ -52,7 +52,8 @@
                 <ContentItem
                   Name="Bedrijfsnaam"
                   Kind="Value"
-                  DataType=":String?">
+                  DataType=":String?"
+                  View="Microsoft.LightSwitch.MobileWeb:Text">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
@@ -65,7 +66,8 @@
                 <ContentItem
                   Name="PrimairContact"
                   Kind="Value"
-                  DataType=":String?">
+                  DataType=":String?"
+                  View="Microsoft.LightSwitch.MobileWeb:Text">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
@@ -156,8 +158,10 @@
                 Kind="Group">
                 <ContentItem
                   Name="MoederAccount"
+                  IsHidden="True"
                   Kind="Value"
-                  DataType=":String?">
+                  DataType=":String?"
+                  View="Microsoft.LightSwitch.MobileWeb:Text">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
@@ -278,7 +282,8 @@
                 <ContentItem
                   Name="Adrestype"
                   Kind="Value"
-                  DataType=":String?">
+                  DataType=":String?"
+                  View="Microsoft.LightSwitch.MobileWeb:Text">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
@@ -404,6 +409,16 @@
                         Member="ViewBedrijven/Properties[Adressens]" />
                       <CallExpression
                         Target="viewSelected" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+                <ControlPropertySource
+                  Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[WidthSizingMode]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        Value="FitToContent"
+                        ResultType=":String" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ControlPropertySource>
@@ -689,6 +704,170 @@
               </ContentItem>
             </ContentItem.CommandItems>
           </ContentItem>
+          <ContentItem
+            Name="Group2"
+            Kind="Group">
+            <ContentItem.Attributes>
+              <DisplayName
+                Value="Verkoopkansen / projecten" />
+            </ContentItem.Attributes>
+            <ContentItem
+              Name="VerkoopkansenProjectens"
+              Kind="Collection"
+              DataType="CollectionView$VerkoopkansenProjecten"
+              View="Microsoft.LightSwitch.MobileWeb:TileList">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="Verkoopkansen Projecten" />
+              </ContentItem.Attributes>
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="ViewBedrijven/Properties[VerkoopkansenProjectens]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+              <ContentItem
+                Name="VerkoopkansenProjectensTemplate"
+                Kind="Details"
+                DataType="VerkoopkansenProjecten">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression />
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+                <ContentItem
+                  Name="Projectcode"
+                  Kind="Value"
+                  DataType=":String?">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="VerkoopkansenProjecten/Properties[Projectcode]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="Omschrijving"
+                  Kind="Value"
+                  DataType=":String?">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="VerkoopkansenProjecten/Properties[Omschrijving]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="Bedrijfsnaam1"
+                  Kind="Value"
+                  DataType=":String?">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="VerkoopkansenProjecten/Properties[Bedrijfsnaam]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="Opdrachtgever"
+                  Kind="Value"
+                  DataType=":String?">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="VerkoopkansenProjecten/Properties[Opdrachtgever]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="Klantpartner1"
+                  Kind="Value"
+                  DataType=":Person?">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="VerkoopkansenProjecten/Properties[Klantpartner]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+              </ContentItem>
+              <ContentItem.PropertySources>
+                <ControlPropertySource
+                  Property="Microsoft.LightSwitch.MobileWeb:RootCollectionControl/Properties[ItemTap]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <CallExpression
+                        Target="!module/Methods[showViewVerkoopkansenProjecten]">
+                        <CallExpression.Attributes>
+                          <AssociatedCollection
+                            Collection="ViewBedrijven/Properties[VerkoopkansenProjectens]" />
+                        </CallExpression.Attributes>
+                        <ArgumentExpression
+                          Parameter="VerkoopkansenProjecten">
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="ViewBedrijven/Properties[VerkoopkansenProjectens]" />
+                            <MemberExpression
+                              Member="selectedItem" />
+                          </ChainExpression>
+                        </ArgumentExpression>
+                      </CallExpression>
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+              </ContentItem.PropertySources>
+            </ContentItem>
+            <ContentItem.CommandItems>
+              <ContentItem
+                Name="AddVerkoopkansenProjecten"
+                Kind="Command">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Nieuw project" />
+                </ContentItem.Attributes>
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <CallExpression
+                          Target="!module/Methods[showAddEditVerkoopkansenProjecten]">
+                          <CallExpression.Attributes>
+                            <AssociatedCollection
+                              Collection="ViewBedrijven/Properties[VerkoopkansenProjectens]" />
+                            <CreateNewEntity
+                              TargetParameter="!module/Methods[showAddEditVerkoopkansenProjecten]/Parameters[VerkoopkansenProjecten]" />
+                          </CallExpression.Attributes>
+                        </CallExpression>
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.MobileWeb:RootCommand/Properties[Icon]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          Value="msls-add"
+                          ResultType=":String" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
+              </ContentItem>
+            </ContentItem.CommandItems>
+          </ContentItem>
           <ContentItem.PropertySources>
             <ControlPropertySource
               Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[BrowseOnly]">
@@ -807,6 +986,36 @@
           <ChainExpression>
             <CallExpression
               Target="ViewBedrijven/Properties[Contactpersonens]/Query" />
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenCollectionProperty>
+      <ScreenCollectionProperty
+        Name="VerkoopkansenProjectens"
+        PageSize="45"
+        PropertyType="CollectionView$VerkoopkansenProjecten">
+        <ScreenCollectionProperty.Query>
+          <ScreenQueryDefinition
+            Name="VerkoopkansenProjectensQuery"
+            ReturnType="VerkoopkansenProjecten*">
+            <ScreenQueryDefinition.FilterExpression>
+              <QueryFilterExpressionTree />
+            </ScreenQueryDefinition.FilterExpression>
+            <ScreenQueryDefinition.Source>
+              <QuerySourceExpressionTree>
+                <ChainExpression>
+                  <MemberExpression
+                    Member="ViewBedrijven/Properties[Bedrijven]" />
+                  <MemberExpression
+                    Member="VerkoopkansenProjectens" />
+                </ChainExpression>
+              </QuerySourceExpressionTree>
+            </ScreenQueryDefinition.Source>
+          </ScreenQueryDefinition>
+        </ScreenCollectionProperty.Query>
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="ViewBedrijven/Properties[VerkoopkansenProjectens]/Query" />
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
