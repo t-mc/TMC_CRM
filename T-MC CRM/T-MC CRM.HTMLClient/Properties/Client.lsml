@@ -54,7 +54,13 @@
       Name="link2"
       Method="!module/Methods[showBrowseVerkoopkansenProjectens]" />
     <ApplicationNavigationMethodLink
+      Name="link4"
+      Method="!module/Methods[showBrowseOrders]" />
+    <ApplicationNavigationMethodLink
       Name="link3"
       Method="!module/Methods[showBrowseNietActieveBedrijven]" />
+    <ApplicationNavigationMethodLink
+      Name="link5"
+      Method="!module/Methods[showBrowseBedrijvenOpNaam]" />
   </Application.NavigationItems>
 </Application>

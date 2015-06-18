@@ -82,6 +82,9 @@
     <Content Include="Screens\Contactpersonens\ViewContactpersonen.lsml.js">
       <DependentUpon>ViewContactpersonen.lsml</DependentUpon>
     </Content>
+    <Content Include="Screens\VerkoopkansenProjectens\AddEditVerkoopkansenProjecten.lsml.js">
+      <DependentUpon>AddEditVerkoopkansenProjecten.lsml</DependentUpon>
+    </Content>
     <Content Include="Screens\VerkoopkansenProjectens\ViewVerkoopkansenProjecten.lsml.js">
       <DependentUpon>ViewVerkoopkansenProjecten.lsml</DependentUpon>
     </Content>
@@ -117,7 +120,9 @@
     <LightSwitchModel Include="Screens\Bedrijvens\AddEditBedrijven.lsml" />
     <LightSwitchModel Include="Screens\Bedrijvens\BrowseBedrijvens.lsml" />
     <LightSwitchModel Include="Screens\Bedrijvens\ViewBedrijven.lsml" />
+    <LightSwitchModel Include="Screens\BrowseBedrijvenOpNaam.lsml" />
     <LightSwitchModel Include="Screens\BrowseNietActieveBedrijven.lsml" />
+    <LightSwitchModel Include="Screens\BrowseOrders.lsml" />
     <LightSwitchModel Include="Screens\Contactpersonens\AddEditContactpersonen.lsml" />
     <LightSwitchModel Include="Screens\Contactpersonens\BrowseContactpersonens.lsml" />
     <LightSwitchModel Include="Screens\Contactpersonens\ViewContactpersonen.lsml" />

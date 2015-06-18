@@ -79,6 +79,10 @@
                   Name="Telefoonnummer"
                   Kind="Value"
                   DataType="Microsoft.LightSwitch.Extensions:PhoneNumber?">
+                  <ContentItem.Attributes>
+                    <Description
+                      Value="Voer telefoonnummer in als +LL NNN AAAAAA" />
+                  </ContentItem.Attributes>
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>

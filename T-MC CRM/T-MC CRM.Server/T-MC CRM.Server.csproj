@@ -284,6 +284,15 @@
     <LightSwitchModel Include="DataSources\T_MC_Verkoopkansen\FilteredVerkoopKans.lsml">
       <DependentUpon>VerkoopkansenProjectens.lsml</DependentUpon>
     </LightSwitchModel>
+    <LightSwitchModel Include="DataSources\T_MC_Verkoopkansen\Orders.lsml">
+      <DependentUpon>VerkoopkansenProjectens.lsml</DependentUpon>
+    </LightSwitchModel>
+    <LightSwitchModel Include="DataSources\T_MC_Verkoopkansen\Verkoopkansen.lsml">
+      <DependentUpon>VerkoopkansenProjectens.lsml</DependentUpon>
+    </LightSwitchModel>
+    <LightSwitchModel Include="DataSources\T_MC_Bedrijven\BedrijvenOpNaam.lsml">
+      <DependentUpon>Bedrijvens.lsml</DependentUpon>
+    </LightSwitchModel>
     <None Include="Properties\PublishProfiles\LightSwitch.SharePoint.ProviderHosted.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

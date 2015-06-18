@@ -140,6 +140,7 @@
                 </ContentItem>
                 <ContentItem
                   Name="Verkoopkans"
+                  IsHidden="True"
                   Kind="Value"
                   DataType=":Double?">
                   <ContentItem.DataSource>

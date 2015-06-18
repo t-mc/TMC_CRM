@@ -10,7 +10,7 @@
       <SaveChangesTo
         EntityContainer="T_MC_Verkoopkansen" />
       <DisplayName
-        Value="Verkoopkansen en Projecten" />
+        Value="Verkoopkansen" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem
@@ -144,6 +144,19 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
+                  Name="Klantpartner"
+                  Kind="Value"
+                  DataType=":Person?">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="VerkoopkansenProjecten/Properties[Klantpartner]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
                   Name="Verkoopstadium"
                   Kind="Value"
                   DataType=":String?">
@@ -263,32 +276,6 @@
                   </ControlPropertySource>
                 </ContentItem.PropertySources>
               </ContentItem>
-              <ContentItem
-                Name="ShowGroup"
-                Kind="Command">
-                <ContentItem.Attributes>
-                  <DisplayName
-                    Value="Filter verkoopstadium" />
-                </ContentItem.Attributes>
-                <ContentItem.PropertySources>
-                  <ControlPropertySource
-                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <CallExpression
-                          Target="BrowseVerkoopkansenProjectens/Methods[showDialog]">
-                          <ArgumentExpression
-                            Parameter="dialogName">
-                            <ConstantExpression
-                              Value="Group"
-                              ResultType=":String" />
-                          </ArgumentExpression>
-                        </CallExpression>
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ControlPropertySource>
-                </ContentItem.PropertySources>
-              </ContentItem>
             </ContentItem.CommandItems>
           </ContentItem>
           <ContentItem.PropertySources>
@@ -307,29 +294,7 @@
         <ContentItem
           Name="Popups"
           Kind="Group"
-          View="Microsoft.LightSwitch.MobileWeb:DialogPages">
-          <ContentItem
-            Name="Group"
-            Kind="Group">
-            <ContentItem.Attributes>
-              <DisplayName
-                Value="Filter" />
-            </ContentItem.Attributes>
-            <ContentItem
-              Name="VerkoopkansenProjectenVerkoopstadium"
-              Kind="Value"
-              DataType=":String?">
-              <ContentItem.DataSource>
-                <ScreenExpressionTree>
-                  <ChainExpression>
-                    <MemberExpression
-                      Member="BrowseVerkoopkansenProjectens/Properties[VerkoopkansenProjectenVerkoopstadium]" />
-                  </ChainExpression>
-                </ScreenExpressionTree>
-              </ContentItem.DataSource>
-            </ContentItem>
-          </ContentItem>
-        </ContentItem>
+          View="Microsoft.LightSwitch.MobileWeb:DialogPages" />
       </ContentItem>
     </Screen.RootContentItem>
     <Screen.Methods>
@@ -371,7 +336,7 @@
             <ScreenQueryDefinition.Source>
               <QuerySourceExpressionTree>
                 <MemberExpression
-                  Member="T_MC_Verkoopkansen/Members[FilteredVerkoopKans]" />
+                  Member="T_MC_Verkoopkansen/Members[Verkoopkansen]" />
               </QuerySourceExpressionTree>
             </ScreenQueryDefinition.Source>
           </ScreenQueryDefinition>
@@ -379,15 +344,7 @@
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="BrowseVerkoopkansenProjectens/Properties[VerkoopkansenProjectens]/Query">
-              <ArgumentExpression
-                Parameter="Verkoopstadium">
-                <ChainExpression>
-                  <MemberExpression
-                    Member="BrowseVerkoopkansenProjectens/Properties[VerkoopkansenProjectenVerkoopstadium]" />
-                </ChainExpression>
-              </ArgumentExpression>
-            </CallExpression>
+              Target="BrowseVerkoopkansenProjectens/Properties[VerkoopkansenProjectens]/Query" />
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
