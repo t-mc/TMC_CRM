@@ -14,4 +14,3 @@ myapp.ViewBedrijven.DeleteAdres_execute = function (screen) {
 
 };
 
-

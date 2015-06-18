@@ -25,7 +25,7 @@
             <ContentItem
               Name="BedrijvenBedrijfsnaam"
               Kind="Value"
-              DataType=":String">
+              DataType=":String?">
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
                   <ChainExpression>
@@ -232,7 +232,7 @@
       </ScreenCollectionProperty>
       <ScreenProperty
         Name="BedrijvenBedrijfsnaam"
-        PropertyType=":String" />
+        PropertyType=":String?" />
     </Screen.Properties>
   </Screen>
   <Application.Methods>

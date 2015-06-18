@@ -349,7 +349,7 @@
             <ContentItem
               Name="Contactpersonen_OneNote"
               Kind="Value"
-              DataType=":String?">
+              DataType="Microsoft.LightSwitch.Extensions:WebAddress?">
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
                   <ChainExpression>

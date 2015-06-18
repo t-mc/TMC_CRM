@@ -121,6 +121,7 @@
     <LightSwitchModel Include="Screens\Bedrijvens\BrowseBedrijvens.lsml" />
     <LightSwitchModel Include="Screens\Bedrijvens\ViewBedrijven.lsml" />
     <LightSwitchModel Include="Screens\BrowseBedrijvenOpNaam.lsml" />
+    <LightSwitchModel Include="Screens\BrowseBedrijvenOpNaam1.lsml" />
     <LightSwitchModel Include="Screens\BrowseNietActieveBedrijven.lsml" />
     <LightSwitchModel Include="Screens\BrowseOrders.lsml" />
     <LightSwitchModel Include="Screens\Contactpersonens\AddEditContactpersonen.lsml" />

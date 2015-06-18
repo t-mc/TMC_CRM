@@ -174,42 +174,6 @@
             </ContentItem>
             <ContentItem.CommandItems>
               <ContentItem
-                Name="AddContactpersonen"
-                Kind="Command">
-                <ContentItem.Attributes>
-                  <DisplayName
-                    Value="Voeg contact toe" />
-                </ContentItem.Attributes>
-                <ContentItem.PropertySources>
-                  <ControlPropertySource
-                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <CallExpression
-                          Target="!module/Methods[showAddEditContactpersonen]">
-                          <CallExpression.Attributes>
-                            <AssociatedCollection
-                              Collection="BrowseContactpersonens/Properties[Contactpersonens]" />
-                            <CreateNewEntity
-                              TargetParameter="!module/Methods[showAddEditContactpersonen]/Parameters[Contactpersonen]" />
-                          </CallExpression.Attributes>
-                        </CallExpression>
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ControlPropertySource>
-                  <ControlPropertySource
-                    Property="Microsoft.LightSwitch.MobileWeb:RootCommand/Properties[Icon]">
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <ConstantExpression
-                          Value="msls-add"
-                          ResultType="Microsoft.LightSwitch:String" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ControlPropertySource>
-                </ContentItem.PropertySources>
-              </ContentItem>
-              <ContentItem
                 Name="SearchContactpersonens"
                 Kind="Command">
                 <ContentItem.Attributes>

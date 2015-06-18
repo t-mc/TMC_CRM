@@ -152,10 +152,12 @@
       </EntityProperty>
       <EntityProperty
         Name="OneNote"
-        PropertyType=":String?">
+        PropertyType="Microsoft.LightSwitch.Extensions:WebAddress?">
         <EntityProperty.Attributes>
           <DisplayName
             Value="OneNote" />
+          <MaxLength
+            Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
