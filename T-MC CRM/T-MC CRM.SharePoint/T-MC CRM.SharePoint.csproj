@@ -23,7 +23,7 @@
     <CspkgPartId>{f5383842-e118-4ffc-b2de-6c3ba388c51b}</CspkgPartId>
     <SqlPackagePartId>{4bc18d28-a239-4bc8-94d6-d5f7e9f2241d}</SqlPackagePartId>
     <LightSwitchProjectTypeV45>SharePoint</LightSwitchProjectTypeV45>
-    <DefaultLanguage>en-US</DefaultLanguage>
+    <DefaultLanguage>en-us</DefaultLanguage>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

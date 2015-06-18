@@ -334,6 +334,10 @@
                   Name="Group"
                   Kind="Group"
                   View="Microsoft.LightSwitch.MobileWeb:ColumnsLayout">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Postcode - Plaats" />
+                  </ContentItem.Attributes>
                   <ContentItem
                     Name="Postcode"
                     Kind="Value"
@@ -372,6 +376,18 @@
                       </ScreenExpressionTree>
                     </ContentItem.DataSource>
                   </ContentItem>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[WidthSizingMode]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            Value="FitToContent"
+                            ResultType=":String" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
                 </ContentItem>
                 <ContentItem
                   Name="Land"

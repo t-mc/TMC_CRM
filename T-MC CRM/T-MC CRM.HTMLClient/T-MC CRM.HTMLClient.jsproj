@@ -26,8 +26,8 @@
     <LightSwitchProjectTypeV45>Client</LightSwitchProjectTypeV45>
     <LightSwitchProjectSubType>JScript</LightSwitchProjectSubType>
     <ProjectTypeGuids>{8BB0C5E8-0616-4F60-8E55-A43933E57E9C};{262852c6-cd72-467d-83fe-5eeb1973a190}</ProjectTypeGuids>
-    <DefaultLanguage>en-US</DefaultLanguage>
-    <SupportedCultures>en-US</SupportedCultures>
+    <DefaultLanguage>en-us</DefaultLanguage>
+    <SupportedCultures>en-us</SupportedCultures>
     <DefaultPlatform>AnyCPU</DefaultPlatform>
     <ClientProjectName>HTMLClient</ClientProjectName>
     <ServerProjectReference>..\T-MC CRM.Server\T-MC CRM.Server.csproj</ServerProjectReference>

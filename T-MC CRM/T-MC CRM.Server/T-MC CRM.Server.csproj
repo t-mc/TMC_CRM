@@ -15,8 +15,8 @@
     <AssemblyName>Application.Server</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <LightSwitchVersion>v4.5</LightSwitchVersion>
-    <DefaultLanguage>en-US</DefaultLanguage>
-    <SupportedCultures>en-US</SupportedCultures>
+    <DefaultLanguage>en-us</DefaultLanguage>
+    <SupportedCultures>en-us</SupportedCultures>
     <FileAlignment>512</FileAlignment>
     <IgnoreDeployManagedRuntimeVersion>True</IgnoreDeployManagedRuntimeVersion>
     <UseDeclareParametersXMLInMsDeploy>False</UseDeclareParametersXMLInMsDeploy>
@@ -46,6 +46,7 @@
     <WarningLevel>4</WarningLevel>
     <UseDesignTimeFeatures>true</UseDesignTimeFeatures>
     <NoWarn>1522</NoWarn>
+    <IncludeIisSettings>false</IncludeIisSettings>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -326,7 +327,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:49198/</IISUrl>
+          <IISUrl>http://localhost:55412/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
