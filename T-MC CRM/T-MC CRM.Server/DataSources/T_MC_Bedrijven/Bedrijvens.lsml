@@ -109,6 +109,12 @@
           <DisplayName
             Value="Actief" />
           <NotSearchable />
+          <SupportedValue
+            DisplayName="Actief"
+            Value="True" />
+          <SupportedValue
+            DisplayName="Niet actief"
+            Value="False" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <KeyProperty

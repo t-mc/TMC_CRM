@@ -167,6 +167,12 @@
           <DisplayName
             Value="Nieuwsbrief" />
           <NotSearchable />
+          <SupportedValue
+            DisplayName="Ja"
+            Value="True" />
+          <SupportedValue
+            DisplayName="Nee"
+            Value="False" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -176,6 +182,12 @@
           <DisplayName
             Value="Actief" />
           <NotSearchable />
+          <SupportedValue
+            DisplayName="Actief"
+            Value="True" />
+          <SupportedValue
+            DisplayName="Niet actief"
+            Value="False" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty

@@ -75,45 +75,6 @@
               </ContentItem>
             </ContentItem>
             <ContentItem
-              Name="Group2"
-              Kind="Group"
-              View="Microsoft.LightSwitch.MobileWeb:ColumnsLayout">
-              <ContentItem.Attributes>
-                <DisplayName
-                  Value="Positie" />
-              </ContentItem.Attributes>
-              <ContentItem
-                Name="Afdeling"
-                Kind="Value"
-                DataType=":String?">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="ViewContactpersonen/Properties[Contactpersonen]" />
-                      <MemberExpression
-                        Member="Afdeling" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-              <ContentItem
-                Name="Functie"
-                Kind="Value"
-                DataType=":String?">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="ViewContactpersonen/Properties[Contactpersonen]" />
-                      <MemberExpression
-                        Member="Functie" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-            </ContentItem>
-            <ContentItem
               Name="Group1"
               Kind="Group"
               View="Microsoft.LightSwitch.MobileWeb:ColumnsLayout">
@@ -237,6 +198,45 @@
                   </ScreenExpressionTree>
                 </ControlPropertySource>
               </ContentItem.PropertySources>
+            </ContentItem>
+            <ContentItem
+              Name="Group2"
+              Kind="Group"
+              View="Microsoft.LightSwitch.MobileWeb:ColumnsLayout">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="Positie" />
+              </ContentItem.Attributes>
+              <ContentItem
+                Name="Afdeling"
+                Kind="Value"
+                DataType=":String?">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="ViewContactpersonen/Properties[Contactpersonen]" />
+                      <MemberExpression
+                        Member="Afdeling" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="Functie"
+                Kind="Value"
+                DataType=":String?">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="ViewContactpersonen/Properties[Contactpersonen]" />
+                      <MemberExpression
+                        Member="Functie" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
             </ContentItem>
             <ContentItem
               Name="Group"
@@ -373,7 +373,7 @@
                 Name="Nieuwsbrief"
                 Kind="Value"
                 DataType=":Boolean?"
-                View="Microsoft.LightSwitch.MobileWeb:FlipSwitchControl">
+                View="Microsoft.LightSwitch.MobileWeb:Text">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
@@ -389,7 +389,7 @@
                 Name="Actief"
                 Kind="Value"
                 DataType=":Boolean?"
-                View="Microsoft.LightSwitch.MobileWeb:FlipSwitchControl">
+                View="Microsoft.LightSwitch.MobileWeb:Text">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>

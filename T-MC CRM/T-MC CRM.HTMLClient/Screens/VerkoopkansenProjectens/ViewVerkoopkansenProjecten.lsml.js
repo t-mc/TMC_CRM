@@ -12,7 +12,7 @@ myapp.ViewVerkoopkansenProjecten.Details_postRender = function (element, content
 
 myapp.ViewVerkoopkansenProjecten.DeleteVerkoopkans_execute = function (screen) {
     // Write code here.
-    var bevestig = confirm("Weet je zeker dat je deze contactpersoon wilt verwijderen?");
+    var bevestig = confirm("Weet je zeker dat je deze verkoopkans wilt verwijderen?");
 
     if (bevestig == true) {
         screen.VerkoopkansenProjecten.deleteEntity();

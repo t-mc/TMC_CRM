@@ -24,6 +24,7 @@
     <SqlPackagePartId>{4bc18d28-a239-4bc8-94d6-d5f7e9f2241d}</SqlPackagePartId>
     <LightSwitchProjectTypeV45>SharePoint</LightSwitchProjectTypeV45>
     <DefaultLanguage>en-us</DefaultLanguage>
+    <ActivePublishProfile>LightSwitchProfile</ActivePublishProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

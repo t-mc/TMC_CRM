@@ -204,6 +204,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataSources\T_MC_Bedrijven\Bedrijven.lsml.cs">
+      <DependentUpon>Bedrijvens.lsml</DependentUpon>
+    </Compile>
+    <Compile Include="DataSources\T_MC_Contactpersonen\Contactpersonen.lsml.cs">
+      <DependentUpon>Contactpersonens.lsml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\T_MC_Adressen.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -327,7 +333,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:55412/</IISUrl>
+          <IISUrl>http://localhost:49442/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

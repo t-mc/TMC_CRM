@@ -120,7 +120,7 @@
                   Name="Actief"
                   Kind="Value"
                   DataType=":Boolean?"
-                  View="Microsoft.LightSwitch.MobileWeb:FlipSwitchControl">
+                  View="Microsoft.LightSwitch.MobileWeb:Text">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
@@ -182,6 +182,18 @@
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.SharePoint.MobileWeb:PersonViewer/Properties[DisplayMode]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            Value="NameWithPictureAndTitle"
+                            ResultType=":String" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
                 </ContentItem>
                 <ContentItem
                   Name="EmailAdres"
