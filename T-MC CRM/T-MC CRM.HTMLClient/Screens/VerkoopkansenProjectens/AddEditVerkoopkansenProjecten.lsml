@@ -100,14 +100,7 @@
                       <ScreenExpressionTree>
                         <ChainExpression>
                           <CallExpression
-                            Target="AddEditVerkoopkansenProjecten/Methods[showDialog]">
-                            <ArgumentExpression
-                              Parameter="dialogName">
-                              <ConstantExpression
-                                Value="ZoekBedrijf"
-                                ResultType=":String" />
-                            </ArgumentExpression>
-                          </CallExpression>
+                            Target="AddEditVerkoopkansenProjecten/Methods[Bedrijfsnaam_Tap]" />
                         </ChainExpression>
                       </ScreenExpressionTree>
                     </ControlPropertySource>
@@ -971,6 +964,8 @@
         Name="Contactpersonens_ItemTap" />
       <ScreenMethod
         Name="Opdrachtgever_Tap" />
+      <ScreenMethod
+        Name="Bedrijfsnaam_Tap" />
     </Screen.Methods>
     <Screen.Properties>
       <ScreenProperty
@@ -1051,6 +1046,13 @@
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
+      <ScreenProperty
+        Name="GekozenBedrijf"
+        PropertyType=":String">
+        <ScreenProperty.Attributes>
+          <Required />
+        </ScreenProperty.Attributes>
+      </ScreenProperty>
       <ScreenProperty
         Name="prmBedrijfsnaam"
         PropertyType=":String?">

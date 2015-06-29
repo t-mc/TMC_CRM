@@ -239,6 +239,31 @@
                   </ContentItem>
                 </ContentItem>
                 <ContentItem
+                  Name="Bedrijfsnaam"
+                  Kind="Value"
+                  DataType=":String?"
+                  View="Microsoft.LightSwitch.MobileWeb:Text">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Contactpersonen/Properties[Bedrijfsnaam]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <CallExpression
+                            Target="AddEditContactpersonen/Methods[Bedrijfsnaam_Tap]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
+                </ContentItem>
+                <ContentItem
                   Name="Standplaats"
                   Kind="Value"
                   DataType=":String?">
@@ -258,7 +283,8 @@
                   <ContentItem
                     Name="Assistent"
                     Kind="Value"
-                    DataType=":String?">
+                    DataType=":String?"
+                    View="Microsoft.LightSwitch.MobileWeb:Text">
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression>
@@ -267,11 +293,23 @@
                         </ChainExpression>
                       </ScreenExpressionTree>
                     </ContentItem.DataSource>
+                    <ContentItem.PropertySources>
+                      <ControlPropertySource
+                        Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
+                        <ScreenExpressionTree>
+                          <ChainExpression>
+                            <CallExpression
+                              Target="AddEditContactpersonen/Methods[Assistent_Tap]" />
+                          </ChainExpression>
+                        </ScreenExpressionTree>
+                      </ControlPropertySource>
+                    </ContentItem.PropertySources>
                   </ContentItem>
                   <ContentItem
                     Name="Manager"
                     Kind="Value"
-                    DataType=":String?">
+                    DataType=":String?"
+                    View="Microsoft.LightSwitch.MobileWeb:Text">
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression>
@@ -280,6 +318,17 @@
                         </ChainExpression>
                       </ScreenExpressionTree>
                     </ContentItem.DataSource>
+                    <ContentItem.PropertySources>
+                      <ControlPropertySource
+                        Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
+                        <ScreenExpressionTree>
+                          <ChainExpression>
+                            <CallExpression
+                              Target="AddEditContactpersonen/Methods[Manager_Tap]" />
+                          </ChainExpression>
+                        </ScreenExpressionTree>
+                      </ControlPropertySource>
+                    </ContentItem.PropertySources>
                   </ContentItem>
                 </ContentItem>
                 <ContentItem
@@ -403,6 +452,12 @@
           Name="dialogName"
           ParameterType=":String" />
       </ScreenMethod>
+      <ScreenMethod
+        Name="Bedrijfsnaam_Tap" />
+      <ScreenMethod
+        Name="Assistent_Tap" />
+      <ScreenMethod
+        Name="Manager_Tap" />
     </Screen.Methods>
     <Screen.Properties>
       <ScreenProperty

@@ -5,12 +5,10 @@
     <Partial />
   </Application.Attributes>
   <Screen
-    Name="BrowseContactpersonens">
+    Name="ZoekContact">
     <Screen.Attributes>
       <SaveChangesTo
         EntityContainer="T_MC_Contactpersonen" />
-      <DisplayName
-        Value="Contactpersonen" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem
@@ -25,19 +23,19 @@
             Name="ContactpersonenList"
             Kind="Group">
             <ContentItem
-              Name="Contactpersonens"
+              Name="ActieveContacten"
               Kind="Collection"
               DataType="CollectionView$Contactpersonen"
               View="Microsoft.LightSwitch.MobileWeb:TileList">
               <ContentItem.Attributes>
                 <DisplayName
-                  Value="Contactpersonens" />
+                  Value="ActieveContacten" />
               </ContentItem.Attributes>
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <MemberExpression
-                      Member="BrowseContactpersonens/Properties[Contactpersonens]" />
+                      Member="ZoekContact/Properties[ActieveContacten]" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
@@ -78,60 +76,16 @@
                         </ChainExpression>
                       </ScreenExpressionTree>
                     </ControlPropertySource>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <CallExpression
+                            Target="ZoekContact/Methods[VolledigeNaam_Tap]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
                   </ContentItem.PropertySources>
-                </ContentItem>
-                <ContentItem
-                  Name="Functie"
-                  Kind="Value"
-                  DataType=":String?">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="Contactpersonen/Properties[Functie]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="Telefoonnummer"
-                  Kind="Value"
-                  DataType="Microsoft.LightSwitch.Extensions:PhoneNumber?">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="Contactpersonen/Properties[Telefoonnummer]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="MobielNummer"
-                  Kind="Value"
-                  DataType="Microsoft.LightSwitch.Extensions:PhoneNumber?">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="Contactpersonen/Properties[MobielNummer]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="EmailAdres"
-                  Kind="Value"
-                  DataType="Microsoft.LightSwitch.Extensions:EmailAddress?"
-                  View="Microsoft.LightSwitch.MobileWeb:EmailAddressViewer">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="Contactpersonen/Properties[EmailAdres]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem.PropertySources>
                   <ControlPropertySource
@@ -151,22 +105,10 @@
                   Property="Microsoft.LightSwitch.MobileWeb:RootCollectionControl/Properties[ItemTap]">
                   <ScreenExpressionTree>
                     <ChainExpression>
+                      <MemberExpression
+                        Member="ZoekContact/Properties[ActieveContacten]" />
                       <CallExpression
-                        Target="!module/Methods[showViewContactpersonen]">
-                        <CallExpression.Attributes>
-                          <AssociatedCollection
-                            Collection="BrowseContactpersonens/Properties[Contactpersonens]" />
-                        </CallExpression.Attributes>
-                        <ArgumentExpression
-                          Parameter="Contactpersonen">
-                          <ChainExpression>
-                            <MemberExpression
-                              Member="BrowseContactpersonens/Properties[Contactpersonens]" />
-                            <MemberExpression
-                              Member="selectedItem" />
-                          </ChainExpression>
-                        </ArgumentExpression>
-                      </CallExpression>
+                        Target="viewSelected" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ControlPropertySource>
@@ -174,11 +116,11 @@
             </ContentItem>
             <ContentItem.CommandItems>
               <ContentItem
-                Name="SearchContactpersonens"
+                Name="SearchActieveContacten"
                 Kind="Command">
                 <ContentItem.Attributes>
                   <DisplayName
-                    Value="Zoek contact" />
+                    Value="Search" />
                 </ContentItem.Attributes>
                 <ContentItem.PropertySources>
                   <ControlPropertySource
@@ -186,7 +128,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="BrowseContactpersonens/Properties[Contactpersonens]" />
+                          Member="ZoekContact/Properties[ActieveContacten]" />
                         <CallExpression
                           Target="showSearch" />
                       </ChainExpression>
@@ -199,42 +141,6 @@
                         <ConstantExpression
                           Value="msls-search"
                           ResultType="Microsoft.LightSwitch:String" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ControlPropertySource>
-                </ContentItem.PropertySources>
-              </ContentItem>
-              <ContentItem
-                Name="AddContactpersonen"
-                Kind="Command">
-                <ContentItem.Attributes>
-                  <DisplayName
-                    Value="Nieuw contact" />
-                </ContentItem.Attributes>
-                <ContentItem.PropertySources>
-                  <ControlPropertySource
-                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <CallExpression
-                          Target="!module/Methods[showAddEditContactpersonen]">
-                          <CallExpression.Attributes>
-                            <AssociatedCollection
-                              Collection="BrowseContactpersonens/Properties[Contactpersonens]" />
-                            <CreateNewEntity
-                              TargetParameter="!module/Methods[showAddEditContactpersonen]/Parameters[Contactpersonen]" />
-                          </CallExpression.Attributes>
-                        </CallExpression>
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ControlPropertySource>
-                  <ControlPropertySource
-                    Property="Microsoft.LightSwitch.MobileWeb:RootCommand/Properties[Icon]">
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <ConstantExpression
-                          Value="msls-add"
-                          ResultType=":String" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ControlPropertySource>
@@ -284,15 +190,17 @@
           Name="dialogName"
           ParameterType=":String" />
       </ScreenMethod>
+      <ScreenMethod
+        Name="VolledigeNaam_Tap" />
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty
-        Name="Contactpersonens"
+        Name="ActieveContacten"
         PageSize="45"
         PropertyType="CollectionView$Contactpersonen">
         <ScreenCollectionProperty.Query>
           <ScreenQueryDefinition
-            Name="ContactpersonensQuery"
+            Name="ActieveContactenQuery"
             ReturnType="Contactpersonen*">
             <ScreenQueryDefinition.FilterExpression>
               <QueryFilterExpressionTree />
@@ -300,23 +208,15 @@
             <ScreenQueryDefinition.Source>
               <QuerySourceExpressionTree>
                 <MemberExpression
-                  Member="T_MC_Contactpersonen/Members[Contactpersonens]" />
+                  Member="T_MC_Contactpersonen/Members[ActieveContacten]" />
               </QuerySourceExpressionTree>
             </ScreenQueryDefinition.Source>
-            <ScreenQueryDefinition.SortCriteria>
-              <SortCriterion>
-                <ChainExpression>
-                  <MemberExpression
-                    Member="VolledigeNaam" />
-                </ChainExpression>
-              </SortCriterion>
-            </ScreenQueryDefinition.SortCriteria>
           </ScreenQueryDefinition>
         </ScreenCollectionProperty.Query>
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="BrowseContactpersonens/Properties[Contactpersonens]/Query" />
+              Target="ZoekContact/Properties[ActieveContacten]/Query" />
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
@@ -324,10 +224,10 @@
   </Screen>
   <Application.Methods>
     <ApplicationMethod
-      Name="showBrowseContactpersonens">
+      Name="showZoekContact">
       <ApplicationMethod.Attributes>
         <ShowScreenMethod
-          TargetScreen="BrowseContactpersonens" />
+          TargetScreen="ZoekContact" />
       </ApplicationMethod.Attributes>
     </ApplicationMethod>
   </Application.Methods>

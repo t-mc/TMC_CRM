@@ -1,4 +1,6 @@
 ﻿/// <reference path="~/GeneratedArtifacts/viewModel.js" />
+var KeuzeBedrijf;
+var KeuzeContact;
 
 myapp.AddEditContactpersonen.beforeApplyChanges = function (screen) {
     // Write code here.
@@ -14,5 +16,58 @@ myapp.AddEditContactpersonen.beforeApplyChanges = function (screen) {
 
 myapp.AddEditContactpersonen.created = function (screen) {
     // Write code here.
+    alert("Koekoek");
+    // Zet default tekst als bedrijfsnaam leeg is.
+//     screen.findContentItem("Volledigenaam")
+//    .dataBind("value.selectedItem", function (newValue) {
+//        if (newValue == screen.Contactpersonen.VolledigeNaam) {
+//            screen.VerkoopkansenProjecten.VolledigeNaam = "< voeg bedrijf in >";
+//        }
+//    });
     screen.Contactpersonen.VolledigeNaam = "Deze niet invullen, wordt automatisch gevuld!";
+    // Zet default tekst als bedrijfsnaam leeg is.
+    screen.findContentItem("Bedrijfsnaam")
+    .dataBind("value.selectedItem", function (newValue) {
+        if (newValue == screen.Contactpersonen.Bedrijfsnaam) {
+            screen.VerkoopkansenProjecten.Bedrijfsnaam = "< voeg bedrijf in >";
+        }
+    });
+    // Zet default tekst als assistent leeg is.
+    screen.findContentItem("Assistent")
+    .dataBind("value.selectedItem", function (newValue) {
+        if (newValue == screen.Contactpersonen.Assistent) {
+            screen.VerkoopkansenProjecten.Opdrachtgever = "< voeg assistent in >";
+        }
+    });
+    // Zet default tekst als manager leeg is.
+    screen.findContentItem("Manager")
+    .dataBind("value.selectedItem", function (newValue) {
+        if (newValue == screen.Contactpersonen.Manager) {
+            screen.VerkoopkansenProjecten.Opdrachtgever = "< voeg manager in >";
+        }
+    });
+};
+myapp.AddEditContactpersonen.Bedrijfsnaam_Tap_execute = function (screen) {
+    // Write code here.
+    myapp.showZoekBedrijf({
+        afterClosed: function () {
+            screen.Contactpersonen.Bedrijfsnaam = KeuzeBedrijf;
+        }
+    });
+};
+myapp.AddEditContactpersonen.Assistent_Tap_execute = function (screen) {
+    // Write code here.
+    myapp.showZoekContact({
+        afterClosed: function () {
+            screen.Contactpersonen.Assistent = KeuzeContact;
+        }
+    });
+};
+myapp.AddEditContactpersonen.Manager_Tap_execute = function (screen) {
+    // Write code here.
+    myapp.showZoekContact({
+        afterClosed: function () {
+            screen.Contactpersonen.Manager = KeuzeContact;
+        }
+    });
 };

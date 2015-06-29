@@ -1,6 +1,7 @@
 ﻿/// <reference path="~/GeneratedArtifacts/viewModel.js" />
 var VerkoopStadium;
-
+var KeuzeBedrijf;
+var KeuzeContact;
 
 myapp.AddEditVerkoopkansenProjecten.beforeApplyChanges = function (screen) {
     // Write code here.
@@ -49,7 +50,6 @@ myapp.AddEditVerkoopkansenProjecten.created = function (screen) {
         if (newValue == screen.VerkoopkansenProjecten.Bedrijfsnaam) {
             screen.VerkoopkansenProjecten.Bedrijfsnaam = "< voeg bedrijf in >";
         }
-
     });
     // Zet default tekst als Opdrachtgever leeg is.
     screen.findContentItem("Opdrachtgever")
@@ -59,7 +59,6 @@ myapp.AddEditVerkoopkansenProjecten.created = function (screen) {
         }
 
     });
-
 };
 myapp.AddEditVerkoopkansenProjecten.BedrijvenOpNaam_ItemTap_execute = function (screen) {
     // Write code here.
@@ -68,5 +67,17 @@ myapp.AddEditVerkoopkansenProjecten.BedrijvenOpNaam_ItemTap_execute = function (
 };
 myapp.AddEditVerkoopkansenProjecten.Opdrachtgever_Tap_execute = function (screen) {
     // Write code here.
-
+    myapp.showZoekContact({
+        afterClosed: function () {
+            screen.VerkoopkansenProjecten.Opdrachtgever = KeuzeContact;
+        }
+    });
+};
+myapp.AddEditVerkoopkansenProjecten.Bedrijfsnaam_Tap_execute = function (screen) {
+    // Write code here.
+    myapp.showZoekBedrijf( {
+        afterClosed: function () {
+            screen.VerkoopkansenProjecten.Bedrijfsnaam = KeuzeBedrijf;
+        }
+    });
 };

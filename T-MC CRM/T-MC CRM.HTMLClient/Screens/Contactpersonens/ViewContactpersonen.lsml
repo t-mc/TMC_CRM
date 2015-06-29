@@ -293,6 +293,21 @@
               </ContentItem>
             </ContentItem>
             <ContentItem
+              Name="Contactpersonen_Bedrijfsnaam"
+              Kind="Value"
+              DataType=":String?">
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="ViewContactpersonen/Properties[Contactpersonen]" />
+                    <MemberExpression
+                      Member="Bedrijfsnaam" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+            </ContentItem>
+            <ContentItem
               Name="Standplaats"
               Kind="Value"
               DataType=":String?">

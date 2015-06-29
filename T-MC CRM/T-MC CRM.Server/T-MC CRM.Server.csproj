@@ -306,6 +306,9 @@
     <LightSwitchModel Include="DataSources\T_MC_Contactpersonen\ContactsPerBedrijf.lsml">
       <DependentUpon>Contactpersonens.lsml</DependentUpon>
     </LightSwitchModel>
+    <LightSwitchModel Include="DataSources\T_MC_Contactpersonen\ActieveContacten.lsml">
+      <DependentUpon>Contactpersonens.lsml</DependentUpon>
+    </LightSwitchModel>
     <None Include="Properties\PublishProfiles\LightSwitch.SharePoint.ProviderHosted.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

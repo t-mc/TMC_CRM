@@ -92,6 +92,12 @@
     <Content Include="Screens\VerkoopkansenProjectens\ViewVerkoopkansenProjecten.lsml.js">
       <DependentUpon>ViewVerkoopkansenProjecten.lsml</DependentUpon>
     </Content>
+    <Content Include="Screens\ZoekBedrijf.lsml.js">
+      <DependentUpon>ZoekBedrijf.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\ZoekContact.lsml.js">
+      <DependentUpon>ZoekContact.lsml</DependentUpon>
+    </Content>
     <Content Include="Scripts\datajs-1.1.1.js" />
     <Content Include="Scripts\datajs-1.1.1.min.js" />
     <Content Include="Scripts\jquery-1.9.1.intellisense.js" />
@@ -126,6 +132,7 @@
     <LightSwitchModel Include="Screens\Bedrijvens\ViewBedrijven.lsml" />
     <LightSwitchModel Include="Screens\BrowseBedrijvenOpNaam.lsml" />
     <LightSwitchModel Include="Screens\BrowseBedrijvenOpNaam1.lsml" />
+    <LightSwitchModel Include="Screens\BrowseContactsPerBedrijf.lsml" />
     <LightSwitchModel Include="Screens\BrowseNietActieveBedrijven.lsml" />
     <LightSwitchModel Include="Screens\BrowseOrders.lsml" />
     <LightSwitchModel Include="Screens\Contactpersonens\AddEditContactpersonen.lsml" />
@@ -135,6 +142,8 @@
     <LightSwitchModel Include="Screens\VerkoopkansenProjectens\AddEditVerkoopkansenProjecten.lsml" />
     <LightSwitchModel Include="Screens\VerkoopkansenProjectens\BrowseVerkoopkansenProjectens.lsml" />
     <LightSwitchModel Include="Screens\VerkoopkansenProjectens\ViewVerkoopkansenProjecten.lsml" />
+    <LightSwitchModel Include="Screens\ZoekBedrijf.lsml" />
+    <LightSwitchModel Include="Screens\ZoekContact.lsml" />
   </ItemGroup>
   <ItemGroup>
     <_ClientBuildFile Include="GeneratedArtifacts\model.json">

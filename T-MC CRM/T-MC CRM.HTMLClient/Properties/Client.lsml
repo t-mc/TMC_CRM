@@ -64,5 +64,8 @@
     <ApplicationNavigationMethodLink
       Name="link3"
       Method="!module/Methods[showBrowseNietActieveBedrijven]" />
+    <ApplicationNavigationMethodLink
+      Name="link6"
+      Method="!module/Methods[showZoekContact]" />
   </Application.NavigationItems>
 </Application>

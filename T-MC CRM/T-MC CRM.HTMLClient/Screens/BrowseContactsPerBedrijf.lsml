@@ -5,7 +5,7 @@
     <Partial />
   </Application.Attributes>
   <Screen
-    Name="BrowseContactpersonens">
+    Name="BrowseContactsPerBedrijf">
     <Screen.Attributes>
       <SaveChangesTo
         EntityContainer="T_MC_Contactpersonen" />
@@ -25,19 +25,19 @@
             Name="ContactpersonenList"
             Kind="Group">
             <ContentItem
-              Name="Contactpersonens"
+              Name="ContactsPerBedrijf"
               Kind="Collection"
               DataType="CollectionView$Contactpersonen"
               View="Microsoft.LightSwitch.MobileWeb:TileList">
               <ContentItem.Attributes>
                 <DisplayName
-                  Value="Contactpersonens" />
+                  Value="ContactsPerBedrijf" />
               </ContentItem.Attributes>
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <MemberExpression
-                      Member="BrowseContactpersonens/Properties[Contactpersonens]" />
+                      Member="BrowseContactsPerBedrijf/Properties[ContactsPerBedrijf]" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
@@ -80,59 +80,6 @@
                     </ControlPropertySource>
                   </ContentItem.PropertySources>
                 </ContentItem>
-                <ContentItem
-                  Name="Functie"
-                  Kind="Value"
-                  DataType=":String?">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="Contactpersonen/Properties[Functie]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="Telefoonnummer"
-                  Kind="Value"
-                  DataType="Microsoft.LightSwitch.Extensions:PhoneNumber?">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="Contactpersonen/Properties[Telefoonnummer]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="MobielNummer"
-                  Kind="Value"
-                  DataType="Microsoft.LightSwitch.Extensions:PhoneNumber?">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="Contactpersonen/Properties[MobielNummer]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="EmailAdres"
-                  Kind="Value"
-                  DataType="Microsoft.LightSwitch.Extensions:EmailAddress?"
-                  View="Microsoft.LightSwitch.MobileWeb:EmailAddressViewer">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="Contactpersonen/Properties[EmailAdres]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
                 <ContentItem.PropertySources>
                   <ControlPropertySource
                     Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[WidthSizingMode]">
@@ -146,39 +93,14 @@
                   </ControlPropertySource>
                 </ContentItem.PropertySources>
               </ContentItem>
-              <ContentItem.PropertySources>
-                <ControlPropertySource
-                  Property="Microsoft.LightSwitch.MobileWeb:RootCollectionControl/Properties[ItemTap]">
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <CallExpression
-                        Target="!module/Methods[showViewContactpersonen]">
-                        <CallExpression.Attributes>
-                          <AssociatedCollection
-                            Collection="BrowseContactpersonens/Properties[Contactpersonens]" />
-                        </CallExpression.Attributes>
-                        <ArgumentExpression
-                          Parameter="Contactpersonen">
-                          <ChainExpression>
-                            <MemberExpression
-                              Member="BrowseContactpersonens/Properties[Contactpersonens]" />
-                            <MemberExpression
-                              Member="selectedItem" />
-                          </ChainExpression>
-                        </ArgumentExpression>
-                      </CallExpression>
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ControlPropertySource>
-              </ContentItem.PropertySources>
             </ContentItem>
             <ContentItem.CommandItems>
               <ContentItem
-                Name="SearchContactpersonens"
+                Name="SearchContactsPerBedrijf"
                 Kind="Command">
                 <ContentItem.Attributes>
                   <DisplayName
-                    Value="Zoek contact" />
+                    Value="Search" />
                 </ContentItem.Attributes>
                 <ContentItem.PropertySources>
                   <ControlPropertySource
@@ -186,7 +108,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="BrowseContactpersonens/Properties[Contactpersonens]" />
+                          Member="BrowseContactsPerBedrijf/Properties[ContactsPerBedrijf]" />
                         <CallExpression
                           Target="showSearch" />
                       </ChainExpression>
@@ -205,11 +127,36 @@
                 </ContentItem.PropertySources>
               </ContentItem>
               <ContentItem
-                Name="AddContactpersonen"
+                Name="ShowAddEditContactpersonen"
                 Kind="Command">
                 <ContentItem.Attributes>
                   <DisplayName
-                    Value="Nieuw contact" />
+                    Value="Voeg contact toe" />
+                </ContentItem.Attributes>
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <CallExpression
+                          Target="!module/Methods[showAddEditContactpersonen]">
+                          <CallExpression.Attributes>
+                            <CreateNewEntity
+                              EntityType="Contactpersonen"
+                              TargetParameter="!module/Methods[showAddEditContactpersonen]/Parameters[Contactpersonen]" />
+                          </CallExpression.Attributes>
+                        </CallExpression>
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
+              </ContentItem>
+              <ContentItem
+                Name="ShowAddEditContactpersonen1"
+                Kind="Command">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Edit contact" />
                 </ContentItem.Attributes>
                 <ContentItem.PropertySources>
                   <ControlPropertySource
@@ -220,10 +167,17 @@
                           Target="!module/Methods[showAddEditContactpersonen]">
                           <CallExpression.Attributes>
                             <AssociatedCollection
-                              Collection="BrowseContactpersonens/Properties[Contactpersonens]" />
-                            <CreateNewEntity
-                              TargetParameter="!module/Methods[showAddEditContactpersonen]/Parameters[Contactpersonen]" />
+                              Collection="BrowseContactsPerBedrijf/Properties[ContactsPerBedrijf]" />
                           </CallExpression.Attributes>
+                          <ArgumentExpression
+                            Parameter="Contactpersonen">
+                            <ChainExpression>
+                              <MemberExpression
+                                Member="BrowseContactsPerBedrijf/Properties[ContactsPerBedrijf]" />
+                              <MemberExpression
+                                Member="selectedItem" />
+                            </ChainExpression>
+                          </ArgumentExpression>
                         </CallExpression>
                       </ChainExpression>
                     </ScreenExpressionTree>
@@ -233,7 +187,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <ConstantExpression
-                          Value="msls-add"
+                          Value="msls-edit"
                           ResultType=":String" />
                       </ChainExpression>
                     </ScreenExpressionTree>
@@ -287,12 +241,12 @@
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty
-        Name="Contactpersonens"
+        Name="ContactsPerBedrijf"
         PageSize="45"
         PropertyType="CollectionView$Contactpersonen">
         <ScreenCollectionProperty.Query>
           <ScreenQueryDefinition
-            Name="ContactpersonensQuery"
+            Name="ContactsPerBedrijfQuery"
             ReturnType="Contactpersonen*">
             <ScreenQueryDefinition.FilterExpression>
               <QueryFilterExpressionTree />
@@ -300,23 +254,15 @@
             <ScreenQueryDefinition.Source>
               <QuerySourceExpressionTree>
                 <MemberExpression
-                  Member="T_MC_Contactpersonen/Members[Contactpersonens]" />
+                  Member="T_MC_Contactpersonen/Members[ContactsPerBedrijf]" />
               </QuerySourceExpressionTree>
             </ScreenQueryDefinition.Source>
-            <ScreenQueryDefinition.SortCriteria>
-              <SortCriterion>
-                <ChainExpression>
-                  <MemberExpression
-                    Member="VolledigeNaam" />
-                </ChainExpression>
-              </SortCriterion>
-            </ScreenQueryDefinition.SortCriteria>
           </ScreenQueryDefinition>
         </ScreenCollectionProperty.Query>
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="BrowseContactpersonens/Properties[Contactpersonens]/Query" />
+              Target="BrowseContactsPerBedrijf/Properties[ContactsPerBedrijf]/Query" />
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
@@ -324,10 +270,10 @@
   </Screen>
   <Application.Methods>
     <ApplicationMethod
-      Name="showBrowseContactpersonens">
+      Name="showBrowseContactsPerBedrijf">
       <ApplicationMethod.Attributes>
         <ShowScreenMethod
-          TargetScreen="BrowseContactpersonens" />
+          TargetScreen="BrowseContactsPerBedrijf" />
       </ApplicationMethod.Attributes>
     </ApplicationMethod>
   </Application.Methods>
