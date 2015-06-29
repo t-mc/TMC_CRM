@@ -48,6 +48,7 @@
     <Content Include="Content\Images\msls-white-icons-18.png" />
     <Content Include="Content\Images\msls-white-icons-36.png" />
     <Content Include="Content\Images\msls-blue-icons-36.png" />
+    <Content Include="Content\Images\TMC Logo - Office 365.png" />
     <Content Include="Content\jquery.mobile-1.3.0.css" />
     <Content Include="Content\jquery.mobile-1.3.0.min.css" />
     <Content Include="Content\jquery.mobile.structure-1.3.0.css" />
@@ -81,6 +82,9 @@
     </Content>
     <Content Include="Screens\Contactpersonens\ViewContactpersonen.lsml.js">
       <DependentUpon>ViewContactpersonen.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\Home.lsml.js">
+      <DependentUpon>Home.lsml</DependentUpon>
     </Content>
     <Content Include="Screens\VerkoopkansenProjectens\AddEditVerkoopkansenProjecten.lsml.js">
       <DependentUpon>AddEditVerkoopkansenProjecten.lsml</DependentUpon>
@@ -127,6 +131,7 @@
     <LightSwitchModel Include="Screens\Contactpersonens\AddEditContactpersonen.lsml" />
     <LightSwitchModel Include="Screens\Contactpersonens\BrowseContactpersonens.lsml" />
     <LightSwitchModel Include="Screens\Contactpersonens\ViewContactpersonen.lsml" />
+    <LightSwitchModel Include="Screens\Home.lsml" />
     <LightSwitchModel Include="Screens\VerkoopkansenProjectens\AddEditVerkoopkansenProjecten.lsml" />
     <LightSwitchModel Include="Screens\VerkoopkansenProjectens\BrowseVerkoopkansenProjectens.lsml" />
     <LightSwitchModel Include="Screens\VerkoopkansenProjectens\ViewVerkoopkansenProjecten.lsml" />

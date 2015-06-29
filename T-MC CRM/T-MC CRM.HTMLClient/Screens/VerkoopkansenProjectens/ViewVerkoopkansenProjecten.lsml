@@ -51,30 +51,6 @@
                 Kind="Group"
                 View="Microsoft.LightSwitch.MobileWeb:ColumnsLayout">
                 <ContentItem
-                  Name="Bedrijfsnaam1"
-                  Kind="Value"
-                  DataType=":String?">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="VerkoopkansenProjecten/Properties[Bedrijfsnaam]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                  <ContentItem.PropertySources>
-                    <ControlPropertySource
-                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <CallExpression
-                            Target="!module/Methods[showViewBedrijven]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ControlPropertySource>
-                  </ContentItem.PropertySources>
-                </ContentItem>
-                <ContentItem
                   Name="Projectcode"
                   Kind="Value"
                   DataType=":String?">
@@ -151,6 +127,19 @@
                 Name="Group"
                 Kind="Group"
                 View="Microsoft.LightSwitch.MobileWeb:ColumnsLayout">
+                <ContentItem
+                  Name="Bedrijfsnaam1"
+                  Kind="Value"
+                  DataType=":String?">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="VerkoopkansenProjecten/Properties[Bedrijfsnaam]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
                 <ContentItem
                   Name="Opdrachtgever"
                   Kind="Value"
@@ -384,7 +373,7 @@
                       <ChainExpression>
                         <ConstantExpression
                           Value="msls-edit"
-                          ResultType="Microsoft.LightSwitch:String" />
+                          ResultType=":String" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ControlPropertySource>

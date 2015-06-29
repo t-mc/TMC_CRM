@@ -271,13 +271,7 @@
               <SortCriterion>
                 <ChainExpression>
                   <MemberExpression
-                    Member="Achternaam" />
-                </ChainExpression>
-              </SortCriterion>
-              <SortCriterion>
-                <ChainExpression>
-                  <MemberExpression
-                    Member="Voornaam" />
+                    Member="VolledigeNaam" />
                 </ChainExpression>
               </SortCriterion>
             </ScreenQueryDefinition.SortCriteria>

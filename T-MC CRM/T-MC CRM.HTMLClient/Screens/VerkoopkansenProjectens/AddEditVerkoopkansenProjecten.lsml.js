@@ -1,11 +1,6 @@
 ﻿/// <reference path="~/GeneratedArtifacts/viewModel.js" />
 var VerkoopStadium;
 
-myapp.AddEditVerkoopkansenProjecten.created = function (screen) {
-    // Write code here.
-    // alert("Koekoek 1");
-    VerkoopStadium = screen.VerkoopkansenProjecten.Verkoopstadium;
-};
 
 myapp.AddEditVerkoopkansenProjecten.beforeApplyChanges = function (screen) {
     // Write code here.
@@ -39,4 +34,39 @@ myapp.AddEditVerkoopkansenProjecten.beforeApplyChanges = function (screen) {
 
             }
     }
+};
+
+myapp.AddEditVerkoopkansenProjecten.Contactpersonens_ItemTap_execute = function (screen) {
+    // Write code here.
+    screen.VerkoopkansenProjecten.Opdrachtgever = screen.Contactpersonens.selectedItem.VolledigeNaam;
+    screen.closePopup();
+};
+
+myapp.AddEditVerkoopkansenProjecten.created = function (screen) {
+    // Zet default tekst als Bedrijfsnaam leeg is.
+    screen.findContentItem("Bedrijfsnaam")
+    .dataBind("value.selectedItem", function (newValue) {
+        if (newValue == screen.VerkoopkansenProjecten.Bedrijfsnaam) {
+            screen.VerkoopkansenProjecten.Bedrijfsnaam = "< voeg bedrijf in >";
+        }
+
+    });
+    // Zet default tekst als Opdrachtgever leeg is.
+    screen.findContentItem("Opdrachtgever")
+    .dataBind("value.selectedItem", function (newValue) {
+        if (newValue == screen.VerkoopkansenProjecten.Opdrachtgever) {
+            screen.VerkoopkansenProjecten.Opdrachtgever = "< voeg opdrachtgever in >";
+        }
+
+    });
+
+};
+myapp.AddEditVerkoopkansenProjecten.BedrijvenOpNaam_ItemTap_execute = function (screen) {
+    // Write code here.
+    screen.VerkoopkansenProjecten.Bedrijfsnaam = screen.BedrijvenOpNaam.selectedItem.Bedrijfsnaam;
+    screen.closePopup();
+};
+myapp.AddEditVerkoopkansenProjecten.Opdrachtgever_Tap_execute = function (screen) {
+    // Write code here.
+
 };
