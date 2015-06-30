@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="Branche">
+    <EntityType.Attributes>
+      <DisplayName
+        Value="Branche" />
+      <Description
+        Value="" />
+    </EntityType.Attributes>
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <EntityProperty
+        Name="Branche1"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+          <DisplayName
+            Value="Branche" />
+          <Required />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <KeyProperty
+        Name="Id"
+        IsReadOnly="True"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Id" />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="Inhoudstype"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="Inhoudstype" />
+          <NotSortable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="InhoudstypeId"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Inhoudstype-id" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Gewijzigd"
+        IsReadOnly="True"
+        PropertyType=":DateTime?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Gewijzigd" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Gemaakt"
+        IsReadOnly="True"
+        PropertyType=":DateTime?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Gemaakt" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Owshiddenversion"
+        IsReadOnly="True"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="owshiddenversion" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Versie"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Versie" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Pad"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Pad" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="GemaaktDoor"
+        Association="BrancheItem_GemaaktDoor"
+        FromEnd="BrancheItem"
+        ToEnd="GemaaktDoor" />
+      <NavigationProperty
+        Name="GewijzigdDoor"
+        Association="BrancheItem_GewijzigdDoor"
+        FromEnd="BrancheItem"
+        ToEnd="GewijzigdDoor" />
+      <VirtualNavigationProperty
+        Name="Bedrijven"
+        FromEnd="Branche"
+        ToEnd="Bedrijven"
+        VirtualAssociation="Branche_Bedrijven" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityContainer
+    Name="T_MC_Branche">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="Branches"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="Branche" />
+    <QueryOperation
+      Name="Branches_Single"
+      ReturnType="Branche">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Branches" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <DisplayName
+            Value="Id" />
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Branches_SingleOrDefault"
+      ReturnType="Branche">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Branches" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <DisplayName
+            Value="Id" />
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+  </EntityContainer>
+  <DataService
+    Name="T_MC_BrancheDataService">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <EntitySetMapping
+      EntitySet="Branches">
+      <EntitySetMapping.Attributes>
+        <CsdlEntitySet
+          EntityTypeName="BrancheItem"
+          Name="Branche"
+          EntityType="Branche" />
+        <CsdlProperty
+          Name="InhoudstypeId"
+          Property="Branche/Properties[InhoudstypeId]" />
+        <CsdlProperty
+          Name="Branche"
+          Property="Branche/Properties[Branche1]" />
+        <CsdlProperty
+          Name="Id"
+          Property="Branche/Properties[Id]" />
+        <CsdlProperty
+          Name="Inhoudstype"
+          Property="Branche/Properties[Inhoudstype]" />
+        <CsdlProperty
+          Name="Gewijzigd"
+          Property="Branche/Properties[Gewijzigd]" />
+        <CsdlProperty
+          Name="Gemaakt"
+          Property="Branche/Properties[Gemaakt]" />
+        <CsdlProperty
+          Name="Owshiddenversion"
+          Property="Branche/Properties[Owshiddenversion]" />
+        <CsdlProperty
+          Name="Versie"
+          Property="Branche/Properties[Versie]" />
+        <CsdlProperty
+          Name="Pad"
+          Property="Branche/Properties[Pad]" />
+        <CsdlProperty
+          Name="GemaaktDoor"
+          Property="Branche/Properties[GemaaktDoor]" />
+        <CsdlForeignKeyProperty
+          Name="GemaaktDoorId"
+          Property="LijstMetGebruikersgegeven4/Properties[Id]" />
+        <CsdlProperty
+          Name="GewijzigdDoor"
+          Property="Branche/Properties[GewijzigdDoor]" />
+        <CsdlForeignKeyProperty
+          Name="GewijzigdDoorId"
+          Property="LijstMetGebruikersgegeven4/Properties[Id]" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+  </DataService>
+</ServiceApplication>

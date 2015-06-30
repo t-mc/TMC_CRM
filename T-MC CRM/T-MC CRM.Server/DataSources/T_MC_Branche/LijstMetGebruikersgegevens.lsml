@@ -5,7 +5,7 @@
     <Partial />
   </ServiceApplication.Attributes>
   <EntityType
-    Name="LijstMetGebruikersgegeven">
+    Name="LijstMetGebruikersgegeven4">
     <EntityType.Attributes>
       <DisplayName
         Value="Lijst met gebruikersgegevens" />
@@ -77,19 +77,17 @@
       <EntityProperty
         Name="ZakelijkEMailadres"
         IsReadOnly="True"
-        PropertyType="Microsoft.LightSwitch.Extensions:EmailAddress?">
+        PropertyType=":String?">
         <EntityProperty.Attributes>
           <Hidden />
           <DisplayName
             Value="Zakelijk e-mailadres" />
-          <MaxLength
-            Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
         Name="MobieleTelefoon"
         IsReadOnly="True"
-        PropertyType="Microsoft.LightSwitch.Extensions:PhoneNumber?">
+        PropertyType=":String?">
         <EntityProperty.Attributes>
           <Hidden />
           <MaxLength
@@ -155,14 +153,12 @@
       <EntityProperty
         Name="Afbeelding"
         IsReadOnly="True"
-        PropertyType="Microsoft.LightSwitch.Extensions:WebAddress?">
+        PropertyType=":String?">
         <EntityProperty.Attributes>
           <Hidden />
           <DisplayName
             Value="Afbeelding" />
           <NotSortable />
-          <MaxLength
-            Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -342,53 +338,53 @@
       </EntityProperty>
       <NavigationProperty
         Name="GemaaktDoor"
-        Association="LijstMetGebruikersgegevensItem_GemaaktDoor"
+        Association="LijstMetGebruikersgegevensItem_GemaaktDoor4"
         FromEnd="LijstMetGebruikersgegevensItem"
         ToEnd="GemaaktDoor" />
       <NavigationProperty
         Name="GewijzigdDoor"
-        Association="LijstMetGebruikersgegevensItem_GewijzigdDoor"
+        Association="LijstMetGebruikersgegevensItem_GewijzigdDoor4"
         FromEnd="LijstMetGebruikersgegevensItem"
         ToEnd="GewijzigdDoor" />
     </EntityType.Properties>
   </EntityType>
   <Association
-    Name="BedrijvenItem_GemaaktDoor">
+    Name="BrancheItem_GemaaktDoor">
     <AssociationEnd
-      Name="BedrijvenItem"
+      Name="BrancheItem"
       Multiplicity="Many"
-      EntityType="Bedrijven" />
+      EntityType="Branche" />
     <AssociationEnd
       Name="GemaaktDoor"
-      EntityType="LijstMetGebruikersgegeven">
+      EntityType="LijstMetGebruikersgegeven4">
       <AssociationEnd.Attributes>
         <DeleteRule />
       </AssociationEnd.Attributes>
     </AssociationEnd>
   </Association>
   <Association
-    Name="BedrijvenItem_GewijzigdDoor">
+    Name="BrancheItem_GewijzigdDoor">
     <AssociationEnd
-      Name="BedrijvenItem"
+      Name="BrancheItem"
       Multiplicity="Many"
-      EntityType="Bedrijven" />
+      EntityType="Branche" />
     <AssociationEnd
       Name="GewijzigdDoor"
-      EntityType="LijstMetGebruikersgegeven">
+      EntityType="LijstMetGebruikersgegeven4">
       <AssociationEnd.Attributes>
         <DeleteRule />
       </AssociationEnd.Attributes>
     </AssociationEnd>
   </Association>
   <Association
-    Name="LijstMetGebruikersgegevensItem_GemaaktDoor">
+    Name="LijstMetGebruikersgegevensItem_GemaaktDoor4">
     <AssociationEnd
       Name="LijstMetGebruikersgegevensItem"
       Multiplicity="Many"
-      EntityType="LijstMetGebruikersgegeven" />
+      EntityType="LijstMetGebruikersgegeven4" />
     <AssociationEnd
       Name="GemaaktDoor"
-      EntityType="LijstMetGebruikersgegeven">
+      EntityType="LijstMetGebruikersgegeven4">
       <AssociationEnd.Attributes>
         <DeleteRule
           Action="Restrict" />
@@ -396,14 +392,14 @@
     </AssociationEnd>
   </Association>
   <Association
-    Name="LijstMetGebruikersgegevensItem_GewijzigdDoor">
+    Name="LijstMetGebruikersgegevensItem_GewijzigdDoor4">
     <AssociationEnd
       Name="LijstMetGebruikersgegevensItem"
       Multiplicity="Many"
-      EntityType="LijstMetGebruikersgegeven" />
+      EntityType="LijstMetGebruikersgegeven4" />
     <AssociationEnd
       Name="GewijzigdDoor"
-      EntityType="LijstMetGebruikersgegeven">
+      EntityType="LijstMetGebruikersgegeven4">
       <AssociationEnd.Attributes>
         <DeleteRule
           Action="Restrict" />
@@ -411,7 +407,7 @@
     </AssociationEnd>
   </Association>
   <EntityContainer
-    Name="T_MC_Bedrijven">
+    Name="T_MC_Branche">
     <EntityContainer.Attributes>
       <Partial />
     </EntityContainer.Attributes>
@@ -420,30 +416,30 @@
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
-      EntityType="LijstMetGebruikersgegeven" />
+      EntityType="LijstMetGebruikersgegeven4" />
     <AssociationSet
-      Name="BedrijvenItem_GemaaktDoor"
-      Association="BedrijvenItem_GemaaktDoor">
+      Name="BrancheItem_GemaaktDoor"
+      Association="BrancheItem_GemaaktDoor">
       <AssociationSetEnd
-        Name="BedrijvenItem"
-        EntitySet="Bedrijvens" />
+        Name="BrancheItem"
+        EntitySet="Branches" />
       <AssociationSetEnd
         Name="GemaaktDoor"
         EntitySet="LijstMetGebruikersgegevens" />
     </AssociationSet>
     <AssociationSet
-      Name="BedrijvenItem_GewijzigdDoor"
-      Association="BedrijvenItem_GewijzigdDoor">
+      Name="BrancheItem_GewijzigdDoor"
+      Association="BrancheItem_GewijzigdDoor">
       <AssociationSetEnd
-        Name="BedrijvenItem"
-        EntitySet="Bedrijvens" />
+        Name="BrancheItem"
+        EntitySet="Branches" />
       <AssociationSetEnd
         Name="GewijzigdDoor"
         EntitySet="LijstMetGebruikersgegevens" />
     </AssociationSet>
     <AssociationSet
       Name="LijstMetGebruikersgegevensItem_GemaaktDoor"
-      Association="LijstMetGebruikersgegevensItem_GemaaktDoor">
+      Association="LijstMetGebruikersgegevensItem_GemaaktDoor4">
       <AssociationSetEnd
         Name="LijstMetGebruikersgegevensItem"
         EntitySet="LijstMetGebruikersgegevens" />
@@ -453,7 +449,7 @@
     </AssociationSet>
     <AssociationSet
       Name="LijstMetGebruikersgegevensItem_GewijzigdDoor"
-      Association="LijstMetGebruikersgegevensItem_GewijzigdDoor">
+      Association="LijstMetGebruikersgegevensItem_GewijzigdDoor4">
       <AssociationSetEnd
         Name="LijstMetGebruikersgegevensItem"
         EntitySet="LijstMetGebruikersgegevens" />
@@ -463,7 +459,7 @@
     </AssociationSet>
     <QueryOperation
       Name="LijstMetGebruikersgegevens_Single"
-      ReturnType="LijstMetGebruikersgegeven">
+      ReturnType="LijstMetGebruikersgegeven4">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -505,7 +501,7 @@
     </QueryOperation>
     <QueryOperation
       Name="LijstMetGebruikersgegevens_SingleOrDefault"
-      ReturnType="LijstMetGebruikersgegeven">
+      ReturnType="LijstMetGebruikersgegeven4">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -547,7 +543,7 @@
     </QueryOperation>
   </EntityContainer>
   <DataService
-    Name="T_MC_BedrijvenDataService">
+    Name="T_MC_BrancheDataService">
     <DataService.Attributes>
       <Partial />
     </DataService.Attributes>
@@ -557,126 +553,126 @@
         <CsdlEntitySet
           EntityTypeName="LijstMetGebruikersgegevensItem"
           Name="LijstMetGebruikersgegevens"
-          EntityType="LijstMetGebruikersgegeven" />
+          EntityType="LijstMetGebruikersgegeven4" />
         <CsdlProperty
           Name="InhoudstypeId"
-          Property="LijstMetGebruikersgegeven/Properties[InhoudstypeId]" />
+          Property="LijstMetGebruikersgegeven4/Properties[InhoudstypeId]" />
         <CsdlProperty
           Name="Naam"
-          Property="LijstMetGebruikersgegeven/Properties[Naam]" />
+          Property="LijstMetGebruikersgegeven4/Properties[Naam]" />
         <CsdlProperty
           Name="Account"
-          Property="LijstMetGebruikersgegeven/Properties[Account]" />
+          Property="LijstMetGebruikersgegeven4/Properties[Account]" />
         <CsdlProperty
           Name="ZakelijkEMailadres"
-          Property="LijstMetGebruikersgegeven/Properties[ZakelijkEMailadres]" />
+          Property="LijstMetGebruikersgegeven4/Properties[ZakelijkEMailadres]" />
         <CsdlProperty
           Name="MobieleTelefoon"
-          Property="LijstMetGebruikersgegeven/Properties[MobieleTelefoon]" />
+          Property="LijstMetGebruikersgegeven4/Properties[MobieleTelefoon]" />
         <CsdlProperty
           Name="OverMij"
-          Property="LijstMetGebruikersgegeven/Properties[OverMij]" />
+          Property="LijstMetGebruikersgegeven4/Properties[OverMij]" />
         <CsdlProperty
           Name="SIPAdres"
-          Property="LijstMetGebruikersgegeven/Properties[SIPAdres]" />
+          Property="LijstMetGebruikersgegeven4/Properties[SIPAdres]" />
         <CsdlProperty
           Name="IsBeheerderVanDeSite"
-          Property="LijstMetGebruikersgegeven/Properties[IsBeheerderVanDeSite]" />
+          Property="LijstMetGebruikersgegeven4/Properties[IsBeheerderVanDeSite]" />
         <CsdlProperty
           Name="Verwijderd"
-          Property="LijstMetGebruikersgegeven/Properties[Verwijderd]" />
+          Property="LijstMetGebruikersgegeven4/Properties[Verwijderd]" />
         <CsdlProperty
           Name="Verborgen"
-          Property="LijstMetGebruikersgegeven/Properties[Verborgen]" />
+          Property="LijstMetGebruikersgegeven4/Properties[Verborgen]" />
         <CsdlProperty
           Name="Afbeelding"
-          Property="LijstMetGebruikersgegeven/Properties[Afbeelding]" />
+          Property="LijstMetGebruikersgegeven4/Properties[Afbeelding]" />
         <CsdlProperty
           Name="Afdeling"
-          Property="LijstMetGebruikersgegeven/Properties[Afdeling]" />
+          Property="LijstMetGebruikersgegeven4/Properties[Afdeling]" />
         <CsdlProperty
           Name="Titel"
-          Property="LijstMetGebruikersgegeven/Properties[Titel]" />
+          Property="LijstMetGebruikersgegeven4/Properties[Titel]" />
         <CsdlProperty
           Name="Voornaam"
-          Property="LijstMetGebruikersgegeven/Properties[Voornaam]" />
+          Property="LijstMetGebruikersgegeven4/Properties[Voornaam]" />
         <CsdlProperty
           Name="Achternaam"
-          Property="LijstMetGebruikersgegeven/Properties[Achternaam]" />
+          Property="LijstMetGebruikersgegeven4/Properties[Achternaam]" />
         <CsdlProperty
           Name="TelefoonWerk"
-          Property="LijstMetGebruikersgegeven/Properties[TelefoonWerk]" />
+          Property="LijstMetGebruikersgegeven4/Properties[TelefoonWerk]" />
         <CsdlProperty
           Name="Gebruikersnaam"
-          Property="LijstMetGebruikersgegeven/Properties[Gebruikersnaam]" />
+          Property="LijstMetGebruikersgegeven4/Properties[Gebruikersnaam]" />
         <CsdlProperty
           Name="Website"
-          Property="LijstMetGebruikersgegeven/Properties[Website]" />
+          Property="LijstMetGebruikersgegeven4/Properties[Website]" />
         <CsdlProperty
           Name="StelMijEenVraagOver"
-          Property="LijstMetGebruikersgegeven/Properties[StelMijEenVraagOver]" />
+          Property="LijstMetGebruikersgegeven4/Properties[StelMijEenVraagOver]" />
         <CsdlProperty
           Name="Kantoor"
-          Property="LijstMetGebruikersgegeven/Properties[Kantoor]" />
+          Property="LijstMetGebruikersgegeven4/Properties[Kantoor]" />
         <CsdlProperty
           Name="TijdstempelAfbeelding"
-          Property="LijstMetGebruikersgegeven/Properties[TijdstempelAfbeelding]" />
+          Property="LijstMetGebruikersgegeven4/Properties[TijdstempelAfbeelding]" />
         <CsdlProperty
           Name="StatusTijdelijkeAanduidingVoorAfbeelding"
-          Property="LijstMetGebruikersgegeven/Properties[StatusTijdelijkeAanduidingVoorAfbeelding]" />
+          Property="LijstMetGebruikersgegeven4/Properties[StatusTijdelijkeAanduidingVoorAfbeelding]" />
         <CsdlProperty
           Name="SynchronisatiestatusAfbeelding"
-          Property="LijstMetGebruikersgegeven/Properties[SynchronisatiestatusAfbeelding]" />
+          Property="LijstMetGebruikersgegeven4/Properties[SynchronisatiestatusAfbeelding]" />
         <CsdlProperty
           Name="Id"
-          Property="LijstMetGebruikersgegeven/Properties[Id]" />
+          Property="LijstMetGebruikersgegeven4/Properties[Id]" />
         <CsdlProperty
           Name="Inhoudstype"
-          Property="LijstMetGebruikersgegeven/Properties[Inhoudstype]" />
+          Property="LijstMetGebruikersgegeven4/Properties[Inhoudstype]" />
         <CsdlProperty
           Name="Gewijzigd"
-          Property="LijstMetGebruikersgegeven/Properties[Gewijzigd]" />
+          Property="LijstMetGebruikersgegeven4/Properties[Gewijzigd]" />
         <CsdlProperty
           Name="Gemaakt"
-          Property="LijstMetGebruikersgegeven/Properties[Gemaakt]" />
+          Property="LijstMetGebruikersgegeven4/Properties[Gemaakt]" />
         <CsdlProperty
           Name="Owshiddenversion"
-          Property="LijstMetGebruikersgegeven/Properties[Owshiddenversion]" />
+          Property="LijstMetGebruikersgegeven4/Properties[Owshiddenversion]" />
         <CsdlProperty
           Name="Versie"
-          Property="LijstMetGebruikersgegeven/Properties[Versie]" />
+          Property="LijstMetGebruikersgegeven4/Properties[Versie]" />
         <CsdlProperty
           Name="Pad"
-          Property="LijstMetGebruikersgegeven/Properties[Pad]" />
+          Property="LijstMetGebruikersgegeven4/Properties[Pad]" />
         <CsdlProperty
           Name="GemaaktDoor"
-          Property="LijstMetGebruikersgegeven/Properties[GemaaktDoor]" />
+          Property="LijstMetGebruikersgegeven4/Properties[GemaaktDoor]" />
         <CsdlForeignKeyProperty
           Name="GemaaktDoorId"
-          Property="LijstMetGebruikersgegeven/Properties[Id]" />
+          Property="LijstMetGebruikersgegeven4/Properties[Id]" />
         <CsdlProperty
           Name="GewijzigdDoor"
-          Property="LijstMetGebruikersgegeven/Properties[GewijzigdDoor]" />
+          Property="LijstMetGebruikersgegeven4/Properties[GewijzigdDoor]" />
         <CsdlForeignKeyProperty
           Name="GewijzigdDoorId"
-          Property="LijstMetGebruikersgegeven/Properties[Id]" />
+          Property="LijstMetGebruikersgegeven4/Properties[Id]" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
     <AssociationSetMapping
-      AssociationSet="BedrijvenItem_GemaaktDoor">
+      AssociationSet="BrancheItem_GemaaktDoor">
       <AssociationSetMapping.Attributes>
         <CsdlAssociation
-          Name="BedrijvenItem_GemaaktDoor"
-          Association="BedrijvenItem_GemaaktDoor" />
+          Name="BrancheItem_GemaaktDoor"
+          Association="BrancheItem_GemaaktDoor" />
         <CsdlAssociationSetEnd
-          End="T_MC_Bedrijven/Members[BedrijvenItem_GemaaktDoor]/Members[GemaaktDoor]">
+          End="T_MC_Branche/Members[BrancheItem_GemaaktDoor]/Members[GemaaktDoor]">
           <CsdlAssociationSetEnd.Attributes>
             <CsdlPropertyRef
               Name="Id" />
           </CsdlAssociationSetEnd.Attributes>
         </CsdlAssociationSetEnd>
         <CsdlAssociationSetEnd
-          End="T_MC_Bedrijven/Members[BedrijvenItem_GemaaktDoor]/Members[BedrijvenItem]">
+          End="T_MC_Branche/Members[BrancheItem_GemaaktDoor]/Members[BrancheItem]">
           <CsdlAssociationSetEnd.Attributes>
             <CsdlPropertyRef
               Name="GemaaktDoorId" />
@@ -685,20 +681,20 @@
       </AssociationSetMapping.Attributes>
     </AssociationSetMapping>
     <AssociationSetMapping
-      AssociationSet="BedrijvenItem_GewijzigdDoor">
+      AssociationSet="BrancheItem_GewijzigdDoor">
       <AssociationSetMapping.Attributes>
         <CsdlAssociation
-          Name="BedrijvenItem_GewijzigdDoor"
-          Association="BedrijvenItem_GewijzigdDoor" />
+          Name="BrancheItem_GewijzigdDoor"
+          Association="BrancheItem_GewijzigdDoor" />
         <CsdlAssociationSetEnd
-          End="T_MC_Bedrijven/Members[BedrijvenItem_GewijzigdDoor]/Members[GewijzigdDoor]">
+          End="T_MC_Branche/Members[BrancheItem_GewijzigdDoor]/Members[GewijzigdDoor]">
           <CsdlAssociationSetEnd.Attributes>
             <CsdlPropertyRef
               Name="Id" />
           </CsdlAssociationSetEnd.Attributes>
         </CsdlAssociationSetEnd>
         <CsdlAssociationSetEnd
-          End="T_MC_Bedrijven/Members[BedrijvenItem_GewijzigdDoor]/Members[BedrijvenItem]">
+          End="T_MC_Branche/Members[BrancheItem_GewijzigdDoor]/Members[BrancheItem]">
           <CsdlAssociationSetEnd.Attributes>
             <CsdlPropertyRef
               Name="GewijzigdDoorId" />
@@ -711,16 +707,16 @@
       <AssociationSetMapping.Attributes>
         <CsdlAssociation
           Name="LijstMetGebruikersgegevensItem_GemaaktDoor"
-          Association="LijstMetGebruikersgegevensItem_GemaaktDoor" />
+          Association="LijstMetGebruikersgegevensItem_GemaaktDoor4" />
         <CsdlAssociationSetEnd
-          End="T_MC_Bedrijven/Members[LijstMetGebruikersgegevensItem_GemaaktDoor]/Members[GemaaktDoor]">
+          End="T_MC_Branche/Members[LijstMetGebruikersgegevensItem_GemaaktDoor]/Members[GemaaktDoor]">
           <CsdlAssociationSetEnd.Attributes>
             <CsdlPropertyRef
               Name="Id" />
           </CsdlAssociationSetEnd.Attributes>
         </CsdlAssociationSetEnd>
         <CsdlAssociationSetEnd
-          End="T_MC_Bedrijven/Members[LijstMetGebruikersgegevensItem_GemaaktDoor]/Members[LijstMetGebruikersgegevensItem]">
+          End="T_MC_Branche/Members[LijstMetGebruikersgegevensItem_GemaaktDoor]/Members[LijstMetGebruikersgegevensItem]">
           <CsdlAssociationSetEnd.Attributes>
             <CsdlPropertyRef
               Name="GemaaktDoorId" />
@@ -733,16 +729,16 @@
       <AssociationSetMapping.Attributes>
         <CsdlAssociation
           Name="LijstMetGebruikersgegevensItem_GewijzigdDoor"
-          Association="LijstMetGebruikersgegevensItem_GewijzigdDoor" />
+          Association="LijstMetGebruikersgegevensItem_GewijzigdDoor4" />
         <CsdlAssociationSetEnd
-          End="T_MC_Bedrijven/Members[LijstMetGebruikersgegevensItem_GewijzigdDoor]/Members[GewijzigdDoor]">
+          End="T_MC_Branche/Members[LijstMetGebruikersgegevensItem_GewijzigdDoor]/Members[GewijzigdDoor]">
           <CsdlAssociationSetEnd.Attributes>
             <CsdlPropertyRef
               Name="Id" />
           </CsdlAssociationSetEnd.Attributes>
         </CsdlAssociationSetEnd>
         <CsdlAssociationSetEnd
-          End="T_MC_Bedrijven/Members[LijstMetGebruikersgegevensItem_GewijzigdDoor]/Members[LijstMetGebruikersgegevensItem]">
+          End="T_MC_Branche/Members[LijstMetGebruikersgegevensItem_GewijzigdDoor]/Members[LijstMetGebruikersgegevensItem]">
           <CsdlAssociationSetEnd.Attributes>
             <CsdlPropertyRef
               Name="GewijzigdDoorId" />

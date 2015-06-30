@@ -5,7 +5,7 @@
     <Partial />
   </ServiceApplication.Attributes>
   <EntityContainer
-    Name="T_MC_Contactpersonen"
+    Name="T_MC_Branche"
     DataProvider="SharePointDataProvider">
     <EntityContainer.Attributes>
       <SupportsSharePointHostFeatures />
@@ -16,8 +16,8 @@
       Name="SaveChanges" />
   </EntityContainer>
   <DataService
-    Name="T_MC_ContactpersonenDataService"
-    EntityContainer="T_MC_Contactpersonen">
+    Name="T_MC_BrancheDataService"
+    EntityContainer="T_MC_Branche">
     <DataService.Attributes>
       <CsdlEntityContainer
         Name="TMCDevDataContext" />
@@ -27,22 +27,10 @@
     <DataService.ConnectionProperties>
       <ConnectionProperty
         Name="ConnectionStringGuid"
-        Value="1f067482-580d-4514-8d2a-c29fe32818a7" />
+        Value="d3ff77ab-09dd-4699-9878-e6e7a1ecdfa3" />
       <ConnectionProperty
         Name="ProjectMetadata"
-        Value="T_MC_Contactpersonen" />
-      <ConnectionProperty
-        Name="ProjectMetadata"
-        Value="T_MC_Contactpersonen" />
-      <ConnectionProperty
-        Name="ProjectMetadata"
-        Value="T_MC_Contactpersonen" />
-      <ConnectionProperty
-        Name="ProjectMetadata"
-        Value="T_MC_Contactpersonen" />
-      <ConnectionProperty
-        Name="ProjectMetadata"
-        Value="T_MC_Contactpersonen" />
+        Value="T_MC_Branche" />
     </DataService.ConnectionProperties>
   </DataService>
 </ServiceApplication>

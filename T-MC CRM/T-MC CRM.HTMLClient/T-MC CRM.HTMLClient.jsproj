@@ -71,6 +71,9 @@
     <Content Include="Screens\AddEditAdressen.lsml.js">
       <DependentUpon>AddEditAdressen.lsml</DependentUpon>
     </Content>
+    <Content Include="Screens\Bedrijvens\AddEditBedrijven.lsml.js">
+      <DependentUpon>AddEditBedrijven.lsml</DependentUpon>
+    </Content>
     <Content Include="Screens\Bedrijvens\BrowseBedrijvens.lsml.js">
       <DependentUpon>BrowseBedrijvens.lsml</DependentUpon>
     </Content>
@@ -86,14 +89,23 @@
     <Content Include="Screens\Home.lsml.js">
       <DependentUpon>Home.lsml</DependentUpon>
     </Content>
+    <Content Include="Screens\ToonStandplaatsAdres.lsml.js">
+      <DependentUpon>ToonStandplaatsAdres.lsml</DependentUpon>
+    </Content>
     <Content Include="Screens\VerkoopkansenProjectens\AddEditVerkoopkansenProjecten.lsml.js">
       <DependentUpon>AddEditVerkoopkansenProjecten.lsml</DependentUpon>
     </Content>
     <Content Include="Screens\VerkoopkansenProjectens\ViewVerkoopkansenProjecten.lsml.js">
       <DependentUpon>ViewVerkoopkansenProjecten.lsml</DependentUpon>
     </Content>
+    <Content Include="Screens\ZoekAdressen.lsml.js">
+      <DependentUpon>ZoekAdressen.lsml</DependentUpon>
+    </Content>
     <Content Include="Screens\ZoekBedrijf.lsml.js">
       <DependentUpon>ZoekBedrijf.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\ZoekBranches.lsml.js">
+      <DependentUpon>ZoekBranches.lsml</DependentUpon>
     </Content>
     <Content Include="Screens\ZoekContact.lsml.js">
       <DependentUpon>ZoekContact.lsml</DependentUpon>
@@ -139,10 +151,13 @@
     <LightSwitchModel Include="Screens\Contactpersonens\BrowseContactpersonens.lsml" />
     <LightSwitchModel Include="Screens\Contactpersonens\ViewContactpersonen.lsml" />
     <LightSwitchModel Include="Screens\Home.lsml" />
+    <LightSwitchModel Include="Screens\ToonStandplaatsAdres.lsml" />
     <LightSwitchModel Include="Screens\VerkoopkansenProjectens\AddEditVerkoopkansenProjecten.lsml" />
     <LightSwitchModel Include="Screens\VerkoopkansenProjectens\BrowseVerkoopkansenProjectens.lsml" />
     <LightSwitchModel Include="Screens\VerkoopkansenProjectens\ViewVerkoopkansenProjecten.lsml" />
+    <LightSwitchModel Include="Screens\ZoekAdressen.lsml" />
     <LightSwitchModel Include="Screens\ZoekBedrijf.lsml" />
+    <LightSwitchModel Include="Screens\ZoekBranches.lsml" />
     <LightSwitchModel Include="Screens\ZoekContact.lsml" />
   </ItemGroup>
   <ItemGroup>
@@ -161,6 +176,9 @@
     <_ClientBuildFile Include="GeneratedArtifacts\resources.js">
       <SubFolder>Scripts\Generated</SubFolder>
     </_ClientBuildFile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\T_MC_Adressen\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\LightSwitch\v4.5\MobileClient\Microsoft.LightSwitch.MobileClient.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\LightSwitch\v4.5\Microsoft.LightSwitch.Build.Tasks.targets" />

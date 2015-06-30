@@ -160,7 +160,8 @@
             </ContentItem>
             <ContentItem
               Name="left"
-              Kind="Group">
+              Kind="Group"
+              View="Microsoft.LightSwitch.MobileWeb:ColumnsLayout">
               <ContentItem
                 Name="Geslacht"
                 Kind="Value"
@@ -172,6 +173,36 @@
                         Member="ViewContactpersonen/Properties[Contactpersonen]" />
                       <MemberExpression
                         Member="Geslacht" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="Afdeling"
+                Kind="Value"
+                DataType=":String?">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="ViewContactpersonen/Properties[Contactpersonen]" />
+                      <MemberExpression
+                        Member="Afdeling" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="Functie"
+                Kind="Value"
+                DataType=":String?">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="ViewContactpersonen/Properties[Contactpersonen]" />
+                      <MemberExpression
+                        Member="Functie" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -207,36 +238,6 @@
                 <DisplayName
                   Value="Positie" />
               </ContentItem.Attributes>
-              <ContentItem
-                Name="Afdeling"
-                Kind="Value"
-                DataType=":String?">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="ViewContactpersonen/Properties[Contactpersonen]" />
-                      <MemberExpression
-                        Member="Afdeling" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-              <ContentItem
-                Name="Functie"
-                Kind="Value"
-                DataType=":String?">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="ViewContactpersonen/Properties[Contactpersonen]" />
-                      <MemberExpression
-                        Member="Functie" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
             </ContentItem>
             <ContentItem
               Name="Group"
@@ -321,6 +322,17 @@
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
+              <ContentItem.PropertySources>
+                <ControlPropertySource
+                  Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <CallExpression
+                        Target="ViewContactpersonen/Methods[Standplaats_Tap]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+              </ContentItem.PropertySources>
             </ContentItem>
             <ContentItem
               Name="Group3"
@@ -516,6 +528,8 @@
       </ScreenMethod>
       <ScreenMethod
         Name="DeleteContact" />
+      <ScreenMethod
+        Name="Standplaats_Tap" />
     </Screen.Methods>
     <Screen.Properties>
       <ScreenProperty

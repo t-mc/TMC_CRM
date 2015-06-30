@@ -1,38 +1,19 @@
 ﻿<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
   <edmx:DataServices xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="1.0">
     <Schema Namespace="Microsoft.SharePoint.DataService" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2007/05/edm">
-      <EntityType Name="ContactpersonenItem">
+      <EntityType Name="BrancheItem">
         <Key>
           <PropertyRef Name="Id" />
         </Key>
         <Property Name="InhoudstypeId" Type="Edm.String" Nullable="true" />
-        <Property Name="VolledigeNaam" Type="Edm.String" Nullable="true" m:FC_TargetPath="SyndicationTitle" m:FC_ContentKind="text" m:FC_KeepInContent="true" />
-        <Property Name="Titel" Type="Edm.String" Nullable="true" />
-        <Property Name="Initialen" Type="Edm.String" Nullable="true" />
-        <Property Name="Voornaam" Type="Edm.String" Nullable="true" />
-        <Property Name="Tussenvoegsel" Type="Edm.String" Nullable="true" />
-        <Property Name="Achternaam" Type="Edm.String" Nullable="true" />
-        <Property Name="Telefoonnummer" Type="Edm.String" Nullable="true" />
-        <Property Name="MobielNummer" Type="Edm.String" Nullable="true" />
-        <Property Name="EmailAdres" Type="Edm.String" Nullable="true" />
-        <Property Name="Standplaats" Type="Edm.String" Nullable="true" />
-        <Property Name="Functie" Type="Edm.String" Nullable="true" />
-        <Property Name="Afdeling" Type="Edm.String" Nullable="true" />
-        <Property Name="Assistent" Type="Edm.String" Nullable="true" />
-        <Property Name="Manager" Type="Edm.String" Nullable="true" />
-        <Property Name="OneNote" Type="Edm.String" Nullable="true" />
-        <Property Name="Nieuwsbrief" Type="Edm.Boolean" Nullable="true" />
-        <Property Name="Actief" Type="Edm.Boolean" Nullable="true" />
-        <Property Name="Bedrijfsnaam" Type="Edm.String" Nullable="true" />
-        <Property Name="GeslachtValue" Type="Edm.String" Nullable="true" />
-        <Property Name="StandplaatsId" Type="Edm.Double" Nullable="true" />
+        <Property Name="Branche" Type="Edm.String" Nullable="true" m:FC_TargetPath="SyndicationTitle" m:FC_ContentKind="text" m:FC_KeepInContent="true" />
         <Property Name="Id" Type="Edm.Int32" Nullable="false" />
         <Property Name="Inhoudstype" Type="Edm.String" Nullable="true" />
         <Property Name="Gewijzigd" Type="Edm.DateTime" Nullable="true" m:FC_TargetPath="SyndicationUpdated" m:FC_ContentKind="text" m:FC_KeepInContent="true" />
         <Property Name="Gemaakt" Type="Edm.DateTime" Nullable="true" />
-        <NavigationProperty Name="GemaaktDoor" Relationship="Microsoft.SharePoint.DataService.ContactpersonenItem_GemaaktDoor" FromRole="ContactpersonenItem" ToRole="GemaaktDoor" />
+        <NavigationProperty Name="GemaaktDoor" Relationship="Microsoft.SharePoint.DataService.BrancheItem_GemaaktDoor" FromRole="BrancheItem" ToRole="GemaaktDoor" />
         <Property Name="GemaaktDoorId" Type="Edm.Int32" Nullable="true" />
-        <NavigationProperty Name="GewijzigdDoor" Relationship="Microsoft.SharePoint.DataService.ContactpersonenItem_GewijzigdDoor" FromRole="ContactpersonenItem" ToRole="GewijzigdDoor" />
+        <NavigationProperty Name="GewijzigdDoor" Relationship="Microsoft.SharePoint.DataService.BrancheItem_GewijzigdDoor" FromRole="BrancheItem" ToRole="GewijzigdDoor" />
         <Property Name="GewijzigdDoorId" Type="Edm.Int32" Nullable="true" />
         <Property Name="Owshiddenversion" Type="Edm.Int32" Nullable="true" ConcurrencyMode="Fixed" />
         <Property Name="Versie" Type="Edm.String" Nullable="true" />
@@ -77,12 +58,12 @@
         <Property Name="Versie" Type="Edm.String" Nullable="true" />
         <Property Name="Pad" Type="Edm.String" Nullable="true" />
       </EntityType>
-      <Association Name="ContactpersonenItem_GemaaktDoor">
-        <End Role="ContactpersonenItem" Type="Microsoft.SharePoint.DataService.ContactpersonenItem" Multiplicity="*" />
+      <Association Name="BrancheItem_GemaaktDoor">
+        <End Role="BrancheItem" Type="Microsoft.SharePoint.DataService.BrancheItem" Multiplicity="*" />
         <End Role="GemaaktDoor" Type="Microsoft.SharePoint.DataService.LijstMetGebruikersgegevensItem" Multiplicity="0..1" />
       </Association>
-      <Association Name="ContactpersonenItem_GewijzigdDoor">
-        <End Role="ContactpersonenItem" Type="Microsoft.SharePoint.DataService.ContactpersonenItem" Multiplicity="*" />
+      <Association Name="BrancheItem_GewijzigdDoor">
+        <End Role="BrancheItem" Type="Microsoft.SharePoint.DataService.BrancheItem" Multiplicity="*" />
         <End Role="GewijzigdDoor" Type="Microsoft.SharePoint.DataService.LijstMetGebruikersgegevensItem" Multiplicity="0..1" />
       </Association>
       <Association Name="LijstMetGebruikersgegevensItem_GemaaktDoor">
@@ -94,14 +75,14 @@
         <End Role="GewijzigdDoor" Type="Microsoft.SharePoint.DataService.LijstMetGebruikersgegevensItem" Multiplicity="0..1" />
       </Association>
       <EntityContainer Name="TMCDevDataContext" m:IsDefaultEntityContainer="true">
-        <EntitySet Name="Contactpersonen" EntityType="Microsoft.SharePoint.DataService.ContactpersonenItem" />
+        <EntitySet Name="Branche" EntityType="Microsoft.SharePoint.DataService.BrancheItem" />
         <EntitySet Name="LijstMetGebruikersgegevens" EntityType="Microsoft.SharePoint.DataService.LijstMetGebruikersgegevensItem" />
-        <AssociationSet Name="ContactpersonenItem_GemaaktDoor" Association="Microsoft.SharePoint.DataService.ContactpersonenItem_GemaaktDoor">
-          <End Role="ContactpersonenItem" EntitySet="Contactpersonen" />
+        <AssociationSet Name="BrancheItem_GemaaktDoor" Association="Microsoft.SharePoint.DataService.BrancheItem_GemaaktDoor">
+          <End Role="BrancheItem" EntitySet="Branche" />
           <End Role="GemaaktDoor" EntitySet="LijstMetGebruikersgegevens" />
         </AssociationSet>
-        <AssociationSet Name="ContactpersonenItem_GewijzigdDoor" Association="Microsoft.SharePoint.DataService.ContactpersonenItem_GewijzigdDoor">
-          <End Role="ContactpersonenItem" EntitySet="Contactpersonen" />
+        <AssociationSet Name="BrancheItem_GewijzigdDoor" Association="Microsoft.SharePoint.DataService.BrancheItem_GewijzigdDoor">
+          <End Role="BrancheItem" EntitySet="Branche" />
           <End Role="GewijzigdDoor" EntitySet="LijstMetGebruikersgegevens" />
         </AssociationSet>
         <AssociationSet Name="LijstMetGebruikersgegevensItem_GemaaktDoor" Association="Microsoft.SharePoint.DataService.LijstMetGebruikersgegevensItem_GemaaktDoor">

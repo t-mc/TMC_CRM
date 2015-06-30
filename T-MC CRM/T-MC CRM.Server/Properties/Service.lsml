@@ -33,6 +33,9 @@
     <EntityContainerGroupProperty
       Name="T_MC_Verkoopkansen"
       EntityContainer="T_MC_Verkoopkansen" />
+    <EntityContainerGroupProperty
+      Name="T_MC_Branche"
+      EntityContainer="T_MC_Branche" />
   </EntityContainerGroup>
   <GlobalAttributeGroup
     Name="LightSwitchServiceApplicationGroup">

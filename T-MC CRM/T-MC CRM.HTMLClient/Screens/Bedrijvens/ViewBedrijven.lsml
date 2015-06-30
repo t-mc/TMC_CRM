@@ -157,23 +157,10 @@
                 Name="right"
                 Kind="Group">
                 <ContentItem
-                  Name="MoederAccount"
-                  Kind="Value"
-                  DataType=":String?"
-                  View="Microsoft.LightSwitch.MobileWeb:Text">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="Bedrijven/Properties[MoederAccount]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
                   Name="Klantpartner"
                   Kind="Value"
-                  DataType=":Person?">
+                  DataType=":Person?"
+                  View="Microsoft.LightSwitch.SharePoint.MobileWeb:PersonViewer">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
@@ -231,6 +218,20 @@
                       <ChainExpression>
                         <MemberExpression
                           Member="Bedrijven/Properties[OneNote]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="MoederAccount"
+                  Kind="Value"
+                  DataType=":String?"
+                  View="Microsoft.LightSwitch.MobileWeb:Text">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Bedrijven/Properties[MoederAccount]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>

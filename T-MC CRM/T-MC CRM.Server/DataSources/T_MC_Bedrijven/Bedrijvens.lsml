@@ -237,6 +237,11 @@
         FromEnd="Bedrijven"
         ToEnd="VerkoopkansenProjecten"
         VirtualAssociation="VerkoopkansenProjecten_Bedrijven" />
+      <VirtualNavigationProperty
+        Name="Branches"
+        FromEnd="Bedrijven"
+        ToEnd="Branche"
+        VirtualAssociation="Branche_Bedrijven" />
     </EntityType.Properties>
   </EntityType>
   <EntityContainer
@@ -504,6 +509,35 @@
       EntitySet="Bedrijvens">
       <VirtualAssociationSetEndProperty
         EntityProperty="Bedrijfsnaam" />
+    </VirtualAssociationSetEnd>
+  </VirtualAssociationSet>
+  <VirtualAssociation
+    Name="Branche_Bedrijven">
+    <VirtualAssociationEnd
+      Name="Branche"
+      Multiplicity="Many"
+      EntityType="Branche" />
+    <VirtualAssociationEnd
+      Name="Bedrijven"
+      Multiplicity="One"
+      EntityType="Bedrijven" />
+  </VirtualAssociation>
+  <VirtualAssociationSet
+    Name="Branche_Bedrijven_Set"
+    VirtualAssociation="Branche_Bedrijven">
+    <VirtualAssociationSetEnd
+      Name="Branche"
+      EntityContainer="T_MC_Branche"
+      EntitySet="Branches">
+      <VirtualAssociationSetEndProperty
+        EntityProperty="Branche1" />
+    </VirtualAssociationSetEnd>
+    <VirtualAssociationSetEnd
+      Name="Bedrijven"
+      EntityContainer="T_MC_Bedrijven"
+      EntitySet="Bedrijvens">
+      <VirtualAssociationSetEndProperty
+        EntityProperty="Branche" />
     </VirtualAssociationSetEnd>
   </VirtualAssociationSet>
 </ServiceApplication>

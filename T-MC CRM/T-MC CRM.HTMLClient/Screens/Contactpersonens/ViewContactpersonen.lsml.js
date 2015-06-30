@@ -22,3 +22,7 @@ myapp.ViewContactpersonen.DeleteContact_execute = function (screen) {
         });
     }
 };
+myapp.ViewContactpersonen.Standplaats_Tap_execute = function (screen) {
+    // Write code here.
+    myapp.showToonStandplaatsAdres(screen.Contactpersonen.StandplaatsId);
+};

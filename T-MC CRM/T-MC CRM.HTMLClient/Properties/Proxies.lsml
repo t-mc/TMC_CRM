@@ -4,12 +4,6 @@
   <Application.Attributes>
     <Partial />
   </Application.Attributes>
-  <EntityType>
-    <EntityType.Attributes>
-      <Proxy
-        Target="ServiceInterface:LijstMetGebruikersgegeven" />
-    </EntityType.Attributes>
-  </EntityType>
   <Association>
     <Association.Attributes>
       <Proxy
@@ -40,12 +34,6 @@
         Target="ServiceInterface:T_MC_Bedrijven" />
     </EntityContainer.Attributes>
   </EntityContainer>
-  <EntityType>
-    <EntityType.Attributes>
-      <Proxy
-        Target="ServiceInterface:Adressen" />
-    </EntityType.Attributes>
-  </EntityType>
   <EntityType>
     <EntityType.Attributes>
       <Proxy
@@ -202,4 +190,70 @@
         Target="ServiceInterface:VerkoopkansenProjecten_Contactpersonen_Set" />
     </VirtualAssociationSet.Attributes>
   </VirtualAssociationSet>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:Branche" />
+    </EntityType.Attributes>
+  </EntityType>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:LijstMetGebruikersgegeven4" />
+    </EntityType.Attributes>
+  </EntityType>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:BrancheItem_GemaaktDoor" />
+    </Association.Attributes>
+  </Association>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:BrancheItem_GewijzigdDoor" />
+    </Association.Attributes>
+  </Association>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:LijstMetGebruikersgegevensItem_GemaaktDoor4" />
+    </Association.Attributes>
+  </Association>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:LijstMetGebruikersgegevensItem_GewijzigdDoor4" />
+    </Association.Attributes>
+  </Association>
+  <EntityContainer>
+    <EntityContainer.Attributes>
+      <Proxy
+        Target="ServiceInterface:T_MC_Branche" />
+    </EntityContainer.Attributes>
+  </EntityContainer>
+  <VirtualAssociation>
+    <VirtualAssociation.Attributes>
+      <Proxy
+        Target="ServiceInterface:Branche_Bedrijven" />
+    </VirtualAssociation.Attributes>
+  </VirtualAssociation>
+  <VirtualAssociationSet>
+    <VirtualAssociationSet.Attributes>
+      <Proxy
+        Target="ServiceInterface:Branche_Bedrijven_Set" />
+    </VirtualAssociationSet.Attributes>
+  </VirtualAssociationSet>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:LijstMetGebruikersgegeven" />
+    </EntityType.Attributes>
+  </EntityType>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:Adressen" />
+    </EntityType.Attributes>
+  </EntityType>
 </Application>

@@ -204,6 +204,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataSources\T_MC_Adressen\_T_MC_AdressenService.lsml.cs" />
     <Compile Include="DataSources\T_MC_Bedrijven\Bedrijven.lsml.cs">
       <DependentUpon>Bedrijvens.lsml</DependentUpon>
     </Compile>
@@ -223,6 +224,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>T_MC_Bedrijven.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\T_MC_Branche.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>T_MC_Branche.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\T_MC_Contactpersonen.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -309,7 +315,18 @@
     <LightSwitchModel Include="DataSources\T_MC_Contactpersonen\ActieveContacten.lsml">
       <DependentUpon>Contactpersonens.lsml</DependentUpon>
     </LightSwitchModel>
+    <LightSwitchModel Include="DataSources\T_MC_Branche\Branches.lsml" />
+    <LightSwitchModel Include="DataSources\T_MC_Branche\LijstMetGebruikersgegevens.lsml" />
+    <LightSwitchModel Include="Properties\DataSources\T_MC_Branche.lsml" />
+    <LightSwitchModel Include="DataSources\T_MC_Adressen\ToonStandplaatsAdres.lsml">
+      <DependentUpon>Adressens.lsml</DependentUpon>
+    </LightSwitchModel>
     <None Include="Properties\PublishProfiles\LightSwitch.SharePoint.ProviderHosted.pubxml" />
+    <LightSwitchExternalDataSource Include="Properties\T_MC_Branche.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>T_MC_Branche.Designer.cs</LastGenOutput>
+      <EntityContainer>T_MC_Branche</EntityContainer>
+    </LightSwitchExternalDataSource>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

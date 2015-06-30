@@ -136,8 +136,6 @@
         <EntityProperty.Attributes>
           <DisplayName
             Value="Assistent" />
-          <MaxLength
-            Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -146,8 +144,6 @@
         <EntityProperty.Attributes>
           <DisplayName
             Value="Manager" />
-          <MaxLength
-            Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -156,8 +152,6 @@
         <EntityProperty.Attributes>
           <DisplayName
             Value="OneNote" />
-          <MaxLength
-            Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -317,6 +311,17 @@
         FromEnd="Contactpersonen"
         ToEnd="VerkoopkansenProjecten"
         VirtualAssociation="VerkoopkansenProjecten_Contactpersonen" />
+      <EntityProperty
+        Name="StandplaatsId"
+        PropertyType=":Double?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="StandplaatsId" />
+          <NotSearchable />
+          <Description
+            Value="" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
     </EntityType.Properties>
   </EntityType>
   <EntityContainer
@@ -415,6 +420,35 @@
       </QueryOperationParameter>
     </QueryOperation>
   </EntityContainer>
+  <VirtualAssociation
+    Name="VerkoopkansenProjecten_Contactpersonen">
+    <VirtualAssociationEnd
+      Name="VerkoopkansenProjecten"
+      Multiplicity="Many"
+      EntityType="VerkoopkansenProjecten" />
+    <VirtualAssociationEnd
+      Name="Contactpersonen"
+      Multiplicity="One"
+      EntityType="Contactpersonen" />
+  </VirtualAssociation>
+  <VirtualAssociationSet
+    Name="VerkoopkansenProjecten_Contactpersonen_Set"
+    VirtualAssociation="VerkoopkansenProjecten_Contactpersonen">
+    <VirtualAssociationSetEnd
+      Name="VerkoopkansenProjecten"
+      EntityContainer="T_MC_Verkoopkansen"
+      EntitySet="VerkoopkansenProjectens">
+      <VirtualAssociationSetEndProperty
+        EntityProperty="Opdrachtgever" />
+    </VirtualAssociationSetEnd>
+    <VirtualAssociationSetEnd
+      Name="Contactpersonen"
+      EntityContainer="T_MC_Contactpersonen"
+      EntitySet="Contactpersonens">
+      <VirtualAssociationSetEndProperty
+        EntityProperty="VolledigeNaam" />
+    </VirtualAssociationSetEnd>
+  </VirtualAssociationSet>
   <DataService
     Name="T_MC_ContactpersonenDataService">
     <DataService.Attributes>
@@ -488,6 +522,9 @@
           Name="GeslachtValue"
           Property="Contactpersonen/Properties[Geslacht]" />
         <CsdlProperty
+          Name="StandplaatsId"
+          Property="Contactpersonen/Properties[StandplaatsId]" />
+        <CsdlProperty
           Name="Id"
           Property="Contactpersonen/Properties[Id]" />
         <CsdlProperty
@@ -523,33 +560,4 @@
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
   </DataService>
-  <VirtualAssociation
-    Name="VerkoopkansenProjecten_Contactpersonen">
-    <VirtualAssociationEnd
-      Name="VerkoopkansenProjecten"
-      Multiplicity="Many"
-      EntityType="VerkoopkansenProjecten" />
-    <VirtualAssociationEnd
-      Name="Contactpersonen"
-      Multiplicity="One"
-      EntityType="Contactpersonen" />
-  </VirtualAssociation>
-  <VirtualAssociationSet
-    Name="VerkoopkansenProjecten_Contactpersonen_Set"
-    VirtualAssociation="VerkoopkansenProjecten_Contactpersonen">
-    <VirtualAssociationSetEnd
-      Name="VerkoopkansenProjecten"
-      EntityContainer="T_MC_Verkoopkansen"
-      EntitySet="VerkoopkansenProjectens">
-      <VirtualAssociationSetEndProperty
-        EntityProperty="Opdrachtgever" />
-    </VirtualAssociationSetEnd>
-    <VirtualAssociationSetEnd
-      Name="Contactpersonen"
-      EntityContainer="T_MC_Contactpersonen"
-      EntitySet="Contactpersonens">
-      <VirtualAssociationSetEndProperty
-        EntityProperty="VolledigeNaam" />
-    </VirtualAssociationSetEnd>
-  </VirtualAssociationSet>
 </ServiceApplication>

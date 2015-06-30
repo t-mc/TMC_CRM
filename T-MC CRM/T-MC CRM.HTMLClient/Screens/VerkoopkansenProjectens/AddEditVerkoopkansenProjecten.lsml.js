@@ -1,11 +1,10 @@
 ﻿/// <reference path="~/GeneratedArtifacts/viewModel.js" />
-var VerkoopStadium;
-var KeuzeBedrijf;
-var KeuzeContact;
+var VerkoopStadium = "";
+var KeuzeBedrijf = "";
+var KeuzeContact = "";
 
 myapp.AddEditVerkoopkansenProjecten.beforeApplyChanges = function (screen) {
     // Write code here.
-    // alert("Koekoek 2");
     if (screen.VerkoopkansenProjecten.Verkoopstadium != VerkoopStadium) {
         switch (screen.VerkoopkansenProjecten.Verkoopstadium) {
             case "Marktkans":
