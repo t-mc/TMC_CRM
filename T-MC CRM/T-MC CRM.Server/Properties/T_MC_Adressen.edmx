@@ -13,6 +13,7 @@
         <Property Name="Land" Type="Edm.String" Nullable="true" />
         <Property Name="Adresregel1" Type="Edm.String" Nullable="true" />
         <Property Name="Adresregel2" Type="Edm.String" Nullable="true" />
+        <Property Name="AdresId" Type="Edm.Double" Nullable="true" />
         <Property Name="Id" Type="Edm.Int32" Nullable="false" />
         <Property Name="Inhoudstype" Type="Edm.String" Nullable="true" />
         <Property Name="Gewijzigd" Type="Edm.DateTime" Nullable="true" m:FC_TargetPath="SyndicationUpdated" m:FC_ContentKind="text" m:FC_KeepInContent="true" />

@@ -68,8 +68,14 @@
     <Content Include="Content\Images\user-splash-screen.png" />
     <Content Include="Content\Web.config" />
     <Content Include="packages.config" />
-    <Content Include="Screens\AddEditAdressen.lsml.js">
+    <Content Include="Screens\Adressen\AddEditAdressen.lsml.js">
       <DependentUpon>AddEditAdressen.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\Adressen\ToonStandplaatsAdres.lsml.js">
+      <DependentUpon>ToonStandplaatsAdres.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\Adressen\ZoekAdressen.lsml.js">
+      <DependentUpon>ZoekAdressen.lsml</DependentUpon>
     </Content>
     <Content Include="Screens\Bedrijvens\AddEditBedrijven.lsml.js">
       <DependentUpon>AddEditBedrijven.lsml</DependentUpon>
@@ -77,20 +83,38 @@
     <Content Include="Screens\Bedrijvens\BrowseBedrijvens.lsml.js">
       <DependentUpon>BrowseBedrijvens.lsml</DependentUpon>
     </Content>
+    <Content Include="Screens\Bedrijvens\ToonDetailsBedrijf.lsml.js">
+      <DependentUpon>ToonDetailsBedrijf.lsml</DependentUpon>
+    </Content>
     <Content Include="Screens\Bedrijvens\ViewBedrijven.lsml.js">
       <DependentUpon>ViewBedrijven.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\Bedrijvens\ZoekBedrijf.lsml.js">
+      <DependentUpon>ZoekBedrijf.lsml</DependentUpon>
     </Content>
     <Content Include="Screens\Contactpersonens\AddEditContactpersonen.lsml.js">
       <DependentUpon>AddEditContactpersonen.lsml</DependentUpon>
     </Content>
+    <Content Include="Screens\Contactpersonens\ToonDetailAssistent.lsml.js">
+      <DependentUpon>ToonDetailAssistent.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\Contactpersonens\ToonDetailsManager.lsml.js">
+      <DependentUpon>ToonDetailsManager.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\Contactpersonens\ToonDetailsOpdrachtgever.lsml.js">
+      <DependentUpon>ToonDetailsOpdrachtgever.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\Contactpersonens\ToonDetailsPrimairContact.lsml.js">
+      <DependentUpon>ToonDetailsPrimairContact.lsml</DependentUpon>
+    </Content>
     <Content Include="Screens\Contactpersonens\ViewContactpersonen.lsml.js">
       <DependentUpon>ViewContactpersonen.lsml</DependentUpon>
     </Content>
+    <Content Include="Screens\Contactpersonens\ZoekContact.lsml.js">
+      <DependentUpon>ZoekContact.lsml</DependentUpon>
+    </Content>
     <Content Include="Screens\Home.lsml.js">
       <DependentUpon>Home.lsml</DependentUpon>
-    </Content>
-    <Content Include="Screens\ToonStandplaatsAdres.lsml.js">
-      <DependentUpon>ToonStandplaatsAdres.lsml</DependentUpon>
     </Content>
     <Content Include="Screens\VerkoopkansenProjectens\AddEditVerkoopkansenProjecten.lsml.js">
       <DependentUpon>AddEditVerkoopkansenProjecten.lsml</DependentUpon>
@@ -98,17 +122,8 @@
     <Content Include="Screens\VerkoopkansenProjectens\ViewVerkoopkansenProjecten.lsml.js">
       <DependentUpon>ViewVerkoopkansenProjecten.lsml</DependentUpon>
     </Content>
-    <Content Include="Screens\ZoekAdressen.lsml.js">
-      <DependentUpon>ZoekAdressen.lsml</DependentUpon>
-    </Content>
-    <Content Include="Screens\ZoekBedrijf.lsml.js">
-      <DependentUpon>ZoekBedrijf.lsml</DependentUpon>
-    </Content>
     <Content Include="Screens\ZoekBranches.lsml.js">
       <DependentUpon>ZoekBranches.lsml</DependentUpon>
-    </Content>
-    <Content Include="Screens\ZoekContact.lsml.js">
-      <DependentUpon>ZoekContact.lsml</DependentUpon>
     </Content>
     <Content Include="Scripts\datajs-1.1.1.js" />
     <Content Include="Scripts\datajs-1.1.1.min.js" />
@@ -138,27 +153,32 @@
     <LightSwitchModel Include="Properties\T_MC_Bedrijven\Bedrijvens.lsml" />
     <LightSwitchModel Include="Properties\T_MC_Contactpersonen\Contactpersonens.lsml" />
     <LightSwitchModel Include="Properties\T_MC_Verkoopkansen\VerkoopkansenProjectens.lsml" />
-    <LightSwitchModel Include="Screens\AddEditAdressen.lsml" />
+    <LightSwitchModel Include="Screens\Adressen\AddEditAdressen.lsml" />
+    <LightSwitchModel Include="Screens\Adressen\ToonStandplaatsAdres.lsml" />
+    <LightSwitchModel Include="Screens\Adressen\ZoekAdressen.lsml" />
     <LightSwitchModel Include="Screens\Bedrijvens\AddEditBedrijven.lsml" />
+    <LightSwitchModel Include="Screens\Bedrijvens\BrowseBedrijvenOpNaam.lsml" />
+    <LightSwitchModel Include="Screens\Bedrijvens\BrowseBedrijvenOpNaam1.lsml" />
     <LightSwitchModel Include="Screens\Bedrijvens\BrowseBedrijvens.lsml" />
+    <LightSwitchModel Include="Screens\Bedrijvens\BrowseNietActieveBedrijven.lsml" />
+    <LightSwitchModel Include="Screens\Bedrijvens\ToonDetailsBedrijf.lsml" />
     <LightSwitchModel Include="Screens\Bedrijvens\ViewBedrijven.lsml" />
-    <LightSwitchModel Include="Screens\BrowseBedrijvenOpNaam.lsml" />
-    <LightSwitchModel Include="Screens\BrowseBedrijvenOpNaam1.lsml" />
-    <LightSwitchModel Include="Screens\BrowseContactsPerBedrijf.lsml" />
-    <LightSwitchModel Include="Screens\BrowseNietActieveBedrijven.lsml" />
-    <LightSwitchModel Include="Screens\BrowseOrders.lsml" />
+    <LightSwitchModel Include="Screens\Bedrijvens\ZoekBedrijf.lsml" />
     <LightSwitchModel Include="Screens\Contactpersonens\AddEditContactpersonen.lsml" />
     <LightSwitchModel Include="Screens\Contactpersonens\BrowseContactpersonens.lsml" />
+    <LightSwitchModel Include="Screens\Contactpersonens\BrowseContactsPerBedrijf.lsml" />
+    <LightSwitchModel Include="Screens\Contactpersonens\ToonDetailAssistent.lsml" />
+    <LightSwitchModel Include="Screens\Contactpersonens\ToonDetailsManager.lsml" />
+    <LightSwitchModel Include="Screens\Contactpersonens\ToonDetailsOpdrachtgever.lsml" />
+    <LightSwitchModel Include="Screens\Contactpersonens\ToonDetailsPrimairContact.lsml" />
     <LightSwitchModel Include="Screens\Contactpersonens\ViewContactpersonen.lsml" />
+    <LightSwitchModel Include="Screens\Contactpersonens\ZoekContact.lsml" />
     <LightSwitchModel Include="Screens\Home.lsml" />
-    <LightSwitchModel Include="Screens\ToonStandplaatsAdres.lsml" />
     <LightSwitchModel Include="Screens\VerkoopkansenProjectens\AddEditVerkoopkansenProjecten.lsml" />
+    <LightSwitchModel Include="Screens\VerkoopkansenProjectens\BrowseOrders.lsml" />
     <LightSwitchModel Include="Screens\VerkoopkansenProjectens\BrowseVerkoopkansenProjectens.lsml" />
     <LightSwitchModel Include="Screens\VerkoopkansenProjectens\ViewVerkoopkansenProjecten.lsml" />
-    <LightSwitchModel Include="Screens\ZoekAdressen.lsml" />
-    <LightSwitchModel Include="Screens\ZoekBedrijf.lsml" />
     <LightSwitchModel Include="Screens\ZoekBranches.lsml" />
-    <LightSwitchModel Include="Screens\ZoekContact.lsml" />
   </ItemGroup>
   <ItemGroup>
     <_ClientBuildFile Include="GeneratedArtifacts\model.json">

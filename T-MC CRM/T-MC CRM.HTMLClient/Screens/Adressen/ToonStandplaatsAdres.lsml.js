@@ -2,5 +2,5 @@
 
 myapp.ToonStandplaatsAdres.created = function (screen) {
     // Write code here.
-
+    screen.setLpStandplaatsId(KeuzeStandplaats);
 };

@@ -187,6 +187,15 @@
         FromEnd="Adressen"
         ToEnd="Bedrijven"
         VirtualAssociation="Bedrijven_Adressen" />
+      <EntityProperty
+        Name="AdresId"
+        PropertyType=":Double?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="AdresId" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
     </EntityType.Properties>
   </EntityType>
   <EntityContainer
@@ -321,6 +330,9 @@
         <CsdlProperty
           Name="Adresregel2"
           Property="Adressen/Properties[Adresregel2]" />
+        <CsdlProperty
+          Name="AdresId"
+          Property="Adressen/Properties[AdresId]" />
         <CsdlProperty
           Name="Id"
           Property="Adressen/Properties[Id]" />

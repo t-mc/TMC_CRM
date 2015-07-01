@@ -1,7 +1,9 @@
 ﻿/// <reference path="~/GeneratedArtifacts/viewModel.js" />
 var KeuzeBedrijf = "";
 var KeuzeContact = "";
-var KeuzeStandplaats = null;
+var KeuzeStandplaatsId = null;
+var KeuzeStandplaats = "";
+var CurrentBedrijf = "";
 
 myapp.AddEditContactpersonen.beforeApplyChanges = function (screen) {
     // Write code here.
@@ -57,6 +59,7 @@ myapp.AddEditContactpersonen.Bedrijfsnaam_Tap_execute = function (screen) {
     myapp.showZoekBedrijf({
         afterClosed: function () {
             screen.Contactpersonen.Bedrijfsnaam = KeuzeBedrijf;
+            KeuzeBedrijf = "";
         }
     });
 };
@@ -65,6 +68,7 @@ myapp.AddEditContactpersonen.Assistent_Tap_execute = function (screen) {
     myapp.showZoekContact({
         afterClosed: function () {
             screen.Contactpersonen.Assistent = KeuzeContact;
+            KeuzeContact = "";
         }
     });
 };
@@ -73,15 +77,22 @@ myapp.AddEditContactpersonen.Manager_Tap_execute = function (screen) {
     myapp.showZoekContact({
         afterClosed: function () {
             screen.Contactpersonen.Manager = KeuzeContact;
+            KeuzeContact = "";
         }
     });
 };
 myapp.AddEditContactpersonen.Standplaats_Tap_execute = function (screen) {
     // Write code here.
+    CurrentBedrijf = screen.Contactpersonen.Bedrijfsnaam;
+    KeuzeStandplaats = screen.Contactpersonen.StandplaatsId;
+
     myapp.showZoekAdressen({
         afterClosed: function () {
-            screen.Contactpersonen.StandplaatsId = KeuzeStandplaats;
-            screen.Contactpersonen.Standplaats = "Klik hier voor standplaats adres";
+            screen.Contactpersonen.StandplaatsId = KeuzeStandplaatsId;
+            screen.Contactpersonen.Standplaats = KeuzeStandplaats;
+            KeuzeStandplaatsId = null;
+            KeuzeStandplaats = "";
+            CurrentBedrijf = "";
         }
     });
 };

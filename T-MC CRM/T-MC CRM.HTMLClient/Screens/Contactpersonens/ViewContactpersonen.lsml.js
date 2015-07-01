@@ -1,4 +1,8 @@
 ﻿/// <reference path="~/GeneratedArtifacts/viewModel.js" />
+var KeuzeStandplaats = null;
+var ZoekBedrijf = "";
+var ZoekManager = "";
+var ZoekAssistent = "";
 
 myapp.ViewContactpersonen.Details_postRender = function (element, contentItem) {
     // Write code here.
@@ -24,5 +28,21 @@ myapp.ViewContactpersonen.DeleteContact_execute = function (screen) {
 };
 myapp.ViewContactpersonen.Standplaats_Tap_execute = function (screen) {
     // Write code here.
-    myapp.showToonStandplaatsAdres(screen.Contactpersonen.StandplaatsId);
+    KeuzeStandplaats = screen.Contactpersonen.StandplaatsId;
+    myapp.showToonStandplaatsAdres();
+};
+myapp.ViewContactpersonen.Contactpersonen_Bedrijfsnaam_Tap_execute = function (screen) {
+    // Write code here.
+    ZoekBedrijf = screen.Contactpersonen.Bedrijfsnaam;
+    myapp.showToonDetailsBedrijf();
+};
+myapp.ViewContactpersonen.Manager_Tap_execute = function (screen) {
+    // Write code here.
+    ZoekManager = screen.Contactpersonen.Manager;
+    myapp.showToonDetailsManager();
+};
+myapp.ViewContactpersonen.Assistent_Tap_execute = function (screen) {
+    // Write code here.
+    ZoekAssistent = screen.Contactpersonen.Assistent;
+    myapp.showToonDetailAssistent();
 };

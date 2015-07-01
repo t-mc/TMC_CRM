@@ -1,4 +1,6 @@
 ﻿/// <reference path="~/GeneratedArtifacts/viewModel.js" />
+var ZoekBedrijf = "";
+var ZoekOpdrachtgever = "";
 
 myapp.ViewVerkoopkansenProjecten.Details_postRender = function (element, contentItem) {
     // Write code here.
@@ -26,4 +28,14 @@ myapp.ViewVerkoopkansenProjecten.Verkoopkans_render = function (element, content
     // Write code here.
     var verkoopKans = $("<p><i>" + contentItem.value * 100 + " %</i></p>");
     verkoopKans.appendTo($(element));
+};
+myapp.ViewVerkoopkansenProjecten.Bedrijfsnaam_Tap_execute = function (screen) {
+    // Write code here.
+    ZoekBedrijf = screen.VerkoopkansenProjecten.Bedrijfsnaam;
+    myapp.showToonDetailsBedrijf();
+};
+myapp.ViewVerkoopkansenProjecten.Opdrachtgever_Tap_execute = function (screen) {
+    // Write code here.
+    ZoekOpdrachtgever = screen.VerkoopkansenProjecten.Opdrachtgever;
+    myapp.showToonDetailsOpdrachtgever();
 };
