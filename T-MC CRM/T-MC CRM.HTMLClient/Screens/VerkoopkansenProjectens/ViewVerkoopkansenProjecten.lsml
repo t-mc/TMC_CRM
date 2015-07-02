@@ -30,6 +30,25 @@
                 Value="Details" />
             </ContentItem.Attributes>
             <ContentItem
+              Name="ShowBrowseOrders"
+              Kind="Command">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="Vorig scherm" />
+              </ContentItem.Attributes>
+              <ContentItem.PropertySources>
+                <ControlPropertySource
+                  Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <CallExpression
+                        Target="ViewVerkoopkansenProjecten/Methods[ShowBrowseOrders_Tap]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+              </ContentItem.PropertySources>
+            </ContentItem>
+            <ContentItem
               Name="columns"
               Kind="Details"
               DataType="VerkoopkansenProjecten"
@@ -449,6 +468,18 @@
           Name="Popups"
           Kind="Group"
           View="Microsoft.LightSwitch.MobileWeb:DialogPages" />
+        <ContentItem.PropertySources>
+          <ControlPropertySource
+            Property="Microsoft.LightSwitch.MobileWeb:Screen/Properties[HideTabTitles]">
+            <ScreenExpressionTree>
+              <ChainExpression>
+                <ConstantExpression
+                  Value="True"
+                  ResultType=":Boolean" />
+              </ChainExpression>
+            </ScreenExpressionTree>
+          </ControlPropertySource>
+        </ContentItem.PropertySources>
       </ContentItem>
     </Screen.RootContentItem>
     <Screen.Methods>
@@ -480,6 +511,8 @@
         Name="Bedrijfsnaam_Tap" />
       <ScreenMethod
         Name="Opdrachtgever_Tap" />
+      <ScreenMethod
+        Name="ShowBrowseOrders_Tap" />
     </Screen.Methods>
     <Screen.Properties>
       <ScreenProperty

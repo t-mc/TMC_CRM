@@ -3,6 +3,7 @@ var KeuzeBedrijf = "";
 var KeuzeContact = "";
 var KeuzeStandplaatsId = null;
 var KeuzeStandplaats = "";
+var ZoekBedrijf = "";
 var CurrentBedrijf = "";
 
 myapp.AddEditContactpersonen.beforeApplyChanges = function (screen) {
@@ -56,10 +57,16 @@ myapp.AddEditContactpersonen.created = function (screen) {
 };
 myapp.AddEditContactpersonen.Bedrijfsnaam_Tap_execute = function (screen) {
     // Write code here.
+    var BewaarBedrijf = screen.Contactpersonen.Bedrijfsnaam;
     myapp.showZoekBedrijf({
         afterClosed: function () {
-            screen.Contactpersonen.Bedrijfsnaam = KeuzeBedrijf;
+            if (KeuzeBedrijf !== BewaarBedrijf) {
+                screen.Contactpersonen.Bedrijfsnaam = KeuzeBedrijf;
+                screen.Contactpersonen.Standplaats = "< voeg standplaats in >";
+                screen.Contactpersonen.StandplaatsId = null;
+            }
             KeuzeBedrijf = "";
+            BewaarBedrijf = "";
         }
     });
 };
@@ -81,18 +88,26 @@ myapp.AddEditContactpersonen.Manager_Tap_execute = function (screen) {
         }
     });
 };
+
+
+
 myapp.AddEditContactpersonen.Standplaats_Tap_execute = function (screen) {
     // Write code here.
-    CurrentBedrijf = screen.Contactpersonen.Bedrijfsnaam;
-    KeuzeStandplaats = screen.Contactpersonen.StandplaatsId;
-
-    myapp.showZoekAdressen({
-        afterClosed: function () {
-            screen.Contactpersonen.StandplaatsId = KeuzeStandplaatsId;
-            screen.Contactpersonen.Standplaats = KeuzeStandplaats;
-            KeuzeStandplaatsId = null;
-            KeuzeStandplaats = "";
-            CurrentBedrijf = "";
-        }
-    });
+    if (screen.Contactpersonen.Bedrijfsnaam == "< voeg bedrijf in >") {
+        alert("Voer eerst het bedrijf in!")
+    } else {
+        var BewaarStandplaats = screen.Contactpersonen.Standplaats;
+        CurrentBedrijf = screen.Contactpersonen.Bedrijfsnaam;
+        myapp.showZoekStandplaatsAdres(null, {
+            afterClosed: function () {
+                if ( KeuzeStandplaats !== BewaarStandplaats ) {
+                    screen.Contactpersonen.setStandplaatsId(KeuzeStandplaatsId);
+                    screen.Contactpersonen.setStandplaats(KeuzeStandplaats);
+                }
+                KeuzeStandplaatsId = null;
+                KeuzeStandplaats = "";
+                BewaarStandplaats = "";
+            }
+        });
+    }
 };

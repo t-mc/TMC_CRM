@@ -5,35 +5,45 @@ var KeuzeContact = "";
 
 myapp.AddEditVerkoopkansenProjecten.beforeApplyChanges = function (screen) {
     // Write code here.
-    if (screen.VerkoopkansenProjecten.Verkoopstadium != VerkoopStadium) {
-        switch (screen.VerkoopkansenProjecten.Verkoopstadium) {
-            case "Marktkans":
-                screen.VerkoopkansenProjecten.Verkoopkans = 0;
-                break;
-            case "Lead":
-                screen.VerkoopkansenProjecten.Verkoopkans = 0.1;
-                break;
-            case "Prospect":
-                screen.VerkoopkansenProjecten.Verkoopkans = 0.25;
-                break;
-            case "Verkoopkans":
-                screen.VerkoopkansenProjecten.Verkoopkans = 0.5;
-                break;
-            case "Offerte":
-                screen.VerkoopkansenProjecten.Verkoopkans = 0.75;
-                break;
-            case "Order":
-                screen.VerkoopkansenProjecten.Verkoopkans = 1;
-                break;
-            case "Order afgerond":
-                screen.VerkoopkansenProjecten.Verkoopkans = 0;
-                break;
-            case "Loss":
-                screen.VerkoopkansenProjecten.Verkoopkans = 0;
-                break;
 
-            }
+    if (screen.VerkoopkansenProjecten.Bedrijfsnaam == "< voeg bedrijf in >") {
+        alert("Voeg een bedrijf toe om verder te gaan!");
+        return false;
+    } else if (screen.VerkoopkansenProjecten.Opdrachtgever == "< voeg opdrachtgever in >") {
+        alert("Voeg een opdrachtgever toe om verder te gaan!");
+        return false;
+    } else {
+        if (screen.VerkoopkansenProjecten.Verkoopstadium != VerkoopStadium) {
+            switch (screen.VerkoopkansenProjecten.Verkoopstadium) {
+                case "Marktkans":
+                    screen.VerkoopkansenProjecten.Verkoopkans = 0;
+                    break;
+                case "Lead":
+                    screen.VerkoopkansenProjecten.Verkoopkans = 0.1;
+                    break;
+                case "Prospect":
+                    screen.VerkoopkansenProjecten.Verkoopkans = 0.25;
+                    break;
+                case "Verkoopkans":
+                    screen.VerkoopkansenProjecten.Verkoopkans = 0.5;
+                    break;
+                case "Offerte":
+                    screen.VerkoopkansenProjecten.Verkoopkans = 0.75;
+                    break;
+                case "Order":
+                    screen.VerkoopkansenProjecten.Verkoopkans = 1;
+                    break;
+                case "Order afgerond":
+                    screen.VerkoopkansenProjecten.Verkoopkans = 0;
+                    break;
+                case "Loss":
+                    screen.VerkoopkansenProjecten.Verkoopkans = 0;
+                    break;
+
+                }
+        }
     }
+
 };
 
 myapp.AddEditVerkoopkansenProjecten.Contactpersonens_ItemTap_execute = function (screen) {
@@ -66,17 +76,31 @@ myapp.AddEditVerkoopkansenProjecten.BedrijvenOpNaam_ItemTap_execute = function (
 };
 myapp.AddEditVerkoopkansenProjecten.Opdrachtgever_Tap_execute = function (screen) {
     // Write code here.
+    var BewaarContact = screen.VerkoopkansenProjecten.Opdrachtgever;
     myapp.showZoekContact({
         afterClosed: function () {
-            screen.VerkoopkansenProjecten.Opdrachtgever = KeuzeContact;
+            if (KeuzeContact == null || KeuzeContact == "") {
+                screen.VerkoopkansenProjecten.Opdrachtgever = BewaarContact;
+            } else if ( BewaarContact == KeuzeContact ) {
+                screen.VerkoopkansenProjecten.Opdrachtgever = BewaarContact;
+            } else {
+                screen.VerkoopkansenProjecten.Opdrachtgever = KeuzeContact;
+            }
         }
     });
 };
 myapp.AddEditVerkoopkansenProjecten.Bedrijfsnaam_Tap_execute = function (screen) {
     // Write code here.
+    var BewaarBedrijf = screen.VerkoopkansenProjecten.Bedrijfsnaam;
     myapp.showZoekBedrijf( {
         afterClosed: function () {
-            screen.VerkoopkansenProjecten.Bedrijfsnaam = KeuzeBedrijf;
+            if (KeuzeBedrijf == null || KeuzeBedrijf == "") {
+                screen.VerkoopkansenProjecten.Bedrijfsnaam = BewaarBedrijf;
+            } else if (BewaarBedrijf == KeuzeBedrijf) {
+                screen.VerkoopkansenProjecten.Bedrijfsnaam = BewaarBedrijf;
+            } else {
+                screen.VerkoopkansenProjecten.Bedrijfsnaam = KeuzeBedrijf;
+            }
         }
     });
 };

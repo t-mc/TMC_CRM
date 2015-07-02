@@ -1,12 +1,11 @@
 ﻿/// <reference path="~/GeneratedArtifacts/viewModel.js" />
 
-myapp.ZoekAdressen.created = function (screen) {
+myapp.ZoekStandplaatsAdres.created = function (screen) {
     // Write code here.
-    screen.setLpBedrijfsnaam(ZoekBedrijf);
+    screen.setLpBedrijfsnaam(CurrentBedrijf);
 };
-myapp.ZoekAdressen.Adressens_ItemTap_execute = function (screen) {
+myapp.ZoekStandplaatsAdres.Adressens_ItemTap_execute = function (screen) {
     // Write code here.
     KeuzeStandplaatsId = screen.details.properties.Adressens.value.selectedItem.Id;
     KeuzeStandplaats = screen.details.properties.Adressens.value.selectedItem.Plaats;
 };
-

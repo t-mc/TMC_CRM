@@ -39,3 +39,7 @@ myapp.ViewVerkoopkansenProjecten.Opdrachtgever_Tap_execute = function (screen) {
     ZoekOpdrachtgever = screen.VerkoopkansenProjecten.Opdrachtgever;
     myapp.showToonDetailsOpdrachtgever();
 };
+myapp.ViewVerkoopkansenProjecten.ShowBrowseOrders_Tap_execute = function (screen) {
+    // Write code here.
+    myapp.navigateBack();
+};

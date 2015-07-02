@@ -77,6 +77,9 @@
     <Content Include="Screens\Adressen\ZoekAdressen.lsml.js">
       <DependentUpon>ZoekAdressen.lsml</DependentUpon>
     </Content>
+    <Content Include="Screens\Adressen\ZoekStandplaatsAdres.lsml.js">
+      <DependentUpon>ZoekStandplaatsAdres.lsml</DependentUpon>
+    </Content>
     <Content Include="Screens\Bedrijvens\AddEditBedrijven.lsml.js">
       <DependentUpon>AddEditBedrijven.lsml</DependentUpon>
     </Content>
@@ -156,6 +159,7 @@
     <LightSwitchModel Include="Screens\Adressen\AddEditAdressen.lsml" />
     <LightSwitchModel Include="Screens\Adressen\ToonStandplaatsAdres.lsml" />
     <LightSwitchModel Include="Screens\Adressen\ZoekAdressen.lsml" />
+    <LightSwitchModel Include="Screens\Adressen\ZoekStandplaatsAdres.lsml" />
     <LightSwitchModel Include="Screens\Bedrijvens\AddEditBedrijven.lsml" />
     <LightSwitchModel Include="Screens\Bedrijvens\BrowseBedrijvenOpNaam.lsml" />
     <LightSwitchModel Include="Screens\Bedrijvens\BrowseBedrijvenOpNaam1.lsml" />

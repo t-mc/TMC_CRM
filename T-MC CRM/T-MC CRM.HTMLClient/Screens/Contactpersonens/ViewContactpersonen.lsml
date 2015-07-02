@@ -30,6 +30,26 @@
                 Value="Details" />
             </ContentItem.Attributes>
             <ContentItem
+              Name="ShowBrowseContactpersonens"
+              Kind="Command"
+              View="Microsoft.LightSwitch.MobileWeb:Button">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="Vorig scherm" />
+              </ContentItem.Attributes>
+              <ContentItem.PropertySources>
+                <ControlPropertySource
+                  Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <CallExpression
+                        Target="ViewContactpersonen/Methods[ShowBrowseContactpersonens_Tap]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+              </ContentItem.PropertySources>
+            </ContentItem>
+            <ContentItem
               Name="columns"
               Kind="Details"
               DataType="Contactpersonen"
@@ -503,6 +523,10 @@
               <ContentItem
                 Name="DeleteContact"
                 Kind="Command">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Verwijder contact" />
+                </ContentItem.Attributes>
                 <ContentItem.PropertySources>
                   <ControlPropertySource
                     Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
@@ -517,6 +541,9 @@
               </ContentItem>
             </ContentItem.CommandItems>
           </ContentItem>
+          <ContentItem
+            Name="Group5"
+            Kind="Group" />
           <ContentItem.PropertySources>
             <ControlPropertySource
               Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[BrowseOnly]">
@@ -534,6 +561,18 @@
           Name="Popups"
           Kind="Group"
           View="Microsoft.LightSwitch.MobileWeb:DialogPages" />
+        <ContentItem.PropertySources>
+          <ControlPropertySource
+            Property="Microsoft.LightSwitch.MobileWeb:Screen/Properties[HideTabTitles]">
+            <ScreenExpressionTree>
+              <ChainExpression>
+                <ConstantExpression
+                  Value="True"
+                  ResultType=":Boolean" />
+              </ChainExpression>
+            </ScreenExpressionTree>
+          </ControlPropertySource>
+        </ContentItem.PropertySources>
       </ContentItem>
     </Screen.RootContentItem>
     <Screen.Methods>
@@ -569,6 +608,8 @@
         Name="Manager_Tap" />
       <ScreenMethod
         Name="Assistent_Tap" />
+      <ScreenMethod
+        Name="ShowBrowseContactpersonens_Tap" />
     </Screen.Methods>
     <Screen.Properties>
       <ScreenProperty

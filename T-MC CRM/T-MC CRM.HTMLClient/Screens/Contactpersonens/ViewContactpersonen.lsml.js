@@ -46,3 +46,7 @@ myapp.ViewContactpersonen.Assistent_Tap_execute = function (screen) {
     ZoekAssistent = screen.Contactpersonen.Assistent;
     myapp.showToonDetailAssistent();
 };
+myapp.ViewContactpersonen.ShowBrowseContactpersonens_Tap_execute = function (screen) {
+    // Write code here.
+    myapp.navigateBack();
+};
