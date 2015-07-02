@@ -116,6 +116,12 @@
     <Content Include="Screens\Contactpersonens\ZoekContact.lsml.js">
       <DependentUpon>ZoekContact.lsml</DependentUpon>
     </Content>
+    <Content Include="Screens\Contactpersonens\ZoekContactpersoon.lsml.js">
+      <DependentUpon>ZoekContactpersoon.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\Contactpersonens\ZoekOpdrachtgever.lsml.js">
+      <DependentUpon>ZoekOpdrachtgever.lsml</DependentUpon>
+    </Content>
     <Content Include="Screens\Home.lsml.js">
       <DependentUpon>Home.lsml</DependentUpon>
     </Content>
@@ -177,6 +183,8 @@
     <LightSwitchModel Include="Screens\Contactpersonens\ToonDetailsPrimairContact.lsml" />
     <LightSwitchModel Include="Screens\Contactpersonens\ViewContactpersonen.lsml" />
     <LightSwitchModel Include="Screens\Contactpersonens\ZoekContact.lsml" />
+    <LightSwitchModel Include="Screens\Contactpersonens\ZoekContactpersoon.lsml" />
+    <LightSwitchModel Include="Screens\Contactpersonens\ZoekOpdrachtgever.lsml" />
     <LightSwitchModel Include="Screens\Home.lsml" />
     <LightSwitchModel Include="Screens\VerkoopkansenProjectens\AddEditVerkoopkansenProjecten.lsml" />
     <LightSwitchModel Include="Screens\VerkoopkansenProjectens\BrowseOrders.lsml" />

@@ -2,6 +2,7 @@
 var VerkoopStadium = "";
 var KeuzeBedrijf = "";
 var KeuzeContact = "";
+var CurrentBedrijf = "";
 
 myapp.AddEditVerkoopkansenProjecten.beforeApplyChanges = function (screen) {
     // Write code here.
@@ -74,21 +75,6 @@ myapp.AddEditVerkoopkansenProjecten.BedrijvenOpNaam_ItemTap_execute = function (
     screen.VerkoopkansenProjecten.Bedrijfsnaam = screen.BedrijvenOpNaam.selectedItem.Bedrijfsnaam;
     screen.closePopup();
 };
-myapp.AddEditVerkoopkansenProjecten.Opdrachtgever_Tap_execute = function (screen) {
-    // Write code here.
-    var BewaarContact = screen.VerkoopkansenProjecten.Opdrachtgever;
-    myapp.showZoekContact({
-        afterClosed: function () {
-            if (KeuzeContact == null || KeuzeContact == "") {
-                screen.VerkoopkansenProjecten.Opdrachtgever = BewaarContact;
-            } else if ( BewaarContact == KeuzeContact ) {
-                screen.VerkoopkansenProjecten.Opdrachtgever = BewaarContact;
-            } else {
-                screen.VerkoopkansenProjecten.Opdrachtgever = KeuzeContact;
-            }
-        }
-    });
-};
 myapp.AddEditVerkoopkansenProjecten.Bedrijfsnaam_Tap_execute = function (screen) {
     // Write code here.
     var BewaarBedrijf = screen.VerkoopkansenProjecten.Bedrijfsnaam;
@@ -101,6 +87,31 @@ myapp.AddEditVerkoopkansenProjecten.Bedrijfsnaam_Tap_execute = function (screen)
             } else {
                 screen.VerkoopkansenProjecten.Bedrijfsnaam = KeuzeBedrijf;
             }
+            BewaarBedrijf = "";
+            KeuzeBedrijf = "";
         }
     });
+};
+myapp.AddEditVerkoopkansenProjecten.Opdrachtgever_Tap_execute = function (screen) {
+    // Write code here.
+    if (screen.VerkoopkansenProjecten.Bedrijfsnaam == "< voeg bedrijf in >") {
+        alert("Voeg eerst bedrijf in!");
+    }
+    else {
+        var BewaarContact = screen.VerkoopkansenProjecten.Opdrachtgever;
+        CurrentBedrijf = screen.VerkoopkansenProjecten.Bedrijfsnaam;
+        myapp.showZoekOpdrachtgever(null, {
+            afterClosed: function () {
+                if (KeuzeContact == null || KeuzeContact == "") {
+                    screen.VerkoopkansenProjecten.Opdrachtgever = BewaarContact;
+                } else if (BewaarContact == KeuzeContact) {
+                    screen.VerkoopkansenProjecten.Opdrachtgever = BewaarContact;
+                } else {
+                    screen.VerkoopkansenProjecten.Opdrachtgever = KeuzeContact;
+                }
+                BewaarContact = "";
+                KeuzeContact = "";
+            }
+        });
+    }
 };

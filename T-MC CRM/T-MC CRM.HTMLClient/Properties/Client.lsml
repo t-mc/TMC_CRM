@@ -64,8 +64,5 @@
     <ApplicationNavigationMethodLink
       Name="link4"
       Method="!module/Methods[showBrowseOrders]" />
-    <ApplicationNavigationMethodLink
-      Name="link3"
-      Method="!module/Methods[showBrowseNietActieveBedrijven]" />
   </Application.NavigationItems>
 </Application>

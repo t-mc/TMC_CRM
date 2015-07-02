@@ -2,6 +2,7 @@
 var KeuzeBedrijf = "";
 var KeuzeContact = "";
 var KeuzeBranche = "";
+var CurrentBedrijf = "";
 
 myapp.AddEditBedrijven.created = function (screen) {
     // Write code here.
@@ -43,12 +44,14 @@ myapp.AddEditBedrijven.MoederAccount_Tap_execute = function (screen) {
 };
 myapp.AddEditBedrijven.PrimairContact_Tap_execute = function (screen) {
     // Write code here.
+    CurrentBedrijf = screen.Bedrijven.Bedrijfsnaam;
     var PrimairContact = screen.Bedrijven.PrimairContact;
-    myapp.showZoekContact({
+    myapp.showZoekContact(null, {
         afterClosed: function () {
             if (KeuzeContact !== PrimairContact) {
                 screen.Bedrijven.PrimairContact = KeuzeContact;
             }
+            CurrentBedrijf = "";
         }
     })
 };

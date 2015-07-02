@@ -72,25 +72,26 @@ myapp.AddEditContactpersonen.Bedrijfsnaam_Tap_execute = function (screen) {
 };
 myapp.AddEditContactpersonen.Assistent_Tap_execute = function (screen) {
     // Write code here.
-    myapp.showZoekContact({
+    CurrentBedrijf = screen.Contactpersonen.Bedrijfsnaam;
+    myapp.showZoekContact(null, {
         afterClosed: function () {
             screen.Contactpersonen.Assistent = KeuzeContact;
             KeuzeContact = "";
+            CurrentBedrijf = "";
         }
     });
 };
 myapp.AddEditContactpersonen.Manager_Tap_execute = function (screen) {
     // Write code here.
-    myapp.showZoekContact({
+    CurrentBedrijf = screen.Contactpersonen.Bedrijfsnaam;
+    myapp.showZoekContact(null, {
         afterClosed: function () {
             screen.Contactpersonen.Manager = KeuzeContact;
             KeuzeContact = "";
+            CurrentBedrijf = "";
         }
     });
 };
-
-
-
 myapp.AddEditContactpersonen.Standplaats_Tap_execute = function (screen) {
     // Write code here.
     if (screen.Contactpersonen.Bedrijfsnaam == "< voeg bedrijf in >") {
