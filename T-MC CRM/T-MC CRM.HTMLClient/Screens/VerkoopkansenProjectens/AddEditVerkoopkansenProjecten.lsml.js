@@ -4,6 +4,23 @@ var KeuzeBedrijf = "";
 var KeuzeContact = "";
 var CurrentBedrijf = "";
 
+myapp.AddEditVerkoopkansenProjecten.created = function (screen) {
+    // Zet default tekst als Bedrijfsnaam leeg is.
+    screen.findContentItem("Bedrijfsnaam")
+    .dataBind("value.selectedItem", function (newValue) {
+        if (newValue == screen.VerkoopkansenProjecten.Bedrijfsnaam) {
+            screen.VerkoopkansenProjecten.Bedrijfsnaam = "< voeg bedrijf in >";
+        }
+    });
+    // Zet default tekst als Opdrachtgever leeg is.
+    screen.findContentItem("Opdrachtgever")
+    .dataBind("value.selectedItem", function (newValue) {
+        if (newValue == screen.VerkoopkansenProjecten.Opdrachtgever) {
+            screen.VerkoopkansenProjecten.Opdrachtgever = "< voeg opdrachtgever in >";
+        }
+
+    });
+};
 myapp.AddEditVerkoopkansenProjecten.beforeApplyChanges = function (screen) {
     // Write code here.
 
@@ -53,23 +70,7 @@ myapp.AddEditVerkoopkansenProjecten.Contactpersonens_ItemTap_execute = function 
     screen.closePopup();
 };
 
-myapp.AddEditVerkoopkansenProjecten.created = function (screen) {
-    // Zet default tekst als Bedrijfsnaam leeg is.
-    screen.findContentItem("Bedrijfsnaam")
-    .dataBind("value.selectedItem", function (newValue) {
-        if (newValue == screen.VerkoopkansenProjecten.Bedrijfsnaam) {
-            screen.VerkoopkansenProjecten.Bedrijfsnaam = "< voeg bedrijf in >";
-        }
-    });
-    // Zet default tekst als Opdrachtgever leeg is.
-    screen.findContentItem("Opdrachtgever")
-    .dataBind("value.selectedItem", function (newValue) {
-        if (newValue == screen.VerkoopkansenProjecten.Opdrachtgever) {
-            screen.VerkoopkansenProjecten.Opdrachtgever = "< voeg opdrachtgever in >";
-        }
 
-    });
-};
 myapp.AddEditVerkoopkansenProjecten.BedrijvenOpNaam_ItemTap_execute = function (screen) {
     // Write code here.
     screen.VerkoopkansenProjecten.Bedrijfsnaam = screen.BedrijvenOpNaam.selectedItem.Bedrijfsnaam;
@@ -113,5 +114,12 @@ myapp.AddEditVerkoopkansenProjecten.Opdrachtgever_Tap_execute = function (screen
                 KeuzeContact = "";
             }
         });
+    }
+};
+myapp.AddEditVerkoopkansenProjecten.Verkoopstadium_postRender = function (element, contentItem) {
+    // Write code here.
+    // Write code here.
+    if (contentItem.value == undefined || contentItem.value == null) {
+        contentItem.value = "Marktkans";
     }
 };

@@ -5,6 +5,3 @@ myapp.ZoekBedrijf.Bedrijfsnaam_Tap_execute = function (screen) {
     // Write code here.
     KeuzeBedrijf = screen.details.properties.BedrijvenOpNaam.value.selectedItem.Bedrijfsnaam;
 };
-myapp.ZoekBedrijf.created = function (screen) {
-
-};

@@ -1,10 +1,11 @@
 ﻿/// <reference path="~/GeneratedArtifacts/viewModel.js" />
 var KeuzeBedrijf = "";
-var KeuzeContact = "";
+var KeuzeContact = null;
 var KeuzeStandplaatsId = null;
 var KeuzeStandplaats = "";
 var ZoekBedrijf = "";
 var CurrentBedrijf = "";
+var BewaarContact = null;
 
 myapp.AddEditContactpersonen.beforeApplyChanges = function (screen) {
     // Write code here.
@@ -24,7 +25,7 @@ myapp.AddEditContactpersonen.created = function (screen) {
             screen.Contactpersonen.VolledigeNaam = "< voeg bedrijf in >";
         }
     });
-    screen.Contactpersonen.VolledigeNaam = "Deze niet invullen, wordt automatisch gevuld!";
+    // screen.Contactpersonen.VolledigeNaam = "Deze niet invullen, wordt automatisch gevuld!";
 
     // Zet default tekst als bedrijfsnaam leeg is.
     screen.findContentItem("Bedrijfsnaam")
@@ -72,23 +73,45 @@ myapp.AddEditContactpersonen.Bedrijfsnaam_Tap_execute = function (screen) {
 };
 myapp.AddEditContactpersonen.Assistent_Tap_execute = function (screen) {
     // Write code here.
-    CurrentBedrijf = screen.Contactpersonen.Bedrijfsnaam;
-    myapp.showZoekContact(null, {
+    BewaarContact = screen.Contactpersonen.Assistent;
+    KeuzeContact = screen.Contactpersonen.Assistent;
+    var ZoekAssistent = screen.Contactpersonen.Assistent;
+    if (ZoekAssistent == "< voeg assistent in >") {
+        ZoekAssistent = null;
+    }
+    myapp.showZoekContact(screen.Contactpersonen.Bedrijfsnaam, ZoekAssistent, {
         afterClosed: function () {
-            screen.Contactpersonen.Assistent = KeuzeContact;
-            KeuzeContact = "";
-            CurrentBedrijf = "";
+            if (BewaarContact !== KeuzeContact) {
+                if (KeuzeContact !== "< Choice Deleted >" ) {
+                    screen.Contactpersonen.Assistent = KeuzeContact;
+                } else {
+                    screen.Contactpersonen.Assistent = "< voeg assistent in >";
+                }
+            }
+            KeuzeContact = null;
+            BewaarContact = null;
         }
     });
 };
 myapp.AddEditContactpersonen.Manager_Tap_execute = function (screen) {
     // Write code here.
-    CurrentBedrijf = screen.Contactpersonen.Bedrijfsnaam;
-    myapp.showZoekContact(null, {
+    BewaarContact = screen.Contactpersonen.Manager;
+    KeuzeContact = screen.Contactpersonen.Manager;
+    var ZoekManager = screen.Contactpersonen.Manager;
+    if (ZoekManager == "< voeg manager in >") {
+        ZoekManager = null;
+    }
+    myapp.showZoekContact(screen.Contactpersonen.Bedrijfsnaam, ZoekManager, {
         afterClosed: function () {
-            screen.Contactpersonen.Manager = KeuzeContact;
-            KeuzeContact = "";
-            CurrentBedrijf = "";
+            if (BewaarContact !== KeuzeContact) {
+                if ( KeuzeContact !== "< Choice Deleted >" ) {
+                    screen.Contactpersonen.Manager = KeuzeContact;
+                } else {
+                    screen.Contactpersonen.Manager = "< voeg manager in >";
+                }
+            }
+            KeuzeContact = null;
+            BewaarContact = null;
         }
     });
 };
@@ -98,8 +121,7 @@ myapp.AddEditContactpersonen.Standplaats_Tap_execute = function (screen) {
         alert("Voer eerst het bedrijf in!")
     } else {
         var BewaarStandplaats = screen.Contactpersonen.Standplaats;
-        CurrentBedrijf = screen.Contactpersonen.Bedrijfsnaam;
-        myapp.showZoekStandplaatsAdres(null, {
+        myapp.showZoekStandplaatsAdres(screen.Contactpersonen.Bedrijfsnaam, {
             afterClosed: function () {
                 if ( KeuzeStandplaats !== BewaarStandplaats ) {
                     screen.Contactpersonen.setStandplaatsId(KeuzeStandplaatsId);
@@ -107,7 +129,6 @@ myapp.AddEditContactpersonen.Standplaats_Tap_execute = function (screen) {
                 }
                 KeuzeStandplaatsId = null;
                 KeuzeStandplaats = "";
-                BewaarStandplaats = "";
             }
         });
     }

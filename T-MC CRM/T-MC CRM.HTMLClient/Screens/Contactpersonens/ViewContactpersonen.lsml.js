@@ -11,9 +11,6 @@ myapp.ViewContactpersonen.Details_postRender = function (element, contentItem) {
         contentItem.screen.details.displayName = value;
     });
 }
-
-
-
 myapp.ViewContactpersonen.DeleteContact_execute = function (screen) {
     // Write code here.
     var bevestig = confirm("Weet je zeker dat je deze contactpersoon wilt verwijderen?");

@@ -98,6 +98,9 @@
     <Content Include="Screens\Contactpersonens\AddEditContactpersonen.lsml.js">
       <DependentUpon>AddEditContactpersonen.lsml</DependentUpon>
     </Content>
+    <Content Include="Screens\Contactpersonens\AddEditContactpersonen1.lsml.js">
+      <DependentUpon>AddEditContactpersonen1.lsml</DependentUpon>
+    </Content>
     <Content Include="Screens\Contactpersonens\ToonDetailAssistent.lsml.js">
       <DependentUpon>ToonDetailAssistent.lsml</DependentUpon>
     </Content>
@@ -175,6 +178,7 @@
     <LightSwitchModel Include="Screens\Bedrijvens\ViewBedrijven.lsml" />
     <LightSwitchModel Include="Screens\Bedrijvens\ZoekBedrijf.lsml" />
     <LightSwitchModel Include="Screens\Contactpersonens\AddEditContactpersonen.lsml" />
+    <LightSwitchModel Include="Screens\Contactpersonens\AddEditContactpersonen1.lsml" />
     <LightSwitchModel Include="Screens\Contactpersonens\BrowseContactpersonens.lsml" />
     <LightSwitchModel Include="Screens\Contactpersonens\BrowseContactsPerBedrijf.lsml" />
     <LightSwitchModel Include="Screens\Contactpersonens\ToonDetailAssistent.lsml" />
