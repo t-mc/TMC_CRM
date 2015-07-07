@@ -217,12 +217,12 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <CallExpression
-                          Target="!module/Methods[showAddEditContactpersonen1]">
+                          Target="!module/Methods[showAddEditContactpersonen]">
                           <CallExpression.Attributes>
                             <AssociatedCollection
                               Collection="BrowseContactpersonens/Properties[Contactpersonens]" />
                             <CreateNewEntity
-                              TargetParameter="!module/Methods[showAddEditContactpersonen1]/Parameters[Contactpersonen]" />
+                              TargetParameter="!module/Methods[showAddEditContactpersonen]/Parameters[Contactpersonen]" />
                           </CallExpression.Attributes>
                         </CallExpression>
                       </ChainExpression>

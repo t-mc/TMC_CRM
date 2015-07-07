@@ -55,6 +55,18 @@ myapp.AddEditContactpersonen.created = function (screen) {
             screen.Contactpersonen.Standplaats = "< voeg standplaats in >";
         }
     });
+    screen.findContentItem("Nieuwsbrief")
+    .dataBind("value.selected", function (newValue) {
+        if (newValue == screen.Contactpersonen.Nieuwsbrief) {
+            screen.Contactpersonen.Nieuwsbrief = true;
+        }
+    });
+    screen.findContentItem("Actief")
+    .dataBind("value.selected", function (newValue) {
+        if (newValue == screen.Contactpersonen.Actief) {
+            screen.Contactpersonen.Actief = true;
+        }
+    });
 };
 myapp.AddEditContactpersonen.Bedrijfsnaam_Tap_execute = function (screen) {
     // Write code here.

@@ -182,6 +182,10 @@
               <ContentItem
                 Name="DeleteAdres"
                 Kind="Command">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Verwijder adres" />
+                </ContentItem.Attributes>
                 <ContentItem.PropertySources>
                   <ControlPropertySource
                     Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">

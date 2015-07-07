@@ -46,7 +46,7 @@ myapp.AddEditBedrijven.PrimairContact_Tap_execute = function (screen) {
     // Write code here.
     CurrentBedrijf = screen.Bedrijven.Bedrijfsnaam;
     var PrimairContact = screen.Bedrijven.PrimairContact;
-    myapp.showZoekContact(null, {
+    myapp.showZoekContact(screen.Bedrijven.Bedrijfsnaam, null, {
         afterClosed: function () {
             if (KeuzeContact !== PrimairContact) {
                 screen.Bedrijven.PrimairContact = KeuzeContact;

@@ -11,5 +11,11 @@ namespace LightSwitchApplication
         {
             this.Actief = true;
         }
+
+        partial void Telefoonnummer_Validate(EntityValidationResultsBuilder results)
+        {
+            // results.AddPropertyError("<Error-Message>");
+
+        }
     }
 }

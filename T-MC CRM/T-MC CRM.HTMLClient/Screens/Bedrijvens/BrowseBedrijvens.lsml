@@ -201,7 +201,7 @@
                 Kind="Command">
                 <ContentItem.Attributes>
                   <DisplayName
-                    Value="Voeg bedrijf toe" />
+                    Value="Nieuw bedrijf" />
                 </ContentItem.Attributes>
                 <ContentItem.PropertySources>
                   <ControlPropertySource

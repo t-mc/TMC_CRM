@@ -18,8 +18,13 @@ myapp.AddEditVerkoopkansenProjecten.created = function (screen) {
         if (newValue == screen.VerkoopkansenProjecten.Opdrachtgever) {
             screen.VerkoopkansenProjecten.Opdrachtgever = "< voeg opdrachtgever in >";
         }
-
     });
+    // Zet titel op Verkoopkans of Project
+    if (screen.VerkoopkansenProjecten.Verkoopstadium == "Order") {
+        screen.details.displayName = "Project: " + screen.VerkoopkansenProjecten.Projectcode;
+    } else {
+        screen.details.displayName = "Verkoopkans: " + screen.VerkoopkansenProjecten.Projectcode;
+    }
 };
 myapp.AddEditVerkoopkansenProjecten.beforeApplyChanges = function (screen) {
     // Write code here.

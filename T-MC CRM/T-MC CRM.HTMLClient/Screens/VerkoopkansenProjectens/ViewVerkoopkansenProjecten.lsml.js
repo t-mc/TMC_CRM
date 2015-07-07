@@ -9,9 +9,6 @@ myapp.ViewVerkoopkansenProjecten.Details_postRender = function (element, content
         contentItem.screen.details.displayName = value;
     });
 }
-
-
-
 myapp.ViewVerkoopkansenProjecten.DeleteVerkoopkans_execute = function (screen) {
     // Write code here.
     var bevestig = confirm("Weet je zeker dat je deze verkoopkans wilt verwijderen?");
@@ -42,4 +39,12 @@ myapp.ViewVerkoopkansenProjecten.Opdrachtgever_Tap_execute = function (screen) {
 myapp.ViewVerkoopkansenProjecten.ShowBrowseOrders_Tap_execute = function (screen) {
     // Write code here.
     myapp.navigateBack();
+};
+myapp.ViewVerkoopkansenProjecten.created = function (screen) {
+    // Write code here.
+    if (screen.VerkoopkansenProjecten.Verkoopstadium == "Order") {
+        screen.findContentItem("DeleteVerkoopkans").isEnabled = false;
+    //     screen.VerkoopkansenProjecten.DeleteVerkoopkans.displayName = "Verwijder order";
+    }
+
 };

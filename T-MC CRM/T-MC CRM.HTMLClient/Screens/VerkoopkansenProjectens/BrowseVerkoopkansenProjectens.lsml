@@ -257,7 +257,7 @@
                 Kind="Command">
                 <ContentItem.Attributes>
                   <DisplayName
-                    Value="Voeg verkoopkans toe" />
+                    Value="Nieuwe verkoopkans" />
                   <Description
                     Value="Voeg verkoopkans toe" />
                 </ContentItem.Attributes>

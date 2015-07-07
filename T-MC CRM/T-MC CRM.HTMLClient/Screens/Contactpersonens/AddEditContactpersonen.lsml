@@ -10,7 +10,7 @@
       <SaveChangesTo
         EntityContainer="T_MC_Contactpersonen" />
       <DisplayName
-        Value="Contactpersonen" />
+        Value="Contactpersoon" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem
