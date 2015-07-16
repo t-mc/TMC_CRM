@@ -90,10 +90,8 @@
                 <ContentItem
                   Name="Telefoonnummer"
                   Kind="Value"
-                  DataType="Microsoft.LightSwitch.Extensions:PhoneNumber?">
+                  DataType=":String?">
                   <ContentItem.Attributes>
-                    <Description
-                      Value="Voer telefoonnummer in als +LL NNN AAAAAA of +LL NN AAAAAAA of +ll N AAAAAAAA" />
                     <DisplayName
                       Value="Telefoonnummer" />
                   </ContentItem.Attributes>

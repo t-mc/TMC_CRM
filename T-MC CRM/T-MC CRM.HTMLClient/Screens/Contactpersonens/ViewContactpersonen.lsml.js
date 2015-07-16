@@ -45,5 +45,5 @@ myapp.ViewContactpersonen.Assistent_Tap_execute = function (screen) {
 };
 myapp.ViewContactpersonen.ShowBrowseContactpersonens_Tap_execute = function (screen) {
     // Write code here.
-    myapp.navigateBack();
+    myapp.showBrowseContactpersonens();
 };

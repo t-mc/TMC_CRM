@@ -71,7 +71,7 @@
                   <ContentItem
                     Name="Telefoonnummer"
                     Kind="Value"
-                    DataType="Microsoft.LightSwitch.Extensions:PhoneNumber?">
+                    DataType=":String?">
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression>
@@ -97,7 +97,7 @@
                   <ContentItem
                     Name="MobielNummer"
                     Kind="Value"
-                    DataType="Microsoft.LightSwitch.Extensions:PhoneNumber?">
+                    DataType=":String?">
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression>

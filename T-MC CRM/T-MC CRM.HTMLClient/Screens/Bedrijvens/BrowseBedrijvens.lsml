@@ -96,7 +96,7 @@
                 <ContentItem
                   Name="Telefoonnummer"
                   Kind="Value"
-                  DataType="Microsoft.LightSwitch.Extensions:PhoneNumber?">
+                  DataType=":String?">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
@@ -122,6 +122,10 @@
                   Name="Klantpartner"
                   Kind="Value"
                   DataType=":Person?">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Klantpartner" />
+                  </ContentItem.Attributes>
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>

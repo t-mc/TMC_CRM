@@ -35,7 +35,7 @@
               View="Microsoft.LightSwitch.MobileWeb:Button">
               <ContentItem.Attributes>
                 <DisplayName
-                  Value="Vorig scherm" />
+                  Value="Naar contactpersonen overzicht" />
               </ContentItem.Attributes>
               <ContentItem.PropertySources>
                 <ControlPropertySource
@@ -270,7 +270,7 @@
               <ContentItem
                 Name="Telefoonnummer"
                 Kind="Value"
-                DataType="Microsoft.LightSwitch.Extensions:PhoneNumber?">
+                DataType=":String?">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
@@ -285,7 +285,7 @@
               <ContentItem
                 Name="MobielNummer"
                 Kind="Value"
-                DataType="Microsoft.LightSwitch.Extensions:PhoneNumber?">
+                DataType=":String?">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>

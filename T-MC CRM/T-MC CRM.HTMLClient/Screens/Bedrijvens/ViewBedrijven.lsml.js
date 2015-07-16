@@ -27,3 +27,8 @@ myapp.ViewBedrijven.MoederAccount_Tap_execute = function (screen) {
     ZoekBedrijf = screen.Bedrijven.MoederAccount;
     myapp.showToonDetailsBedrijf();
 };
+myapp.ViewBedrijven.GoBack_execute = function (screen) {
+    // Write code here.
+    //myapp.navigateBack();
+    myapp.showBrowseBedrijvens();
+};

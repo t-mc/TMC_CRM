@@ -9,6 +9,8 @@
     <Screen.Attributes>
       <SaveChangesTo
         EntityContainer="T_MC_Adressen" />
+      <DisplayName
+        Value="Zoek Adres" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem
@@ -186,7 +188,7 @@
                 Kind="Command">
                 <ContentItem.Attributes>
                   <DisplayName
-                    Value="Search" />
+                    Value="Zoek adres" />
                 </ContentItem.Attributes>
                 <ContentItem.PropertySources>
                   <ControlPropertySource

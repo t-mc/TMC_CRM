@@ -14,6 +14,21 @@ myapp.AddEditContactpersonen.beforeApplyChanges = function (screen) {
     } else {
         screen.Contactpersonen.VolledigeNaam = screen.Contactpersonen.Voornaam + " " + screen.Contactpersonen.Achternaam;
     }
+
+    var RegExpr = /^\+[1-9]{2,4}[ ][1-9][0-9]{0,2}[ ][1-9][0-9]{5,14}$/;
+
+    if (screen.Contactpersonen.Telefoonnummer !== null) { 
+        if (RegExpr.test(screen.Contactpersonen.Telefoonnummer) == false) {
+            alert("Voer telefoonnummer op juiste wijze in, bijv:\n+31 6 223973110 of\n+31 348 501462");
+            return false;
+        }
+    }
+    if (screen.Contactpersonen.MobielNummer !== null) {
+        if (RegExpr.test(screen.Contactpersonen.MobielNummer) == false) {
+            alert("Voer mobiel nummer op juiste wijze in, bijv:\n+31 6 223973110 of\n+31 348 501462");
+            return false;
+        }
+    }
 };
 
 myapp.AddEditContactpersonen.created = function (screen) {
@@ -74,9 +89,13 @@ myapp.AddEditContactpersonen.Bedrijfsnaam_Tap_execute = function (screen) {
     myapp.showZoekBedrijf({
         afterClosed: function () {
             if (KeuzeBedrijf !== BewaarBedrijf) {
-                screen.Contactpersonen.Bedrijfsnaam = KeuzeBedrijf;
-                screen.Contactpersonen.Standplaats = "< voeg standplaats in >";
-                screen.Contactpersonen.StandplaatsId = null;
+                    if (KeuzeBedrijf !== "< Choice Deleted >") {
+                    screen.Contactpersonen.Bedrijfsnaam = KeuzeBedrijf;
+                    } else {
+                        screen.Contactpersonen.Bedrijfsnaam = "< voeg bedrijf in >";
+                    }
+                    screen.Contactpersonen.Standplaats = "< voeg standplaats in >";
+                    screen.Contactpersonen.StandplaatsId = null;
             }
             KeuzeBedrijf = "";
             BewaarBedrijf = "";

@@ -214,6 +214,7 @@
     <Compile Include="DataSources\T_MC_Verkoopkansen\VerkoopkansenProjecten.lsml.cs">
       <DependentUpon>VerkoopkansenProjectens.lsml</DependentUpon>
     </Compile>
+    <Compile Include="DataSources\T_MC_Verkoopkansen\_T_MC_VerkoopkansenService.lsml.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\T_MC_Adressen.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -321,6 +322,12 @@
     <LightSwitchModel Include="DataSources\T_MC_Adressen\ToonStandplaatsAdres.lsml">
       <DependentUpon>Adressens.lsml</DependentUpon>
     </LightSwitchModel>
+    <LightSwitchModel Include="DataSources\T_MC_Verkoopkansen\AfgerondeOrders.lsml">
+      <DependentUpon>VerkoopkansenProjectens.lsml</DependentUpon>
+    </LightSwitchModel>
+    <LightSwitchModel Include="DataSources\T_MC_Verkoopkansen\LossKansen.lsml">
+      <DependentUpon>VerkoopkansenProjectens.lsml</DependentUpon>
+    </LightSwitchModel>
     <None Include="Properties\PublishProfiles\LightSwitch.SharePoint.ProviderHosted.pubxml" />
     <LightSwitchExternalDataSource Include="Properties\T_MC_Branche.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -359,7 +366,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:49442/</IISUrl>
+          <IISUrl>http://localhost:61506/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

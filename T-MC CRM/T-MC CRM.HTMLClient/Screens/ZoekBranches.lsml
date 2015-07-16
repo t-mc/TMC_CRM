@@ -120,7 +120,7 @@
                 Kind="Command">
                 <ContentItem.Attributes>
                   <DisplayName
-                    Value="Search" />
+                    Value="Zoek" />
                 </ContentItem.Attributes>
                 <ContentItem.PropertySources>
                   <ControlPropertySource
@@ -141,6 +141,25 @@
                         <ConstantExpression
                           Value="msls-search"
                           ResultType="Microsoft.LightSwitch:String" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
+              </ContentItem>
+              <ContentItem
+                Name="VerwijderKeuze"
+                Kind="Command">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Verwijder keuze" />
+                </ContentItem.Attributes>
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <CallExpression
+                          Target="ZoekBranches/Methods[VerwijderKeuze]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ControlPropertySource>
@@ -192,6 +211,8 @@
       </ScreenMethod>
       <ScreenMethod
         Name="Branche_Tap" />
+      <ScreenMethod
+        Name="VerwijderKeuze" />
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty

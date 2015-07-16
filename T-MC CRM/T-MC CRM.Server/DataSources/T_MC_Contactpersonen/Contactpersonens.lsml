@@ -72,30 +72,22 @@
       </EntityProperty>
       <EntityProperty
         Name="Telefoonnummer"
-        PropertyType="Microsoft.LightSwitch.Extensions:PhoneNumber?">
+        PropertyType=":String?">
         <EntityProperty.Attributes>
           <DisplayName
             Value="Telefoonnummer" />
-          <Attribute
-            Class="Microsoft.LightSwitch.Extensions:@PhoneNumberValidation">
-            <Property
-              Name="Formats"
-              Value="+CC (AAA) NNNNNN;+CC (AA) NNNNNNN" />
-          </Attribute>
+          <MaxLength
+            Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
         Name="MobielNummer"
-        PropertyType="Microsoft.LightSwitch.Extensions:PhoneNumber?">
+        PropertyType=":String?">
         <EntityProperty.Attributes>
           <DisplayName
             Value="Mobiel nummer" />
-          <Attribute
-            Class="Microsoft.LightSwitch.Extensions:@PhoneNumberValidation">
-            <Property
-              Name="Formats"
-              Value="+CC (A) NNNNNNNN" />
-          </Attribute>
+          <MaxLength
+            Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty

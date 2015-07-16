@@ -158,6 +158,25 @@
                   </ControlPropertySource>
                 </ContentItem.PropertySources>
               </ContentItem>
+              <ContentItem
+                Name="DeleteChoice"
+                Kind="Command">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Verwijder keuze" />
+                </ContentItem.Attributes>
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <CallExpression
+                          Target="ZoekBedrijf/Methods[DeleteChoice]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
+              </ContentItem>
             </ContentItem.CommandItems>
           </ContentItem>
           <ContentItem.PropertySources>
@@ -226,6 +245,8 @@
       </ScreenMethod>
       <ScreenMethod
         Name="Bedrijfsnaam_Tap" />
+      <ScreenMethod
+        Name="DeleteChoice" />
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty

@@ -64,5 +64,11 @@
     <ApplicationNavigationMethodLink
       Name="link4"
       Method="!module/Methods[showBrowseOrders]" />
+    <ApplicationNavigationMethodLink
+      Name="link3"
+      Method="!module/Methods[showAfgerondeOrders]" />
+    <ApplicationNavigationMethodLink
+      Name="link6"
+      Method="!module/Methods[showBrowseLossKansen]" />
   </Application.NavigationItems>
 </Application>

@@ -34,7 +34,7 @@
               Kind="Command">
               <ContentItem.Attributes>
                 <DisplayName
-                  Value="Vorig scherm" />
+                  Value="Naar overzicht" />
               </ContentItem.Attributes>
               <ContentItem.PropertySources>
                 <ControlPropertySource

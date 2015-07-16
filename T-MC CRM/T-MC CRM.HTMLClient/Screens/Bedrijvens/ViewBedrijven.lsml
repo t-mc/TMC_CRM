@@ -30,6 +30,25 @@
                 Value="Details" />
             </ContentItem.Attributes>
             <ContentItem
+              Name="GoBack"
+              Kind="Command">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="Naar bedrijven overzicht" />
+              </ContentItem.Attributes>
+              <ContentItem.PropertySources>
+                <ControlPropertySource
+                  Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <CallExpression
+                        Target="ViewBedrijven/Methods[GoBack]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+              </ContentItem.PropertySources>
+            </ContentItem>
+            <ContentItem
               Name="columns"
               Kind="Details"
               DataType="Bedrijven"
@@ -91,7 +110,7 @@
                 <ContentItem
                   Name="Telefoonnummer"
                   Kind="Value"
-                  DataType="Microsoft.LightSwitch.Extensions:PhoneNumber?">
+                  DataType=":String?">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
@@ -652,7 +671,7 @@
                 <ContentItem
                   Name="Telefoonnummer1"
                   Kind="Value"
-                  DataType="Microsoft.LightSwitch.Extensions:PhoneNumber?">
+                  DataType=":String?">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
@@ -665,7 +684,7 @@
                 <ContentItem
                   Name="MobielNummer"
                   Kind="Value"
-                  DataType="Microsoft.LightSwitch.Extensions:PhoneNumber?">
+                  DataType=":String?">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
@@ -1053,6 +1072,8 @@
         Name="PrimairContact_Tap" />
       <ScreenMethod
         Name="MoederAccount_Tap" />
+      <ScreenMethod
+        Name="GoBack" />
     </Screen.Methods>
     <Screen.Properties>
       <ScreenProperty

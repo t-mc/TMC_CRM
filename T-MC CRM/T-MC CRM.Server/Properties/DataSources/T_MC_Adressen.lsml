@@ -37,6 +37,12 @@
       <ConnectionProperty
         Name="ProjectMetadata"
         Value="T_MC_Adressen" />
+      <ConnectionProperty
+        Name="ProjectMetadata"
+        Value="T_MC_Adressen" />
+      <ConnectionProperty
+        Name="ProjectMetadata"
+        Value="T_MC_Adressen" />
     </DataService.ConnectionProperties>
   </DataService>
 </ServiceApplication>

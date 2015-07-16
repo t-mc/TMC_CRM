@@ -10,7 +10,7 @@
       <SaveChangesTo
         EntityContainer="T_MC_Verkoopkansen" />
       <DisplayName
-        Value="Verkoopkansen" />
+        Value="Commerciële kansen" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem
@@ -290,6 +290,42 @@
                   </ControlPropertySource>
                 </ContentItem.PropertySources>
               </ContentItem>
+              <ContentItem
+                Name="ShowVerkoopstadiumFilter"
+                Kind="Command">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Filter" />
+                </ContentItem.Attributes>
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <CallExpression
+                          Target="BrowseVerkoopkansenProjectens/Methods[showDialog]">
+                          <ArgumentExpression
+                            Parameter="dialogName">
+                            <ConstantExpression
+                              Value="VerkoopstadiumFilter"
+                              ResultType=":String" />
+                          </ArgumentExpression>
+                        </CallExpression>
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.MobileWeb:RootCommand/Properties[Icon]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          Value="msls-filter"
+                          ResultType=":String" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
+              </ContentItem>
             </ContentItem.CommandItems>
           </ContentItem>
           <ContentItem.PropertySources>
@@ -308,7 +344,30 @@
         <ContentItem
           Name="Popups"
           Kind="Group"
-          View="Microsoft.LightSwitch.MobileWeb:DialogPages" />
+          View="Microsoft.LightSwitch.MobileWeb:DialogPages">
+          <ContentItem
+            Name="VerkoopstadiumFilter"
+            Kind="Group">
+            <ContentItem.Attributes>
+              <DisplayName
+                Value="Filter" />
+            </ContentItem.Attributes>
+            <ContentItem
+              Name="Verkoopstadium1"
+              Kind="Value"
+              DataType=":String?"
+              View="Microsoft.LightSwitch.MobileWeb:ValueCustomControl">
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="BrowseVerkoopkansenProjectens/Properties[Verkoopstadium]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+            </ContentItem>
+          </ContentItem>
+        </ContentItem>
       </ContentItem>
     </Screen.RootContentItem>
     <Screen.Methods>
@@ -345,7 +404,21 @@
             Name="VerkoopkansenProjectensQuery"
             ReturnType="VerkoopkansenProjecten*">
             <ScreenQueryDefinition.FilterExpression>
-              <QueryFilterExpressionTree />
+              <QueryFilterExpressionTree>
+                <BinaryExpression
+                  NodeType="Equal">
+                  <BinaryExpression.Left>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="VerkoopkansenProjecten/Properties[Verkoopstadium]" />
+                    </ChainExpression>
+                  </BinaryExpression.Left>
+                  <BinaryExpression.Right>
+                    <ParameterExpression
+                      Parameter="Verkoopstadium" />
+                  </BinaryExpression.Right>
+                </BinaryExpression>
+              </QueryFilterExpressionTree>
             </ScreenQueryDefinition.FilterExpression>
             <ScreenQueryDefinition.Source>
               <QuerySourceExpressionTree>
@@ -353,6 +426,12 @@
                   Member="T_MC_Verkoopkansen/Members[Verkoopkansen]" />
               </QuerySourceExpressionTree>
             </ScreenQueryDefinition.Source>
+            <ScreenQueryDefinition.Parameters>
+              <QueryParameter
+                Name="Verkoopstadium"
+                IsOptional="True"
+                ParameterType=":String?" />
+            </ScreenQueryDefinition.Parameters>
             <ScreenQueryDefinition.SortCriteria>
               <SortCriterion>
                 <ChainExpression>
@@ -366,12 +445,23 @@
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="BrowseVerkoopkansenProjectens/Properties[VerkoopkansenProjectens]/Query" />
+              Target="BrowseVerkoopkansenProjectens/Properties[VerkoopkansenProjectens]/Query">
+              <ArgumentExpression
+                Parameter="Verkoopstadium">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="BrowseVerkoopkansenProjectens/Properties[Verkoopstadium]" />
+                </ChainExpression>
+              </ArgumentExpression>
+            </CallExpression>
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
       <ScreenProperty
         Name="VerkoopkansenProjectenVerkoopstadium"
+        PropertyType=":String?" />
+      <ScreenProperty
+        Name="Verkoopstadium"
         PropertyType=":String?" />
     </Screen.Properties>
   </Screen>

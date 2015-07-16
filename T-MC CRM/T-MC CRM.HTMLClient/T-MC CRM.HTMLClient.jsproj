@@ -101,6 +101,9 @@
     <Content Include="Screens\Contactpersonens\AddEditContactpersonen1.lsml.js">
       <DependentUpon>AddEditContactpersonen1.lsml</DependentUpon>
     </Content>
+    <Content Include="Screens\Contactpersonens\BrowseContactpersonens.lsml.js">
+      <DependentUpon>BrowseContactpersonens.lsml</DependentUpon>
+    </Content>
     <Content Include="Screens\Contactpersonens\ToonDetailAssistent.lsml.js">
       <DependentUpon>ToonDetailAssistent.lsml</DependentUpon>
     </Content>
@@ -118,9 +121,6 @@
     </Content>
     <Content Include="Screens\Contactpersonens\ZoekContact.lsml.js">
       <DependentUpon>ZoekContact.lsml</DependentUpon>
-    </Content>
-    <Content Include="Screens\Contactpersonens\ZoekContactpersoon.lsml.js">
-      <DependentUpon>ZoekContactpersoon.lsml</DependentUpon>
     </Content>
     <Content Include="Screens\Contactpersonens\ZoekOpdrachtgever.lsml.js">
       <DependentUpon>ZoekOpdrachtgever.lsml</DependentUpon>
@@ -187,10 +187,11 @@
     <LightSwitchModel Include="Screens\Contactpersonens\ToonDetailsPrimairContact.lsml" />
     <LightSwitchModel Include="Screens\Contactpersonens\ViewContactpersonen.lsml" />
     <LightSwitchModel Include="Screens\Contactpersonens\ZoekContact.lsml" />
-    <LightSwitchModel Include="Screens\Contactpersonens\ZoekContactpersoon.lsml" />
     <LightSwitchModel Include="Screens\Contactpersonens\ZoekOpdrachtgever.lsml" />
     <LightSwitchModel Include="Screens\Home.lsml" />
     <LightSwitchModel Include="Screens\VerkoopkansenProjectens\AddEditVerkoopkansenProjecten.lsml" />
+    <LightSwitchModel Include="Screens\VerkoopkansenProjectens\AfgerondeOrders.lsml" />
+    <LightSwitchModel Include="Screens\VerkoopkansenProjectens\BrowseLossKansen.lsml" />
     <LightSwitchModel Include="Screens\VerkoopkansenProjectens\BrowseOrders.lsml" />
     <LightSwitchModel Include="Screens\VerkoopkansenProjectens\BrowseVerkoopkansenProjectens.lsml" />
     <LightSwitchModel Include="Screens\VerkoopkansenProjectens\ViewVerkoopkansenProjecten.lsml" />

@@ -22,7 +22,7 @@
     <ApplicationServerType>Azure</ApplicationServerType>
     <AuthenticationType>SharePoint</AuthenticationType>
     <ApplicationName>T_MC_CRM</ApplicationName>
-    <AssemblyVersion>0.9.2.0</AssemblyVersion>
+    <AssemblyVersion>1.0.3.0</AssemblyVersion>
     <ServiceDefinitionFile>ServiceDefinition.csdef</ServiceDefinitionFile>
     <ServiceConfigurationFile>ServiceConfiguration.cscfg</ServiceConfigurationFile>
     <SqlExpressInstanceName>(LocalDB)\v11.0</SqlExpressInstanceName>
@@ -37,15 +37,15 @@
     <DefaultInstallLocation>T_MC_CRM</DefaultInstallLocation>
     <DeploySchema>True</DeploySchema>
     <PublishNewDatabase>True</PublishNewDatabase>
-    <PublishUrl>bcapp.scm.azurewebsites.net:443</PublishUrl>
-    <PublishSite>BCApp</PublishSite>
+    <PublishUrl>t-mc-crm.scm.azurewebsites.net:443</PublishUrl>
+    <PublishSite>T-MC-CRM</PublishSite>
     <RemotePublish>True</RemotePublish>
     <SkipExtraFilesOnServer>True</SkipExtraFilesOnServer>
     <UseLightSwitchWebDeploymentProvider>False</UseLightSwitchWebDeploymentProvider>
     <AzureAllowUpgrade>True</AzureAllowUpgrade>
     <AzureAppendTimestampToDeploymentLabel>True</AzureAppendTimestampToDeploymentLabel>
     <AzureDeploymentLabel>T_MC_CRM</AzureDeploymentLabel>
-    <AzureWebSite>BCApp</AzureWebSite>
+    <AzureWebSite>T-MC-CRM</AzureWebSite>
     <AzureWebSpace>WestEuropewebspace</AzureWebSpace>
     <AzureServiceType>WebSite</AzureServiceType>
     <AzureHostedService />
@@ -160,6 +160,9 @@
       <Value>Service Url=https://tmcnl.sharepoint.com/sites/t-mc-dev/_vti_bin/listdata.svc;Is Windows Authentication=False;Allow Invalid Certificate=False;Is OAuth=True</Value>
     </PublishParameter>
     <PublishParameter Include="T_MC_Bedrijven">
+      <Value>Service Url=https://tmcnl.sharepoint.com/sites/t-mc-dev/_vti_bin/listdata.svc;Is Windows Authentication=False;Allow Invalid Certificate=False;Is OAuth=True</Value>
+    </PublishParameter>
+    <PublishParameter Include="T_MC_Branche">
       <Value>Service Url=https://tmcnl.sharepoint.com/sites/t-mc-dev/_vti_bin/listdata.svc;Is Windows Authentication=False;Allow Invalid Certificate=False;Is OAuth=True</Value>
     </PublishParameter>
     <PublishParameter Include="T_MC_Contactpersonen">

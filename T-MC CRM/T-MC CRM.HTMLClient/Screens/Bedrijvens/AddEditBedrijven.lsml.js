@@ -34,11 +34,21 @@ myapp.AddEditBedrijven.created = function (screen) {
 myapp.AddEditBedrijven.MoederAccount_Tap_execute = function (screen) {
     // Write code here.
     var MoederAccount = screen.Bedrijven.MoederAccount;
+    if (MoederAccount == "< voeg moeder account in >") {
+        MoederAccount = null;
+    }
+
     myapp.showZoekBedrijf({
         afterClosed: function () {
             if (KeuzeBedrijf !== MoederAccount) {
-                screen.Bedrijven.MoederAccount = KeuzeBedrijf;
+                if (KeuzeBedrijf !== "< Choice Deleted >") {
+                    screen.Bedrijven.MoederAccount = KeuzeBedrijf;
+                } else {
+                    screen.Bedrijven.MoederAccount = "< voeg moeder account in >";
+                }
             }
+            MoederAccount = null;
+            KeuzeBedrijf = null;
         }
     });
 };
@@ -46,23 +56,50 @@ myapp.AddEditBedrijven.PrimairContact_Tap_execute = function (screen) {
     // Write code here.
     CurrentBedrijf = screen.Bedrijven.Bedrijfsnaam;
     var PrimairContact = screen.Bedrijven.PrimairContact;
-    myapp.showZoekContact(screen.Bedrijven.Bedrijfsnaam, null, {
+    if (PrimairContact == "< voeg primair contact in >") {
+        PrimairContact = null;
+    }
+    myapp.showZoekContact(screen.Bedrijven.Bedrijfsnaam, PrimairContact, {
         afterClosed: function () {
             if (KeuzeContact !== PrimairContact) {
-                screen.Bedrijven.PrimairContact = KeuzeContact;
+                if (KeuzeContact !== "< Choice Deleted >") {
+                    screen.Bedrijven.PrimairContact = KeuzeContact;
+                } else {
+                    screen.Bedrijven.PrimairContact = "< voeg primair contact in >";
+                }
             }
-            CurrentBedrijf = "";
+            CurrentBedrijf = null;
+            PrimairContact = null;
+            KeuzeContact = null;
         }
     })
 };
 myapp.AddEditBedrijven.Branche_Tap_execute = function (screen) {
     // Write code here.
     var Branche = screen.Bedrijven.Branche;
-        myapp.showZoekBranches({
-        afterClosed: function () {
-            if (KeuzeBranche !== Branche) {
+    KeuzeBranche = Branche;
+
+    myapp.showZoekBranches({
+    afterClosed: function () {
+        if (KeuzeBranche !== Branche) {
+            if (KeuzeBranche == "< Choice Deleted >") {
+                screen.Bedrijven.Branche = "< voeg branche in >";
+            } else {
                 screen.Bedrijven.Branche = KeuzeBranche;
             }
         }
+        KeuzeBranche = null;
+        Branche = null;
+    }
     })
+};
+
+myapp.AddEditBedrijven.beforeApplyChanges = function (screen) {
+    // Write code here.
+    var RegExpr = /^\+[1-9]{2,4}[ ][1-9][0-9]{0,2}[ ][1-9][0-9]{5,14}$/;
+
+    if (RegExpr.test(screen.Bedrijven.Telefoonnummer) == false) {
+        alert("Voer telefoonnummer op juiste wijze in, bijv:\n+31 6 223973110 of\n+31 348 501462");
+        return false;
+    }
 };

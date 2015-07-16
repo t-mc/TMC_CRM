@@ -5,10 +5,12 @@
     <Partial />
   </Application.Attributes>
   <Screen
-    Name="ZoekContact">
+    Name="BrowseLossKansen">
     <Screen.Attributes>
       <SaveChangesTo
-        EntityContainer="T_MC_Contactpersonen" />
+        EntityContainer="T_MC_Verkoopkansen" />
+      <DisplayName
+        Value="Gemiste kansen" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem
@@ -20,29 +22,33 @@
           Kind="Group"
           View="Microsoft.LightSwitch.MobileWeb:TabPages">
           <ContentItem
-            Name="ContactpersonenList"
+            Name="VerkoopkansenProjectenList"
             Kind="Group">
+            <ContentItem.Attributes>
+              <DisplayName
+                Value="Gemiste verkoopkansen" />
+            </ContentItem.Attributes>
             <ContentItem
-              Name="ActieveContacten"
+              Name="LossKansen"
               Kind="Collection"
-              DataType="CollectionView$Contactpersonen"
+              DataType="CollectionView$VerkoopkansenProjecten"
               View="Microsoft.LightSwitch.MobileWeb:TileList">
               <ContentItem.Attributes>
                 <DisplayName
-                  Value="ActieveContacten" />
+                  Value="LossKansen" />
               </ContentItem.Attributes>
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <MemberExpression
-                      Member="ZoekContact/Properties[ActieveContacten]" />
+                      Member="BrowseLossKansen/Properties[LossKansen]" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
               <ContentItem
                 Name="rows"
                 Kind="Details"
-                DataType="Contactpersonen"
+                DataType="VerkoopkansenProjecten"
                 View="Microsoft.LightSwitch.MobileWeb:RowsLayout">
                 <ContentItem.Attributes>
                   <DisplayName
@@ -54,14 +60,14 @@
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
                 <ContentItem
-                  Name="VolledigeNaam"
+                  Name="Projectcode"
                   Kind="Value"
                   DataType=":String?">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="Contactpersonen/Properties[VolledigeNaam]" />
+                          Member="VerkoopkansenProjecten/Properties[Projectcode]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -76,16 +82,83 @@
                         </ChainExpression>
                       </ScreenExpressionTree>
                     </ControlPropertySource>
+                  </ContentItem.PropertySources>
+                </ContentItem>
+                <ContentItem
+                  Name="Omschrijving"
+                  Kind="Value"
+                  DataType=":String?">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="VerkoopkansenProjecten/Properties[Omschrijving]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem.PropertySources>
                     <ControlPropertySource
-                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
+                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
                       <ScreenExpressionTree>
                         <ChainExpression>
-                          <CallExpression
-                            Target="ZoekContact/Methods[VolledigeNaam_Tap]" />
+                          <ConstantExpression
+                            Value="Small"
+                            ResultType=":String" />
                         </ChainExpression>
                       </ScreenExpressionTree>
                     </ControlPropertySource>
                   </ContentItem.PropertySources>
+                </ContentItem>
+                <ContentItem
+                  Name="Bedrijfsnaam"
+                  Kind="Value"
+                  DataType=":String?">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="VerkoopkansenProjecten/Properties[Bedrijfsnaam]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            Value="Small"
+                            ResultType=":String" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
+                </ContentItem>
+                <ContentItem
+                  Name="Opdrachtgever"
+                  Kind="Value"
+                  DataType=":String?">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="VerkoopkansenProjecten/Properties[Opdrachtgever]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="Klantpartner"
+                  Kind="Value"
+                  DataType=":Person?">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="VerkoopkansenProjecten/Properties[Klantpartner]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem.PropertySources>
                   <ControlPropertySource
@@ -106,7 +179,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="ZoekContact/Properties[ActieveContacten]" />
+                        Member="BrowseLossKansen/Properties[LossKansen]" />
                       <CallExpression
                         Target="viewSelected" />
                     </ChainExpression>
@@ -116,7 +189,7 @@
             </ContentItem>
             <ContentItem.CommandItems>
               <ContentItem
-                Name="SearchActieveContacten"
+                Name="SearchLossKansen"
                 Kind="Command">
                 <ContentItem.Attributes>
                   <DisplayName
@@ -128,7 +201,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="ZoekContact/Properties[ActieveContacten]" />
+                          Member="BrowseLossKansen/Properties[LossKansen]" />
                         <CallExpression
                           Target="showSearch" />
                       </ChainExpression>
@@ -190,25 +263,23 @@
           Name="dialogName"
           ParameterType=":String" />
       </ScreenMethod>
-      <ScreenMethod
-        Name="VolledigeNaam_Tap" />
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty
-        Name="ActieveContacten"
+        Name="LossKansen"
         PageSize="45"
-        PropertyType="CollectionView$Contactpersonen">
+        PropertyType="CollectionView$VerkoopkansenProjecten">
         <ScreenCollectionProperty.Query>
           <ScreenQueryDefinition
-            Name="ActieveContactenQuery"
-            ReturnType="Contactpersonen*">
+            Name="LossKansenQuery"
+            ReturnType="VerkoopkansenProjecten*">
             <ScreenQueryDefinition.FilterExpression>
               <QueryFilterExpressionTree />
             </ScreenQueryDefinition.FilterExpression>
             <ScreenQueryDefinition.Source>
               <QuerySourceExpressionTree>
                 <MemberExpression
-                  Member="T_MC_Contactpersonen/Members[ActieveContacten]" />
+                  Member="T_MC_Verkoopkansen/Members[LossKansen]" />
               </QuerySourceExpressionTree>
             </ScreenQueryDefinition.Source>
           </ScreenQueryDefinition>
@@ -216,7 +287,7 @@
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="ZoekContact/Properties[ActieveContacten]/Query" />
+              Target="BrowseLossKansen/Properties[LossKansen]/Query" />
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
@@ -224,10 +295,10 @@
   </Screen>
   <Application.Methods>
     <ApplicationMethod
-      Name="showZoekContact">
+      Name="showBrowseLossKansen">
       <ApplicationMethod.Attributes>
         <ShowScreenMethod
-          TargetScreen="ZoekContact" />
+          TargetScreen="BrowseLossKansen" />
       </ApplicationMethod.Attributes>
     </ApplicationMethod>
   </Application.Methods>
