@@ -61,7 +61,7 @@ myapp.AddEditBedrijven.PrimairContact_Tap_execute = function (screen) {
     }
     myapp.showZoekContact(screen.Bedrijven.Bedrijfsnaam, PrimairContact, {
         afterClosed: function () {
-            if (KeuzeContact !== PrimairContact) {
+            if (KeuzeContact !== PrimairContact && KeuzeContact !== null && KeuzeContact !== "") {
                 if (KeuzeContact !== "< Choice Deleted >") {
                     screen.Bedrijven.PrimairContact = KeuzeContact;
                 } else {
@@ -99,7 +99,7 @@ myapp.AddEditBedrijven.beforeApplyChanges = function (screen) {
     var RegExpr = /^\+[1-9]{2,4}[ ][1-9][0-9]{0,2}[ ][1-9][0-9]{5,14}$/;
 
     if (RegExpr.test(screen.Bedrijven.Telefoonnummer) == false) {
-        alert("Voer telefoonnummer op juiste wijze in, bijv:\n+31 6 223973110 of\n+31 348 501462");
+        alert("Voer telefoonnummer op juiste wijze in, bijv:\n+31 6 22397311, \n+31 20 1234567 of\n+31 348 501462");
         return false;
     }
 };

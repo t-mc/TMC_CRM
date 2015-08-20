@@ -295,7 +295,7 @@
                 </ContentItem.DataSource>
               </ContentItem>
               <ContentItem
-                Name="GeschatteSluitingsdatum"
+                Name="VerkoopkansenProjecten_StartdatumProject"
                 Kind="Value"
                 DataType=":Date?">
                 <ContentItem.DataSource>
@@ -304,7 +304,7 @@
                       <MemberExpression
                         Member="ViewVerkoopkansenProjecten/Properties[VerkoopkansenProjecten]" />
                       <MemberExpression
-                        Member="GeschatteSluitingsdatum" />
+                        Member="StartdatumProject" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -352,7 +352,7 @@
                 </ContentItem.DataSource>
               </ContentItem>
               <ContentItem
-                Name="WerkelijkeSluitingsdatum"
+                Name="VerkoopkansenProjecten_EinddatumProject"
                 Kind="Value"
                 DataType=":Date?">
                 <ContentItem.DataSource>
@@ -361,7 +361,7 @@
                       <MemberExpression
                         Member="ViewVerkoopkansenProjecten/Properties[VerkoopkansenProjecten]" />
                       <MemberExpression
-                        Member="WerkelijkeSluitingsdatum" />
+                        Member="EinddatumProject" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>

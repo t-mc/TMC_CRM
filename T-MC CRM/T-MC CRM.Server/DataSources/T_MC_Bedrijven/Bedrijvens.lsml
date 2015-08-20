@@ -225,7 +225,7 @@
           <MaxLength
             Value="255" />
           <DisplayName
-            Value="Klantpartner" />
+            Value="Klantpartner / eigenaar" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <VirtualNavigationProperty

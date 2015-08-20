@@ -41,17 +41,14 @@ myapp.AddEditVerkoopkansenProjecten.beforeApplyChanges = function (screen) {
                 case "Marktkans":
                     screen.VerkoopkansenProjecten.Verkoopkans = 0;
                     break;
-                case "Lead":
+                case "Warm contact":
                     screen.VerkoopkansenProjecten.Verkoopkans = 0.1;
-                    break;
-                case "Prospect":
-                    screen.VerkoopkansenProjecten.Verkoopkans = 0.25;
                     break;
                 case "Verkoopkans":
                     screen.VerkoopkansenProjecten.Verkoopkans = 0.5;
                     break;
-                case "Offerte":
-                    screen.VerkoopkansenProjecten.Verkoopkans = 0.75;
+                case "Offerte verstuurd":
+                    screen.VerkoopkansenProjecten.Verkoopkans = 0.9;
                     break;
                 case "Order":
                     screen.VerkoopkansenProjecten.Verkoopkans = 1;
@@ -59,7 +56,7 @@ myapp.AddEditVerkoopkansenProjecten.beforeApplyChanges = function (screen) {
                 case "Order afgerond":
                     screen.VerkoopkansenProjecten.Verkoopkans = 0;
                     break;
-                case "Loss":
+                case "Order gemist":
                     screen.VerkoopkansenProjecten.Verkoopkans = 0;
                     break;
 

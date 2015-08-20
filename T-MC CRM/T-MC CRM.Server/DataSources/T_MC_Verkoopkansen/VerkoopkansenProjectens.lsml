@@ -54,21 +54,22 @@
         Name="Verkoopstadium"
         PropertyType=":String?">
         <EntityProperty.Attributes>
+          <DisplayName
+            Value="Verkoopstadium" />
+          <Description
+            Value="" />
           <SupportedValue
             DisplayName="Marktkans"
             Value="Marktkans" />
           <SupportedValue
-            DisplayName="Lead"
-            Value="Lead" />
-          <SupportedValue
-            DisplayName="Prospect"
-            Value="Prospect" />
+            DisplayName="Warm contact"
+            Value="Warm contact" />
           <SupportedValue
             DisplayName="Verkoopkans"
             Value="Verkoopkans" />
           <SupportedValue
-            DisplayName="Offerte"
-            Value="Offerte" />
+            DisplayName="Offerte verstuurd"
+            Value="Offerte verstuurd" />
           <SupportedValue
             DisplayName="Order"
             Value="Order" />
@@ -76,12 +77,8 @@
             DisplayName="Order afgerond"
             Value="Order afgerond" />
           <SupportedValue
-            DisplayName="Loss"
-            Value="Loss" />
-          <DisplayName
-            Value="Verkoopstadium" />
-          <Description
-            Value="" />
+            DisplayName="Order gemist"
+            Value="Order gemist" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -107,15 +104,6 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
-        Name="GeschatteSluitingsdatum"
-        PropertyType=":Date?">
-        <EntityProperty.Attributes>
-          <DisplayName
-            Value="Geschatte sluitingsdatum" />
-          <NotSearchable />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
         Name="WerkelijkeOmzet"
         PropertyType=":Double?">
         <EntityProperty.Attributes>
@@ -124,15 +112,6 @@
           <NotSearchable />
           <StringValueFormat
             Value="&quot;C&quot;" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="WerkelijkeSluitingsdatum"
-        PropertyType=":Date?">
-        <EntityProperty.Attributes>
-          <DisplayName
-            Value="Werkelijke sluitingsdatum" />
-          <NotSearchable />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -149,8 +128,6 @@
         <EntityProperty.Attributes>
           <DisplayName
             Value="OneNote" />
-          <MaxLength
-            Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -276,6 +253,24 @@
         FromEnd="VerkoopkansenProjecten"
         ToEnd="Contactpersonen"
         VirtualAssociation="VerkoopkansenProjecten_Contactpersonen" />
+      <EntityProperty
+        Name="StartdatumProject"
+        PropertyType=":Date?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="Startdatum project" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="EinddatumProject"
+        PropertyType=":Date?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="Einddatum project" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
     </EntityType.Properties>
   </EntityType>
   <EntityContainer
@@ -408,14 +403,14 @@
           Name="GeschatteOmzet"
           Property="VerkoopkansenProjecten/Properties[GeschatteOmzet]" />
         <CsdlProperty
-          Name="GeschatteSluitingsdatum"
-          Property="VerkoopkansenProjecten/Properties[GeschatteSluitingsdatum]" />
+          Name="StartdatumProject"
+          Property="VerkoopkansenProjecten/Properties[StartdatumProject]" />
         <CsdlProperty
           Name="WerkelijkeOmzet"
           Property="VerkoopkansenProjecten/Properties[WerkelijkeOmzet]" />
         <CsdlProperty
-          Name="WerkelijkeSluitingsdatum"
-          Property="VerkoopkansenProjecten/Properties[WerkelijkeSluitingsdatum]" />
+          Name="EinddatumProject"
+          Property="VerkoopkansenProjecten/Properties[EinddatumProject]" />
         <CsdlProperty
           Name="Broncampagne"
           Property="VerkoopkansenProjecten/Properties[Broncampagne]" />

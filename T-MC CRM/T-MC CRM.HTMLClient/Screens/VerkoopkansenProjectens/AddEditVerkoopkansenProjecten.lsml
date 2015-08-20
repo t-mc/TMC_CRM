@@ -220,17 +220,29 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="GeschatteSluitingsdatum"
+                  Name="StartdatumProject"
                   Kind="Value"
                   DataType=":Date?">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="VerkoopkansenProjecten/Properties[GeschatteSluitingsdatum]" />
+                          Member="VerkoopkansenProjecten/Properties[StartdatumProject]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.MobileWeb:DateTimePicker/Properties[TimePickerEnabled]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            Value="False"
+                            ResultType=":Boolean" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
                 </ContentItem>
               </ContentItem>
               <ContentItem
@@ -251,17 +263,29 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="WerkelijkeSluitingsdatum"
+                  Name="EinddatumProject"
                   Kind="Value"
                   DataType=":Date?">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="VerkoopkansenProjecten/Properties[WerkelijkeSluitingsdatum]" />
+                          Member="VerkoopkansenProjecten/Properties[EinddatumProject]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.MobileWeb:DateTimePicker/Properties[TimePickerEnabled]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            Value="False"
+                            ResultType=":Boolean" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
                 </ContentItem>
               </ContentItem>
               <ContentItem

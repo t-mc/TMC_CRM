@@ -51,9 +51,9 @@
         <Property Name="VerkoopstadiumValue" Type="Edm.String" Nullable="true" />
         <Property Name="Verkoopkans" Type="Edm.Double" Nullable="true" />
         <Property Name="GeschatteOmzet" Type="Edm.Double" Nullable="true" />
-        <Property Name="GeschatteSluitingsdatum" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="StartdatumProject" Type="Edm.DateTime" Nullable="true" />
         <Property Name="WerkelijkeOmzet" Type="Edm.Double" Nullable="true" />
-        <Property Name="WerkelijkeSluitingsdatum" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="EinddatumProject" Type="Edm.DateTime" Nullable="true" />
         <Property Name="Broncampagne" Type="Edm.String" Nullable="true" />
         <Property Name="OneNote" Type="Edm.String" Nullable="true" />
         <Property Name="Opdrachtgever" Type="Edm.String" Nullable="true" />

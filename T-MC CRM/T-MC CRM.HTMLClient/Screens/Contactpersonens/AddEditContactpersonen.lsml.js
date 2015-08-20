@@ -19,13 +19,13 @@ myapp.AddEditContactpersonen.beforeApplyChanges = function (screen) {
 
     if (screen.Contactpersonen.Telefoonnummer !== null) { 
         if (RegExpr.test(screen.Contactpersonen.Telefoonnummer) == false) {
-            alert("Voer telefoonnummer op juiste wijze in, bijv:\n+31 6 223973110 of\n+31 348 501462");
+            alert("Voer telefoonnummer op juiste wijze in, bijv:\n+31 6 22397311, \n+31 20 1234567 of\n+31 348 501462");
             return false;
         }
     }
     if (screen.Contactpersonen.MobielNummer !== null) {
         if (RegExpr.test(screen.Contactpersonen.MobielNummer) == false) {
-            alert("Voer mobiel nummer op juiste wijze in, bijv:\n+31 6 223973110 of\n+31 348 501462");
+            alert("Voer mobiel nummer op juiste wijze in, bijv:\n+31 6 22397311");
             return false;
         }
     }
@@ -88,9 +88,9 @@ myapp.AddEditContactpersonen.Bedrijfsnaam_Tap_execute = function (screen) {
     var BewaarBedrijf = screen.Contactpersonen.Bedrijfsnaam;
     myapp.showZoekBedrijf({
         afterClosed: function () {
-            if (KeuzeBedrijf !== BewaarBedrijf) {
+            if (KeuzeBedrijf !== BewaarBedrijf && KeuzeBedrijf !== null && KeuzeBedrijf !== "") {
                     if (KeuzeBedrijf !== "< Choice Deleted >") {
-                    screen.Contactpersonen.Bedrijfsnaam = KeuzeBedrijf;
+                        screen.Contactpersonen.Bedrijfsnaam = KeuzeBedrijf;
                     } else {
                         screen.Contactpersonen.Bedrijfsnaam = "< voeg bedrijf in >";
                     }
