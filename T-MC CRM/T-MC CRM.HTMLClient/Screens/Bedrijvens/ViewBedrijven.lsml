@@ -809,7 +809,7 @@
             Kind="Group">
             <ContentItem.Attributes>
               <DisplayName
-                Value="Verkoopkansen / projecten" />
+                Value=" Commerciële kansen / Orders" />
             </ContentItem.Attributes>
             <ContentItem
               Name="VerkoopkansenProjectens"

@@ -19,10 +19,10 @@
     <SignManifests>false</SignManifests>
     <BaseIntermediateOutputPath>bin</BaseIntermediateOutputPath>
     <ApplicationClientType>Browser</ApplicationClientType>
-    <ApplicationServerType>Azure</ApplicationServerType>
+    <ApplicationServerType>IIS</ApplicationServerType>
     <AuthenticationType>SharePoint</AuthenticationType>
     <ApplicationName>T_MC_CRM</ApplicationName>
-    <AssemblyVersion>1.0.3.0</AssemblyVersion>
+    <AssemblyVersion>1.0.7.0</AssemblyVersion>
     <ServiceDefinitionFile>ServiceDefinition.csdef</ServiceDefinitionFile>
     <ServiceConfigurationFile>ServiceConfiguration.cscfg</ServiceConfigurationFile>
     <SqlExpressInstanceName>(LocalDB)\v11.0</SqlExpressInstanceName>
@@ -37,8 +37,8 @@
     <DefaultInstallLocation>T_MC_CRM</DefaultInstallLocation>
     <DeploySchema>True</DeploySchema>
     <PublishNewDatabase>True</PublishNewDatabase>
-    <PublishUrl>t-mc-crm.scm.azurewebsites.net:443</PublishUrl>
-    <PublishSite>T-MC-CRM</PublishSite>
+    <PublishUrl>office.t-mc.nl</PublishUrl>
+    <PublishSite>Default Web Site/T-MC-CRM</PublishSite>
     <RemotePublish>True</RemotePublish>
     <SkipExtraFilesOnServer>True</SkipExtraFilesOnServer>
     <UseLightSwitchWebDeploymentProvider>False</UseLightSwitchWebDeploymentProvider>
@@ -157,19 +157,19 @@
   </ItemGroup>
   <ItemGroup>
     <PublishParameter Include="T_MC_Adressen">
-      <Value>Service Url=https://tmcnl.sharepoint.com/sites/t-mc-dev/_vti_bin/listdata.svc;Is Windows Authentication=False;Allow Invalid Certificate=False;Is OAuth=True</Value>
+      <Value>Service Url=https://tmcnl.sharepoint.com/CRM_Site/_vti_bin/listdata.svc;Is Windows Authentication=False;Allow Invalid Certificate=False;Is OAuth=True</Value>
     </PublishParameter>
     <PublishParameter Include="T_MC_Bedrijven">
-      <Value>Service Url=https://tmcnl.sharepoint.com/sites/t-mc-dev/_vti_bin/listdata.svc;Is Windows Authentication=False;Allow Invalid Certificate=False;Is OAuth=True</Value>
+      <Value>Service Url=https://tmcnl.sharepoint.com/CRM_Site/_vti_bin/listdata.svc;Is Windows Authentication=False;Allow Invalid Certificate=False;Is OAuth=True</Value>
     </PublishParameter>
     <PublishParameter Include="T_MC_Branche">
-      <Value>Service Url=https://tmcnl.sharepoint.com/sites/t-mc-dev/_vti_bin/listdata.svc;Is Windows Authentication=False;Allow Invalid Certificate=False;Is OAuth=True</Value>
+      <Value>Service Url=https://tmcnl.sharepoint.com/CRM_Site/_vti_bin/listdata.svc;Is Windows Authentication=False;Allow Invalid Certificate=False;Is OAuth=True</Value>
     </PublishParameter>
     <PublishParameter Include="T_MC_Contactpersonen">
-      <Value>Service Url=https://tmcnl.sharepoint.com/sites/t-mc-dev/_vti_bin/listdata.svc;Is Windows Authentication=False;Allow Invalid Certificate=False;Is OAuth=True</Value>
+      <Value>Service Url=https://tmcnl.sharepoint.com/CRM_Site/_vti_bin/listdata.svc;Is Windows Authentication=False;Allow Invalid Certificate=False;Is OAuth=True</Value>
     </PublishParameter>
     <PublishParameter Include="T_MC_Verkoopkansen">
-      <Value>Service Url=https://tmcnl.sharepoint.com/sites/t-mc-dev/_vti_bin/listdata.svc;Is Windows Authentication=False;Allow Invalid Certificate=False;Is OAuth=True</Value>
+      <Value>Service Url=https://tmcnl.sharepoint.com/CRM_Site/_vti_bin/listdata.svc;Is Windows Authentication=False;Allow Invalid Certificate=False;Is OAuth=True</Value>
     </PublishParameter>
   </ItemGroup>
   <ItemGroup>

@@ -17,13 +17,13 @@ myapp.AddEditContactpersonen.beforeApplyChanges = function (screen) {
 
     var RegExpr = /^\+[1-9]{2,4}[ ][1-9][0-9]{0,2}[ ][1-9][0-9]{5,14}$/;
 
-    if (screen.Contactpersonen.Telefoonnummer !== null) { 
+    if (screen.Contactpersonen.Telefoonnummer != null) { 
         if (RegExpr.test(screen.Contactpersonen.Telefoonnummer) == false) {
             alert("Voer telefoonnummer op juiste wijze in, bijv:\n+31 6 22397311, \n+31 20 1234567 of\n+31 348 501462");
             return false;
         }
     }
-    if (screen.Contactpersonen.MobielNummer !== null) {
+    if (screen.Contactpersonen.MobielNummer != null) {
         if (RegExpr.test(screen.Contactpersonen.MobielNummer) == false) {
             alert("Voer mobiel nummer op juiste wijze in, bijv:\n+31 6 22397311");
             return false;
