@@ -24,7 +24,7 @@
             </BinaryExpression.Left>
             <BinaryExpression.Right>
               <ConstantExpression
-                Value="Loss"
+                Value="Order gemist"
                 ResultType=":String?" />
             </BinaryExpression.Right>
           </BinaryExpression>
