@@ -22,7 +22,7 @@
     <ApplicationServerType>IIS</ApplicationServerType>
     <AuthenticationType>SharePoint</AuthenticationType>
     <ApplicationName>T_MC_CRM</ApplicationName>
-    <AssemblyVersion>1.0.11.0</AssemblyVersion>
+    <AssemblyVersion>1.0.13.0</AssemblyVersion>
     <ServiceDefinitionFile>ServiceDefinition.csdef</ServiceDefinitionFile>
     <ServiceConfigurationFile>ServiceConfiguration.cscfg</ServiceConfigurationFile>
     <SqlExpressInstanceName>(LocalDB)\v11.0</SqlExpressInstanceName>
@@ -153,6 +153,10 @@
     <LightSwitchExtension Include="Extensions\Microsoft.LightSwitch.Extensions.lspkg">
       <ExtensionId>Microsoft.LightSwitch.Extensions</ExtensionId>
       <Server>MICROSOFT.LIGHTSWITCH.EXTENSIONS.SERVER</Server>
+    </LightSwitchExtension>
+    <LightSwitchExtension Include="Extensions\X360Lightning.ThemePack2.lspkg">
+      <ExtensionId>X360Lightning.ThemePack2</ExtensionId>
+      <Server>X360LIGHTNING.THEMEPACK2.COMMON;X360LIGHTNING.THEMEPACK2.SERVER</Server>
     </LightSwitchExtension>
   </ItemGroup>
   <ItemGroup>

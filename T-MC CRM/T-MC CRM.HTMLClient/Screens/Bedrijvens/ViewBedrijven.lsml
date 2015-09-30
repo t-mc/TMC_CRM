@@ -499,7 +499,7 @@
                 Kind="Command">
                 <ContentItem.Attributes>
                   <DisplayName
-                    Value="Edit details" />
+                    Value="Wijzig details" />
                 </ContentItem.Attributes>
                 <ContentItem.PropertySources>
                   <ControlPropertySource
@@ -536,7 +536,7 @@
                 Kind="Command">
                 <ContentItem.Attributes>
                   <DisplayName
-                    Value="Edit adres" />
+                    Value="Wijzig adres" />
                 </ContentItem.Attributes>
                 <ContentItem.PropertySources>
                   <ControlPropertySource

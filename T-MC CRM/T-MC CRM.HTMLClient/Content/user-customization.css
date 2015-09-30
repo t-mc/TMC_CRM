@@ -55,6 +55,6 @@ screen and (max-width: 640px) and (max-height: 400px) and (orientation: landscap
     height: 100%;
     width: 100%;
 
-}.ui-body-a.ui-icon-searchfield, .ui-input-text, .ui-select, ul.msls-listview li, .msls-table-header {
+/*}.ui-body-a.ui-icon-searchfield, .ui-input-text, .ui-select, ul.msls-listview li, .msls-table-header {
     opacity: 0.5;
-}
+}*/

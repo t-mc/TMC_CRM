@@ -60,6 +60,8 @@
     <Content Include="Content\msls-2.5.2.min.css" />
     <Content Include="Content\msls-dark-2.5.2.css" />
     <Content Include="Content\msls-light-2.5.2.css" />
+    <Content Include="Content\MyOfficeTheme.css" />
+    <Content Include="Content\MyOfficeTheme.min.css" />
     <Content Include="default.htm" />
     <Content Include="Content\user-customization.css" />
     <Content Include="Content\Images\user-logo.png" />

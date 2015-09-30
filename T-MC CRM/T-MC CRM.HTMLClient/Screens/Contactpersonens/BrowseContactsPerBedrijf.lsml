@@ -156,7 +156,7 @@
                 Kind="Command">
                 <ContentItem.Attributes>
                   <DisplayName
-                    Value="Edit contact" />
+                    Value="Wijzig contact" />
                 </ContentItem.Attributes>
                 <ContentItem.PropertySources>
                   <ControlPropertySource

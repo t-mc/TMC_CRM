@@ -10,7 +10,7 @@
       <SaveChangesTo
         EntityContainer="T_MC_Adressen" />
       <DisplayName
-        Value="Edit Adres" />
+        Value="Wijzig Adres" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem

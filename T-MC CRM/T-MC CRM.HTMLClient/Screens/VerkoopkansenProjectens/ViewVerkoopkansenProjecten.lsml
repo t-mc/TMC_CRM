@@ -388,7 +388,7 @@
                 Kind="Command">
                 <ContentItem.Attributes>
                   <DisplayName
-                    Value="Edit" />
+                    Value="Wijzig" />
                 </ContentItem.Attributes>
                 <ContentItem.PropertySources>
                   <ControlPropertySource

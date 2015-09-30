@@ -202,6 +202,12 @@
       <Private>True</Private>
       <ProjectCritical>True</ProjectCritical>
     </Reference>
+    <Reference Include="X360Lightning.ThemePack2.Common">
+      <HintPath>..\_Pvt_Extensions\X360Lightning.ThemePack2\Server\Reference\X360Lightning.ThemePack2.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="X360Lightning.ThemePack2.Server">
+      <HintPath>..\_Pvt_Extensions\X360Lightning.ThemePack2\Server\Reference\X360Lightning.ThemePack2.Server.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataSources\T_MC_Adressen\_T_MC_AdressenService.lsml.cs" />
@@ -366,7 +372,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:61506/</IISUrl>
+          <IISUrl>http://localhost:59437/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

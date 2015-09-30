@@ -92,6 +92,7 @@ myapp.AddEditVerkoopkansenProjecten.Bedrijfsnaam_Tap_execute = function (screen)
             }
             BewaarBedrijf = "";
             KeuzeBedrijf = "";
+            CurrentBedrijf = "";
         }
     });
 };
@@ -114,6 +115,7 @@ myapp.AddEditVerkoopkansenProjecten.Opdrachtgever_Tap_execute = function (screen
                 }
                 BewaarContact = "";
                 KeuzeContact = "";
+                CurrentBedrijf = "";
             }
         });
     }

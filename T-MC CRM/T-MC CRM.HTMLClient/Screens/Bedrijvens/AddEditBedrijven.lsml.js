@@ -8,25 +8,25 @@ myapp.AddEditBedrijven.created = function (screen) {
     // Write code here.
     screen.findContentItem("MoederAccount")
     .dataBind("value.selectedItem", function (newValue) {
-        if (newValue == screen.Bedrijven.MoederAccount) {
+        if (screen.Bedrijven.MoederAccount === undefined) {
             screen.Bedrijven.MoederAccount = "< voeg moeder account in >";
         }
     })
     screen.findContentItem("Branche")
     .dataBind("value.selected", function (newValue) {
-        if (newValue == screen.Bedrijven.Branche) {
+        if (screen.Bedrijven.Branche === undefined) {
             screen.Bedrijven.Branche = "< voeg branche in >"
         }
     })
     screen.findContentItem("Actief")
     .dataBind("value.selected", function (newValue) {
-        if (newValue == screen.Bedrijven.Actief) {
+        if (screen.Bedrijven.Actief === undefined) {
             screen.Bedrijven.Actief = true;
         }
     })
     screen.findContentItem("PrimairContact")
     .dataBind("value.selected", function (newValue) {
-        if (newValue == screen.Bedrijven.PrimairContact) {
+        if (screen.Bedrijven.PrimairContact === undefined) {
             screen.Bedrijven.PrimairContact = "< voeg primair contact in >";
         }
     })

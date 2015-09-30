@@ -34,51 +34,51 @@ myapp.AddEditContactpersonen.beforeApplyChanges = function (screen) {
 myapp.AddEditContactpersonen.created = function (screen) {
     // Write code here.
     // Zet default tekst als bedrijfsnaam leeg is.
-     screen.findContentItem("VolledigeNaam")
-    .dataBind("value.selectedItem", function (newValue) {
-        if (newValue == screen.Contactpersonen.VolledigeNaam) {
-            screen.Contactpersonen.VolledigeNaam = "< voeg bedrijf in >";
-        }
-    });
+    // screen.findContentItem("VolledigeNaam")
+    //.dataBind("value.selectedItem", function (newValue) {
+    //    if (newValue == screen.Contactpersonen.VolledigeNaam) {
+    //        screen.Contactpersonen.VolledigeNaam = "< voeg bedrijf in >";
+    //    }
+    //});
     // screen.Contactpersonen.VolledigeNaam = "Deze niet invullen, wordt automatisch gevuld!";
 
     // Zet default tekst als bedrijfsnaam leeg is.
     screen.findContentItem("Bedrijfsnaam")
     .dataBind("value.selectedItem", function (newValue) {
-        if (newValue == screen.Contactpersonen.Bedrijfsnaam) {
+        if (screen.Contactpersonen.Bedrijfsnaam === undefined) {
             screen.Contactpersonen.Bedrijfsnaam = "< voeg bedrijf in >";
         }
     });
     // Zet default tekst als assistent leeg is.
     screen.findContentItem("Assistent")
     .dataBind("value.selectedItem", function (newValue) {
-        if (newValue == screen.Contactpersonen.Assistent) {
+        if (screen.Contactpersonen.Assistent === undefined) {
             screen.Contactpersonen.Assistent = "< voeg assistent in >";
         }
     });
     // Zet default tekst als manager leeg is.
     screen.findContentItem("Manager")
     .dataBind("value.selectedItem", function (newValue) {
-        if (newValue == screen.Contactpersonen.Manager) {
+        if (screen.Contactpersonen.Manager === undefined) {
             screen.Contactpersonen.Manager = "< voeg manager in >";
         }
     });
     // Zet default tekst als standplaats leeg is.
     screen.findContentItem("Standplaats")
     .dataBind("value.selectedItem", function (newValue) {
-        if (newValue == screen.Contactpersonen.Standplaats) {
+        if (screen.Contactpersonen.Standplaats === undefined) {
             screen.Contactpersonen.Standplaats = "< voeg standplaats in >";
         }
     });
     screen.findContentItem("Nieuwsbrief")
     .dataBind("value.selected", function (newValue) {
-        if (newValue == screen.Contactpersonen.Nieuwsbrief) {
+        if (screen.Contactpersonen.Nieuwsbrief === undefined) {
             screen.Contactpersonen.Nieuwsbrief = true;
         }
     });
     screen.findContentItem("Actief")
     .dataBind("value.selected", function (newValue) {
-        if (newValue == screen.Contactpersonen.Actief) {
+        if (screen.Contactpersonen.Actief === undefined) {
             screen.Contactpersonen.Actief = true;
         }
     });
