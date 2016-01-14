@@ -1,21 +1,21 @@
 ﻿/// <reference path="~/GeneratedArtifacts/viewModel.js" />
-var VerkoopStadium = "";
-var KeuzeBedrijf = "";
-var KeuzeContact = "";
-var CurrentBedrijf = "";
+var VerkoopStadium = null;
+var KeuzeBedrijf = null;
+var KeuzeContact = null;
+var CurrentBedrijf = null;
 
 myapp.AddEditVerkoopkansenProjecten.created = function (screen) {
     // Zet default tekst als Bedrijfsnaam leeg is.
     screen.findContentItem("Bedrijfsnaam")
     .dataBind("value.selectedItem", function (newValue) {
-        if (newValue == screen.VerkoopkansenProjecten.Bedrijfsnaam) {
+        if (screen.VerkoopkansenProjecten.Bedrijfsnaam === undefined) {
             screen.VerkoopkansenProjecten.Bedrijfsnaam = "< voeg bedrijf in >";
         }
     });
     // Zet default tekst als Opdrachtgever leeg is.
     screen.findContentItem("Opdrachtgever")
     .dataBind("value.selectedItem", function (newValue) {
-        if (newValue == screen.VerkoopkansenProjecten.Opdrachtgever) {
+        if (screen.VerkoopkansenProjecten.Opdrachtgever === undefined) {
             screen.VerkoopkansenProjecten.Opdrachtgever = "< voeg opdrachtgever in >";
         }
     });
@@ -41,8 +41,14 @@ myapp.AddEditVerkoopkansenProjecten.beforeApplyChanges = function (screen) {
                 case "Marktkans":
                     screen.VerkoopkansenProjecten.Verkoopkans = 0;
                     break;
-                case "Warm contact":
+                case "Toegewezen":
+                    screen.VerkoopkansenProjecten.Verkoopkans = 0.05;
+                    break;
+                case "Introductie gepland":
                     screen.VerkoopkansenProjecten.Verkoopkans = 0.1;
+                    break;
+                case "Warm contact":
+                    screen.VerkoopkansenProjecten.Verkoopkans = 0.25;
                     break;
                 case "Verkoopkans":
                     screen.VerkoopkansenProjecten.Verkoopkans = 0.5;
@@ -90,9 +96,9 @@ myapp.AddEditVerkoopkansenProjecten.Bedrijfsnaam_Tap_execute = function (screen)
             } else {
                 screen.VerkoopkansenProjecten.Bedrijfsnaam = KeuzeBedrijf;
             }
-            BewaarBedrijf = "";
-            KeuzeBedrijf = "";
-            CurrentBedrijf = "";
+            BewaarBedrijf = null;
+            KeuzeBedrijf = null;
+            CurrentBedrijf = null;
         }
     });
 };
@@ -113,9 +119,9 @@ myapp.AddEditVerkoopkansenProjecten.Opdrachtgever_Tap_execute = function (screen
                 } else {
                     screen.VerkoopkansenProjecten.Opdrachtgever = KeuzeContact;
                 }
-                BewaarContact = "";
-                KeuzeContact = "";
-                CurrentBedrijf = "";
+                BewaarContact = null;
+                KeuzeContact = null;
+                CurrentBedrijf = null;
             }
         });
     }

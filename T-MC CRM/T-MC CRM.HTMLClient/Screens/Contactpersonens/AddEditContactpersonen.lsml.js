@@ -40,7 +40,9 @@ myapp.AddEditContactpersonen.created = function (screen) {
     //        screen.Contactpersonen.VolledigeNaam = "< voeg bedrijf in >";
     //    }
     //});
-    // screen.Contactpersonen.VolledigeNaam = "Deze niet invullen, wordt automatisch gevuld!";
+    if (screen.Contactpersonen.VolledigeNaam === undefined) {
+        screen.Contactpersonen.VolledigeNaam = "Deze niet invullen, wordt automatisch gevuld!";
+    };
 
     // Zet default tekst als bedrijfsnaam leeg is.
     screen.findContentItem("Bedrijfsnaam")

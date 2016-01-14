@@ -35,6 +35,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="Content\dark-theme-2.5.2.css" />
+    <Content Include="Content\default.htm" />
     <Content Include="Content\Images\ajax-loader.gif" />
     <Content Include="Content\Images\App-watermark.png" />
     <Content Include="Content\Images\icons-18-black.png" />
@@ -62,7 +63,6 @@
     <Content Include="Content\msls-light-2.5.2.css" />
     <Content Include="Content\MyOfficeTheme.css" />
     <Content Include="Content\MyOfficeTheme.min.css" />
-    <Content Include="default.htm" />
     <Content Include="Content\user-customization.css" />
     <Content Include="Content\Images\user-logo.png" />
     <Content Include="Content\Images\user-logo.ico" />

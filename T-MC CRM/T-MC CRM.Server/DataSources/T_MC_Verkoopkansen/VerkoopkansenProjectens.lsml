@@ -62,6 +62,12 @@
             DisplayName="Marktkans"
             Value="Marktkans" />
           <SupportedValue
+            DisplayName="Toegewezen"
+            Value="Toegewezen" />
+          <SupportedValue
+            DisplayName="Introductie gepland"
+            Value="Introductie gepland" />
+          <SupportedValue
             DisplayName="Warm contact"
             Value="Warm contact" />
           <SupportedValue
