@@ -15,7 +15,8 @@ myapp.AddEditContactpersonen.beforeApplyChanges = function (screen) {
         screen.Contactpersonen.VolledigeNaam = screen.Contactpersonen.Voornaam + " " + screen.Contactpersonen.Achternaam;
     }
 
-    var RegExpr = /^\+[1-9]{2,4}[ ][1-9][0-9]{0,2}[ ][1-9][0-9]{5,14}$/;
+    var RegExpr = /^\+[1-9]?[0-9]{1,3}[ ][1-9][0-9]{0,2}[ ][1-9][0-9]{5,14}$/;
+
 
     if (screen.Contactpersonen.Telefoonnummer != null) { 
         if (RegExpr.test(screen.Contactpersonen.Telefoonnummer) == false) {

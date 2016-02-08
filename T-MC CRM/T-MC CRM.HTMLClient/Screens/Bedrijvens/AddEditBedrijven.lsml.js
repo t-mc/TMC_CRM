@@ -96,12 +96,12 @@ myapp.AddEditBedrijven.Branche_Tap_execute = function (screen) {
 
 myapp.AddEditBedrijven.beforeApplyChanges = function (screen) {
     // Write code here.
-    var RegExpr = /^\+[1-9]{2,4}[ ][1-9][0-9]{0,2}[ ][1-9][0-9]{5,14}$/;
-
+    var RegExpr = /^\+[1-9]?[0-9]{1,3}[ ][1-9][0-9]{0,2}[ ][1-9][0-9]{5,14}$/;
+    
     if (screen.Bedrijven.Telefoonnummer != null) {
         if (RegExpr.test(screen.Bedrijven.Telefoonnummer) == false) {
             alert("Voer telefoonnummer op juiste wijze in, bijv:\n+31 6 22397311, \n+31 20 1234567 of\n+31 348 501462");
             return false;
         }
     }
-};
+};0
