@@ -239,6 +239,20 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
+                  Name="OverigeContactgegevens"
+                  Kind="Value"
+                  DataType=":String?"
+                  View="Microsoft.LightSwitch.MobileWeb:TextBox">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Contactpersonen/Properties[OverigeContactgegevens]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
                   Name="Bedrijfsnaam"
                   Kind="Value"
                   DataType=":String?"

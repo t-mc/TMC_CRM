@@ -43,6 +43,9 @@
       <ConnectionProperty
         Name="ProjectMetadata"
         Value="T_MC_Contactpersonen" />
+      <ConnectionProperty
+        Name="ProjectMetadata"
+        Value="T_MC_Contactpersonen" />
     </DataService.ConnectionProperties>
   </DataService>
 </ServiceApplication>

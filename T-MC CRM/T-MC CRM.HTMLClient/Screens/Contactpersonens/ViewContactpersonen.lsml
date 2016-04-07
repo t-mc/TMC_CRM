@@ -314,6 +314,21 @@
               </ContentItem>
             </ContentItem>
             <ContentItem
+              Name="Contactpersonen_OverigeContactgegevens"
+              Kind="Value"
+              DataType=":String?">
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="ViewContactpersonen/Properties[Contactpersonen]" />
+                    <MemberExpression
+                      Member="OverigeContactgegevens" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+            </ContentItem>
+            <ContentItem
               Name="Contactpersonen_Bedrijfsnaam"
               Kind="Value"
               DataType=":String?">

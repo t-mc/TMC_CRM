@@ -76,8 +76,6 @@
         <EntityProperty.Attributes>
           <DisplayName
             Value="Telefoonnummer" />
-          <MaxLength
-            Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -86,8 +84,6 @@
         <EntityProperty.Attributes>
           <DisplayName
             Value="Mobiel nummer" />
-          <MaxLength
-            Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -314,6 +310,16 @@
             Value="" />
         </EntityProperty.Attributes>
       </EntityProperty>
+      <EntityProperty
+        Name="OverigeContactgegevens"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="100" />
+          <DisplayName
+            Value="Overige contactgegevens" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
     </EntityType.Properties>
   </EntityType>
   <EntityContainer
@@ -516,6 +522,9 @@
         <CsdlProperty
           Name="StandplaatsId"
           Property="Contactpersonen/Properties[StandplaatsId]" />
+        <CsdlProperty
+          Name="OverigeContactgegevens"
+          Property="Contactpersonen/Properties[OverigeContactgegevens]" />
         <CsdlProperty
           Name="Id"
           Property="Contactpersonen/Properties[Id]" />
